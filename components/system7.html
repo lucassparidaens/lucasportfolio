@@ -1,0 +1,110 @@
+<!-- System 7 Interface - Skills & Expertise Section -->
+<section class="section system7-section" id="system7">
+    <div class="section__container">
+                        <h2 class="section__title">Projects</h2>
+                <p class="section__subtitle">Mijn portfolio in een klassieke Macintosh interface - Bekijk al mijn projecten, upload PDFs, en preview websites in retro stijl!</p>
+        
+        <!-- Classic Macintosh Computer -->
+        <div class="macintosh-computer">
+            <!-- Monitor -->
+            <div class="mac-monitor">
+                <div class="mac-screen-bezel">
+                    <!-- System 7 Desktop (Small Screen) -->
+                    <div class="system7-desktop" id="system7-desktop">
+                        <!-- Menu Bar -->
+                        <div class="system7-menubar">
+                            <div class="menubar-item apple-menu" onclick="System7.toggleAppleMenu()">
+                                <span class="apple-logo">🍎</span>
+                            </div>
+                            <div class="menubar-item file-menu" onclick="System7.toggleFileMenu()">File</div>
+                            <div class="menubar-item edit-menu">Edit</div>
+                            <div class="menubar-spacer"></div>
+                            <div class="menubar-time" id="system7-time">12:00</div>
+                        </div>
+
+                        <!-- Apple Menu Dropdown -->
+                        <div class="system7-dropdown apple-dropdown" id="apple-dropdown" style="display: none;">
+                            <div class="dropdown-item" onclick="System7.showAbout()">About Lucas Portfolio...</div>
+                            <div class="dropdown-divider"></div>
+                            <div class="dropdown-item" onclick="System7.openCalculator()">🧮 Calculator</div>
+                            <div class="dropdown-item" onclick="System7.openProjects()">📁 Projects</div>
+                            <div class="dropdown-item" onclick="System7.openSkills()">⚡ Skills</div>
+
+                        </div>
+
+                        <!-- File Menu Dropdown -->
+                        <div class="system7-dropdown file-dropdown" id="file-dropdown" style="display: none;">
+                            <div class="dropdown-item" onclick="System7.openItem()">Open ⌘O</div>
+                            <div class="dropdown-divider"></div>
+                            <div class="dropdown-item" onclick="System7.closeWindow()">Close Window ⌘W</div>
+                        </div>
+
+                        <!-- Desktop Icons -->
+                        <div class="system7-icons">
+                            <div class="desktop-icon" onclick="System7.openProjects()" oncontextmenu="return false;">
+                                <div class="icon-image">📁</div>
+                                <div class="icon-label">Projects</div>
+                            </div>
+                            <div class="desktop-icon" onclick="System7.openSkills()" oncontextmenu="return false;">
+                                <div class="icon-image">⚡</div>
+                                <div class="icon-label">Skills</div>
+                            </div>
+                            <div class="desktop-icon" onclick="System7.openTrash()" oncontextmenu="return false;">
+                                <div class="icon-image">🗑️</div>
+                                <div class="icon-label">Trash</div>
+                            </div>
+                        </div>
+
+                        <!-- Windows Container -->
+                        <div class="system7-windows" id="system7-windows">
+                            <!-- Windows will be dynamically created here -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Monitor Base -->
+                <div class="mac-monitor-base"></div>
+            </div>
+            
+            <!-- Computer Base -->
+            <div class="mac-base">
+                <div class="mac-disk-slot"></div>
+                <div class="mac-logo">
+                    <span>macintosh</span>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Tech Stack Info -->
+        <div class="tech-info">
+            <div class="tech-note">
+                <h4>The Window Manager</h4>
+                <p>Built with vanilla JavaScript and CSS. Features draggable windows, proper focus management, striped title bars for active windows, and a working menu system.</p>
+            </div>
+
+        </div>
+
+        <!-- About Dialog (Hidden) -->
+        <div class="system7-modal" id="about-modal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-close" onclick="System7.closeModal('about-modal')">×</div>
+                    <div class="modal-title">About Lucas Portfolio</div>
+                </div>
+                <div class="modal-body">
+                    <div class="about-icon">💻</div>
+                    <h3>Lucas Portfolio System 7</h3>
+                    <p>Version 1.0</p>
+                    <p>Built with HTML, CSS & JavaScript</p>
+                    <p>© 2024 Lucas Rijnen</p>
+                    <div class="about-memory">
+                        <p>Memory: 32MB Available</p>
+                        <p>System: Web Browser OS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

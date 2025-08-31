@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas — AI Portfolio (Web/App Dev, Marketing, Chatbots)</title>
+    <meta name="description" content="Lucas is een ervaren web developer, marketing specialist en AI chatbot expert uit Tilburg. Ontdek mijn portfolio met projecten in e-commerce, web development en marketing automatisering.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lucasportfolio.com/">
+    <meta property="og:title" content="Lucas — AI Portfolio (Web/App Dev, Marketing, Chatbots)">
+    <meta property="og:description" content="Ervaren web developer en marketing specialist uit Tilburg. Specialisatie in AI chatbots, e-commerce en marketing automatisering.">
+    <meta property="og:image" content="https://lucasportfolio.com/assets/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://lucasportfolio.com/">
+    <meta property="twitter:title" content="Lucas — AI Portfolio (Web/App Dev, Marketing, Chatbots)">
+    <meta property="twitter:description" content="Ervaren web developer en marketing specialist uit Tilburg. Specialisatie in AI chatbots, e-commerce en marketing automatisering.">
+    <meta property="twitter:image" content="https://lucasportfolio.com/assets/twitter-image.jpg">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Lucas Rijnen",
+        "jobTitle": "Web Developer & Marketing Specialist",
+        "description": "Ervaren web developer en marketing specialist gespecialiseerd in AI chatbots, e-commerce en marketing automatisering",
+        "url": "https://lucasportfolio.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Tilburg",
+            "addressCountry": "NL"
+        },
+        "knowsLanguage": ["nl", "en", "es"],
+        "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Web Developer & Marketing Specialist"
+        }
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" as="style" href="styles.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Spline Viewer -->
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.53/build/spline-viewer.js"></script>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header" role="banner">
+        <nav class="navbar" role="navigation" aria-label="Hoofdnavigatie">
+            <div class="navbar__container">
+                <div class="navbar__brand">
+                    <a href="#hero" class="navbar__logo">
+                        <!-- Replace with your memoji: Same image as hero section -->
+                        <div class="navbar__memoji">
+                            <img src="assets/lucas-memoji.svg" alt="Lucas Memoji" class="navbar__memoji-img">
+                        </div>
+                        <span class="navbar__logo-text">LUCAS</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="navbar__menu" id="navbar-menu">
+                    <ul class="navbar__nav">
+                        <li class="navbar__item">
+                            <a href="#hero" class="navbar__link">HOME</a>
+                        </li>
+                        <li class="navbar__item">
+                            <a href="#projects" class="navbar__link">PROJECTS</a>
+                        </li>
+                        <li class="navbar__item">
+                            <a href="#skills" class="navbar__link">SKILLS</a>
+                        </li>
+                        <li class="navbar__item">
+                            <a href=".footer" class="navbar__link">AI CHAT</a>
+                        </li>
+                        <li class="navbar__item">
+                            <a href="#contact" class="navbar__link">CONTACT</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="navbar__cta">
+                        <a href="#contact" class="navbar__cta-btn">LET'S TALK</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="navbar__toggle" id="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="navbar__toggle-line"></span>
+                    <span class="navbar__toggle-line"></span>
+                    <span class="navbar__toggle-line"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main" role="main">
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero__container">
+                <!-- Hero Content Section -->
+                <div class="hero__content">
+                    <!-- Floating Elements -->
+                    <div class="hero__floating-elements">
+                        <div class="floating-badge">
+                            <img src="https://flagcdn.com/w40/nl.png" alt="Nederlandse vlag" class="flag-icon">
+                            <span class="badge-text">Door een Nederlander, voor iedereen</span>
+                        </div>
+                        <div class="floating-memoji floating-memoji--1">
+                            <img src="assets/lucas-memoji.svg" alt="Lucas Avatar" class="floating-avatar">
+                        </div>
+                        <div class="floating-memoji floating-memoji--2">
+                            <img src="assets/lucas-memoji.svg" alt="Lucas Avatar" class="floating-avatar">
+                        </div>
+                        <div class="floating-decoration floating-decoration--bolt">⚡</div>
+                        <div class="floating-decoration floating-decoration--stars">✨</div>
+                    </div>
+
+                    <!-- Main Content -->
+                    <div class="hero__main-content">
+                        <h1 class="hero__headline">
+                            Breng jouw digitale visie tot leven 
+                            <span class="hero__highlight">met AI-gedreven ontwikkeling</span>
+                        </h1>
+                        <div class="hero__subtitle">
+                            <p class="hero__description">
+                                De #1 fullstack developer voor gebruiksvriendelijke websites & apps.
+                            </p>
+                            <p class="hero__description hero__description--mobile-hidden">
+                                Van concept tot deployment - ik help je elke stap van de weg.
+                            </p>
+                        </div>
+
+                        <!-- CTA Buttons -->
+                        <div class="hero__actions">
+                            <a href=".footer" class="hero__cta-primary">
+                                <span class="cta-text">Start een gesprek</span>
+                                <svg class="cta-icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                                </svg>
+                            </a>
+                            <a href="#projects" class="hero__cta-secondary">
+                                <div class="cta-secondary-content">
+                                    <div class="cta-secondary-overlay"></div>
+                                    <div class="cta-secondary-inner">
+                                        <span class="cta-text">Bekijk mijn werk</span>
+                                        <svg class="cta-icon" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners Section -->
+        <section class="section section--partners">
+            <div class="section__container">
+                <div class="partners">
+                    <div class="partners__title">Werk afgeleverd aan een groot aantal bedrijven, van klein tot groot:</div>
+                    <div class="partners__animation-container">
+                        <div class="partners__gradient partners__gradient--left"></div>
+                        <div class="partners__content">
+                            <!-- Row 1 -->
+                            <div class="partners__row partners__row--1" data-speed="1">
+                                <div class="partners__item">
+                                    <img src="https://cdn.prod.website-files.com/641224d3d867b0d5aade1f7c/660c1a656ca1314b637fe74c_saxion-hogescholen-1-logo-png-transparent.png" alt="Saxion" class="partners__logo">
+                                </div>
+                                <div class="partners__item">
+                                    <img src="https://cdn.prod.website-files.com/641224d3d867b0d5aade1f7c/666aeb36599d82f92eb9f98d_img-logo-thebrowniebox.svg" alt="The Brownie Box" class="partners__logo">
+                                </div>
+                                <div class="partners__item">
+                                    <img src="https://cdn.prod.website-files.com/641224d3d867b0d5aade1f7c/67574a3638c5f28f053b28fa_kruidvat%20logo.png" alt="Kruidvat" class="partners__logo">
+                                </div>
+                                <div class="partners__item">
+                                    <img src="https://cdn.prod.website-files.com/641224d3d867b0d5aade1f7c/660c1a656ca1314b637fe74c_saxion-hogescholen-1-logo-png-transparent.png" alt="Saxion" class="partners__logo">
+                                </div>
+                            </div>
+                            
+                            <!-- Row 2 -->
+                            <div class="partners__row partners__row--2" data-speed="1.5">
+                                <div class="partners__item">
+                                    <img src="https://cdn.prod.website-files.com/641224d3d867b0d5aade1f7c/66053a9672519f841ffd90be_logo-black.png" alt="Degros" class="partners__logo">
+                                </div>
+                                <div class="partners__item">
+                                    <img src="https://cdn.prod.website-files.com/641224d3d867b0d5aade1f7c/675163b6a5c7cb7739147d1a_fotofabriek%20logo.png" alt="Fotofabriek" class="partners__logo">
+                                </div>
+                                <div class="partners__item">
+                                    <img src="https://cdn.prod.website-files.com/641224d3d867b0d5aade1f7c/666ae4727de3c2a47cbed3f9_zon-en-scherm-knikarmscherm-logo.jpg" alt="Zon en Scherm" class="partners__logo">
+                                </div>
+                                <div class="partners__item">
+                                    <img src="https://cdn.prod.website-files.com/641224d3d867b0d5aade1f7c/66053a9672519f841ffd90be_logo-black.png" alt="Degros" class="partners__logo">
+                                </div>
+                            </div>
+                            
+                            <!-- Row 3 -->
+                            <div class="partners__row partners__row--3" data-speed="1">
+                                <div class="partners__item">
+                                    <img src="https://cdn.prod.website-files.com/641224d3d867b0d5aade1f7c/65cf5aa3cec7ae1ee101f5bd_Fotocadeau_1.png" alt="Fotocadeau" class="partners__logo">
+                                </div>
+                                <div class="partners__item">
+                                    <img src="https://cdn.prod.website-files.com/641224d3d867b0d5aade1f7c/666ae886da5737354571131f_logo.webp" alt="Brand Logo" class="partners__logo">
+                                </div>
+                                <div class="partners__item">
+                                    <img src="https://cdn.prod.website-files.com/641224d3d867b0d5aade1f7c/6633987275e549b8a335d554_sunweb%20logo%20-%20sleak.png" alt="Sunweb" class="partners__logo">
+                                </div>
+                                <div class="partners__item">
+                                    <img src="https://cdn.prod.website-files.com/641224d3d867b0d5aade1f7c/65cf5aa3cec7ae1ee101f5bd_Fotocadeau_1.png" alt="Fotocadeau" class="partners__logo">
+                                </div>
+                            </div>
+                            
+                            <!-- Row 4 -->
+                            <div class="partners__row partners__row--4" data-speed="1.8">
+                                <div class="partners__item">
+                                    <img src="https://cdn.prod.website-files.com/641224d3d867b0d5aade1f7c/6605396054aa737d07354de5_bruna.svg" alt="Bruna" class="partners__logo">
+                                </div>
+                                <div class="partners__item">
+                                    <img src="https://cdn.prod.website-files.com/641224d3d867b0d5aade1f7c/675163cda5c7cb7739149344_ergowerken%20logo.png" alt="Ergowerken" class="partners__logo">
+                                </div>
+                                <div class="partners__item">
+                                    <img src="https://cdn.prod.website-files.com/641224d3d867b0d5aade1f7c/661642880f076ca8360ae302_Inventum-logo-407_1.webp" alt="Inventum" class="partners__logo">
+                                </div>
+                                <div class="partners__item">
+                                    <img src="https://cdn.prod.website-files.com/641224d3d867b0d5aade1f7c/6605396054aa737d07354de5_bruna.svg" alt="Bruna" class="partners__logo">
+                                </div>
+                            </div>
+                            
+                            <!-- Row 5 -->
+                            <div class="partners__row partners__row--5" data-speed="1.2">
+                                <div class="partners__item">
+                                    <img src="https://cdn.prod.website-files.com/641224d3d867b0d5aade1f7c/66053b021031a12e977ab4b4_bbqkopen-nl-coupon-codes.png" alt="BBQ Kopen" class="partners__logo">
+                                </div>
+                                <div class="partners__item">
+                                    <img src="https://cdn.prod.website-files.com/641224d3d867b0d5aade1f7c/67516434dc8054cd70105c1d_sticker.nl%20logo.png" alt="Sticker.nl" class="partners__logo">
+                                </div>
+                                <div class="partners__item">
+                                    <img src="https://cdn.prod.website-files.com/641224d3d867b0d5aade1f7c/667533b8d17633649605f543_tuincentrumoutlet.com%20logo%20new%20(1).png" alt="Tuincentrum Outlet" class="partners__logo">
+                                </div>
+                                <div class="partners__item">
+                                    <img src="https://cdn.prod.website-files.com/641224d3d867b0d5aade1f7c/66053b021031a12e977ab4b4_bbqkopen-nl-coupon-codes.png" alt="BBQ Kopen" class="partners__logo">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="partners__gradient partners__gradient--right"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scroll Text Section -->
+        <section class="section section--scroll-text">
+            <div class="section__container">
+                <!-- Scrolling Color Change Text -->
+                <div class="hero__scroll-text">
+                    <h2 class="scroll-text" id="scroll-text">
+                        <span class="scroll-text__word">Ik</span>
+                        <span class="scroll-text__word">denk</span>
+                        <span class="scroll-text__word">verder</span>
+                        <span class="scroll-text__word">met</span>
+                        <span class="scroll-text__word">je</span>
+                        <span class="scroll-text__word">mee</span>
+                        <span class="scroll-text__word">waar</span>
+                        <span class="scroll-text__word">andere</span>
+                        <span class="scroll-text__word">stoppen</span>
+                        <span class="scroll-text__word">bij</span>
+                        <span class="scroll-text__word">het</span>
+                        <span class="scroll-text__word">designen.</span>
+                    </h2>
+                </div>
+
+
+
+
+            </div>
+        </section>
+
+        <!-- Me Section -->
+        <section class="section section--me" id="me">
+            <div class="section__container">
+                <h2 class="section__title">About Me</h2>
+                <div class="me__grid">
+                    <div class="me__content">
+                        <div class="profile-cards">
+                            <div class="profile-card">
+                                <h3 class="profile-card__title">Profiel</h3>
+                                <div class="profile-card__items">
+                                    <div class="profile-item">
+                                        <span class="profile-item__label">Opleiding:</span>
+                                        <span class="profile-item__value">MBO 4 Marketing & Communicatie</span>
+                                    </div>
+                                    <div class="profile-item">
+                                        <span class="profile-item__label">Ervaring:</span>
+                                        <span class="profile-item__value">3 jaar marketing specialist, 4 jaar zelfstandig</span>
+                                    </div>
+                                    <div class="profile-item">
+                                        <span class="profile-item__label">Talen:</span>
+                                        <span class="profile-item__value">NL (vloeiend), EN (vloeiend), ES (basis)</span>
+                                    </div>
+                                    <div class="profile-item">
+                                        <span class="profile-item__label">Locatie:</span>
+                                        <span class="profile-item__value">Tilburg</span>
+                                    </div>
+                                    <div class="profile-item">
+                                        <span class="profile-item__label">Rijbewijs:</span>
+                                        <span class="profile-item__value">✓ Ja</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="profile-card">
+                                <h3 class="profile-card__title">Interesses</h3>
+                                <div class="interest-chips">
+                                    <span class="chip">Healthcare</span>
+                                    <span class="chip">Sport & Fitness</span>
+                                    <span class="chip">MMA/BJJ/Kickboks</span>
+                                    <span class="chip">Football</span>
+                                    <span class="chip">Mental Health</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me__visual">
+                        <div class="profile-visual">
+                            <svg class="profile-visual__svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="100" cy="100" r="90" fill="var(--primary)" opacity="0.1"/>
+                                <circle cx="100" cy="100" r="70" fill="var(--accent)" opacity="0.2"/>
+                                <circle cx="100" cy="100" r="50" fill="var(--primary)" opacity="0.3"/>
+                                <text x="100" y="110" text-anchor="middle" font-size="20" fill="var(--text)">👨‍💻</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="section section--projects" id="projects">
+            <div class="section__container">
+                <h2 class="section__title">Projects</h2>
+                <div class="projects">
+                    <div class="projects__scroll">
+                        <div class="project-card">
+                            <div class="project-card__badge">E-commerce</div>
+                            <h3 class="project-card__title">Gamestoelen.nl</h3>
+                            <p class="project-card__description">Complete e-commerce platform voor gaming chairs met geïntegreerde marketing automation.</p>
+                            <a href="#" class="project-card__cta">Bekijk Project</a>
+                        </div>
+                        
+                        <div class="project-card">
+                            <div class="project-card__badge">E-commerce</div>
+                            <h3 class="project-card__title">Gamestoelenexpert.nl</h3>
+                            <p class="project-card__description">Specialist platform met uitgebreide product vergelijkingen en reviews.</p>
+                            <a href="#" class="project-card__cta">Bekijk Project</a>
+                        </div>
+                        
+                        <div class="project-card">
+                            <div class="project-card__badge">Tech</div>
+                            <h3 class="project-card__title">Pettech.nl</h3>
+                            <p class="project-card__description">Innovatieve tech solutions voor de huisdieren industrie.</p>
+                            <a href="#" class="project-card__cta">Bekijk Project</a>
+                        </div>
+                        
+                        <div class="project-card">
+                            <div class="project-card__badge">SaaS</div>
+                            <h3 class="project-card__title">Getdjoice.com</h3>
+                            <p class="project-card__description">Platform voor voice en audio solutions met AI integratie.</p>
+                            <a href="#" class="project-card__cta">Bekijk Project</a>
+                        </div>
+                        
+                        <div class="project-card">
+                            <div class="project-card__badge">E-commerce</div>
+                            <h3 class="project-card__title">Freakygoodz.com</h3>
+                            <p class="project-card__description">Unieke lifestyle products met focus op conversie optimalisatie.</p>
+                            <a href="#" class="project-card__cta">Bekijk Project</a>
+                        </div>
+                        
+                        <div class="project-card">
+                            <div class="project-card__badge">Content</div>
+                            <h3 class="project-card__title">Margriet</h3>
+                            <p class="project-card__description">Content marketing campagnes voor lifestyle magazine.</p>
+                            <a href="#" class="project-card__cta">Bekijk Project</a>
+                        </div>
+                        
+                        <div class="project-card">
+                            <div class="project-card__badge">Mobile</div>
+                            <h3 class="project-card__title">Dakkie</h3>
+                            <p class="project-card__description">Mobile app development met focus op user experience.</p>
+                            <a href="#" class="project-card__cta">Bekijk Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section section--skills" id="skills">
+            <div class="section__container">
+                <h2 class="section__title">Skills & Expertise</h2>
+                <div class="skills-menu-book">
+                    <!-- Book Cover & Binding -->
+                    <div class="menu-book">
+                        <div class="book-spine"></div>
+                        
+                        <!-- Page Navigation -->
+                        <div class="book-navigation">
+                            <button class="nav-btn nav-btn--prev" id="prevPage" aria-label="Previous page">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                                </svg>
+                            </button>
+                            <div class="page-indicator">
+                                <span class="current-page">1</span> / <span class="total-pages">6</span>
+                            </div>
+                            <button class="nav-btn nav-btn--next" id="nextPage" aria-label="Next page">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Book Pages Container -->
+                        <div class="book-pages" id="bookPages">
+                            
+                            <!-- Page 1: Frontend Development -->
+                            <div class="book-page book-page--active" data-page="1">
+                                <div class="page-content">
+                                    <div class="page-header">
+                                        <div class="page-number">01</div>
+                                        <div class="page-category">
+                                            <span class="category-icon">⚡</span>
+                                            <h3>Frontend Development</h3>
+                                        </div>
+                                    </div>
+                                    <div class="page-body">
+                                        <div class="skills-menu">
+                                            <div class="menu-item">
+                                                <span class="menu-skill">HTML & Semantics</span>
+                                                <span class="menu-dots"></span>
+                                                <span class="menu-level">Expert</span>
+                                            </div>
+                                            <div class="menu-item">
+                                                <span class="menu-skill">CSS & Animations</span>
+                                                <span class="menu-dots"></span>
+                                                <span class="menu-level">Expert</span>
+                                            </div>
+                                            <div class="menu-item">
+                                                <span class="menu-skill">JavaScript/TypeScript</span>
+                                                <span class="menu-dots"></span>
+                                                <span class="menu-level">Expert</span>
+                                            </div>
+                                            <div class="menu-item">
+                                                <span class="menu-skill">React & Next.js</span>
+                                                <span class="menu-dots"></span>
+                                                <span class="menu-level">Advanced</span>
+                                            </div>
+                                            <div class="menu-item">
+                                                <span class="menu-skill">Tailwind CSS</span>
+                                                <span class="menu-dots"></span>
+                                                <span class="menu-level">Expert</span>
+                                            </div>
+                                            <div class="menu-item">
+                                                <span class="menu-skill">GSAP Animations</span>
+                                                <span class="menu-dots"></span>
+                                                <span class="menu-level">Advanced</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Page 2: Backend & Systems -->
+                            <div class="book-page" data-page="2">
+                                <div class="page-content">
+                                    <div class="page-header">
+                                        <div class="page-number">02</div>
+                                        <div class="page-category">
+                                            <span class="category-icon">⚙️</span>
+                                            <h3>Backend & Systems</h3>
+                                        </div>
+                                    </div>
+                                    <div class="page-body">
+                                        <div class="skills-menu">
+                                            <div class="menu-item">
+                                                <span class="menu-skill">Python Development</span>
+                                                <span class="menu-dots"></span>
+                                                <span class="menu-level">Advanced</span>
+                                            </div>
+                                            <div class="menu-item">
+                                                <span class="menu-skill">Unix & Command Line</span>
+                                                <span class="menu-dots"></span>
+                                                <span class="menu-level">Expert</span>
+                                            </div>
+                                            <div class="menu-item">
+                                                <span class="menu-skill">Git & GitHub</span>
+                                                <span class="menu-dots"></span>
+                                                <span class="menu-level">Expert</span>
+                                            </div>
+                                            <div class="menu-item">
+                                                <span class="menu-skill">Docker & Containers</span>
+                                                <span class="menu-dots"></span>
+                                                <span class="menu-level">Intermediate</span>
+                                            </div>
+                                            <div class="menu-item">
+                                                <span class="menu-skill">Google Cloud Platform</span>
+                                                <span class="menu-dots"></span>
+                                                <span class="menu-level">Intermediate</span>
+                                            </div>
+                                            <div class="menu-item">
+                                                <span class="menu-skill">PostgreSQL</span>
+                                                <span class="menu-dots"></span>
+                                                <span class="menu-level">Intermediate</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- More pages will be added -->
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+    </main>
+
+    <!-- Footer - Toukoum Style -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer__container">
+            <!-- AI Portfolio Footer Section -->
+            <div class="footer__ai-section">
+                <div class="footer__header">
+                    <h2 class="footer__title">Hey, I'm Lucas 👋</h2>
+                    <h3 class="footer__subtitle">AI Portfolio</h3>
+                </div>
+                
+                <!-- Large Memoji Display -->
+                <div class="footer__memoji">
+                    <div class="footer__memoji-display">
+                        <img src="assets/lucas-memoji.svg" alt="Lucas Memoji" class="footer__memoji-img">
+                        <div class="footer__memoji-glow"></div>
+                    </div>
+                </div>
+                
+                <!-- AI Chat Interface -->
+                <div class="footer__chat">
+                    <!-- Chat Messages -->
+                    <div class="footer__chat-messages" id="footer-chat-messages">
+                        <div class="footer__message footer__message--ai">
+                            <div class="footer__message-avatar">🤖</div>
+                            <div class="footer__message-bubble">
+                                <p>Hi! I'm Lucas's AI assistant. Ask me anything about his work, skills, or projects!</p>
+                                <div class="footer__message-time">just now</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Actions -->
+                    <div class="footer__quick-actions" id="footer-quick-actions">
+                        <button class="footer__quick-btn" data-message="Tell me about Lucas's experience">💼 Experience</button>
+                        <button class="footer__quick-btn" data-message="What projects has Lucas worked on?">🚀 Projects</button>
+                        <button class="footer__quick-btn" data-message="What are Lucas's main skills?">⚡ Skills</button>
+                        <button class="footer__quick-btn" data-message="How can I contact Lucas?">📧 Contact</button>
+                    </div>
+                    
+                    <!-- Chat Input -->
+                    <div class="footer__chat-input">
+                        <input 
+                            type="text" 
+                            placeholder="Ask me anything..." 
+                            class="footer__input-field"
+                            id="footer-chat-input"
+                            aria-label="Ask me anything">
+                        <button class="footer__send-btn" id="footer-send-btn" aria-label="Send message">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <!-- Typing Indicator -->
+                    <div class="footer__typing" id="footer-typing" style="display: none;">
+                        <div class="footer__typing-avatar">🤖</div>
+                        <div class="footer__typing-bubble">
+                            <div class="footer__typing-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+            
+            <!-- Copyright -->
+            <div class="footer__copyright">
+                <p class="footer__text">© 2024 Lucas Rijnen. Made with HTML/CSS/JS + Spline.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Section -->
+    <section class="section section--contact" id="contact">
+        <div class="section__container">
+            <h2 class="section__title">Get in Touch</h2>
+            <div class="contact">
+                <form class="contact__form" id="contact-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Naam</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Bericht</label>
+                        <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="form-submit">Verstuur Bericht</button>
+                </form>
+                
+                <div class="contact__info">
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <div class="micro-faq">
+                        <h3 class="micro-faq__title">Quick FAQ</h3>
+                        <div class="faq-item">
+                            <strong>Beschikbaarheid:</strong> Direct beschikbaar voor nieuwe projecten
+                        </div>
+                        <div class="faq-item">
+                            <strong>Werkwijze:</strong> Remote, hybrid of on-site mogelijk
+                        </div>
+                        <div class="faq-item">
+                            <strong>Response tijd:</strong> Binnen 24 uur
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Modal -->
+    <div class="modal" id="about-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+        <div class="modal__backdrop"></div>
+        <div class="modal__content">
+            <div class="modal__header">
+                <h2 id="modal-title" class="modal__title">About Lucas</h2>
+                <button class="modal__close" aria-label="Close modal">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal__body">
+                <p>Hoi! Ik ben Lucas, een gepassioneerde web developer en marketing specialist uit Tilburg. Met meer dan 7 jaar ervaring help ik bedrijven groeien door middel van slimme digitale oplossingen.</p>
+                <p>Mijn specialiteiten liggen in het bouwen van e-commerce platforms, marketing automation, en AI-gestuurde chatbots. Ik werk graag aan projecten die echte impact maken.</p>
+                <p>Wanneer ik niet aan code werk, ben je me te vinden in de sportschool, tijdens een MMA training, of bezig met nieuwe AI tools en technieken.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Theme Density Toggle -->
+    <div class="theme-toggle">
+        <button class="theme-toggle__btn" id="density-toggle" aria-label="Toggle theme density">
+            <span class="theme-toggle__text">Compact</span>
+        </button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js" defer></script>
+</body>
+</html>

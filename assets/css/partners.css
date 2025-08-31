@@ -1,0 +1,160 @@
+/* ===================================
+   PARTNERS COMPONENT STYLES
+   =================================== */
+
+/* Partners Section */
+.section--partners {
+  padding: var(--space-lg) 0;
+  background: transparent;
+  overflow: hidden;
+}
+
+.partners {
+  text-align: center;
+  width: 100%;
+}
+
+.partners__title {
+  font-size: var(--font-size-lg);
+  color: var(--muted);
+  margin-bottom: var(--space-2xl);
+  font-weight: 500;
+}
+
+.partners__animation-container {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent 0%, black 20%, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 20%, black 80%, transparent 100%);
+}
+
+.partners__gradient {
+  position: absolute;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.partners__gradient--left {
+  left: 0;
+  background: linear-gradient(90deg, var(--bg) 0%, transparent 100%);
+}
+
+.partners__gradient--right {
+  right: 0;
+  background: linear-gradient(270deg, var(--bg) 0%, transparent 100%);
+}
+
+.partners__content {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: var(--space-lg);
+}
+
+.partners__row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xl);
+  white-space: nowrap;
+  animation: slideLeft 30s linear infinite;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Different animation speeds and offsets for each row */
+.partners__row--1 {
+  animation-duration: 25s;
+  animation-delay: 0s;
+}
+
+.partners__row--2 {
+  animation-duration: 35s;
+  animation-delay: -8s;
+  animation-direction: reverse;
+}
+
+.partners__row--3 {
+  animation-duration: 30s;
+  animation-delay: -15s;
+}
+
+.partners__row--4 {
+  animation-duration: 28s;
+  animation-delay: -5s;
+  animation-direction: reverse;
+}
+
+.partners__row--5 {
+  animation-duration: 32s;
+  animation-delay: -12s;
+}
+
+.partners__item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+  height: 60px;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-lg);
+  transition: var(--transition);
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.partners__logo {
+  max-width: 120px;
+  max-height: 40px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.6);
+  transition: var(--transition);
+}
+
+.partners__item:hover {
+  transform: scale(1.05) translateZ(10px);
+  z-index: 5;
+}
+
+.partners__item:hover .partners__logo {
+  filter: grayscale(0%) opacity(1);
+}
+
+/* Keyframe Animation */
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .partners__animation-container {
+    height: 300px;
+  }
+  
+  .partners__item {
+    min-width: 150px;
+    height: 50px;
+  }
+  
+  .partners__logo {
+    max-width: 100px;
+    max-height: 30px;
+  }
+  
+  .partners__row {
+    gap: var(--space-lg);
+  }
+}

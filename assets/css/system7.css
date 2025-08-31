@@ -1,0 +1,1518 @@
+/* ===================================
+   SYSTEM 7 INTERFACE STYLES - COMPACT MAC
+   =================================== */
+
+/* CSS Custom Properties for System 7 Colors */
+:root {
+  --system7-gray: #c0c0c0;
+  --system7-dark-gray: #808080;
+  --system7-light-gray: #e0e0e0;
+  --system7-black: #000000;
+  --system7-white: #ffffff;
+  --system7-blue: #0000ff;
+  --system7-desktop: #008080;
+  --mac-beige: #f2f0e6;
+  --mac-shadow: #d0cfc8;
+  
+  /* System 7 Titlebar Gradients */
+  --system7-titlebar-active: repeating-linear-gradient(
+    0deg,
+    #ffffff 0px,
+    #ffffff 1px,
+    #000000 1px,
+    #000000 2px
+  );
+  --system7-titlebar-inactive: #c0c0c0;
+}
+
+/* System 7 Section Container */
+.system7-section {
+  padding: var(--space-2xl) 0;
+  background: transparent;
+  position: relative;
+}
+
+.system7-section .section__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+  text-align: center;
+}
+
+.system7-section .section__title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: var(--space-md);
+}
+
+.system7-section .section__subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--text-muted);
+  margin-bottom: var(--space-2xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===================================
+   MACINTOSH COMPUTER - CONSISTENT SIZING
+   =================================== */
+.macintosh-computer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: var(--space-2xl) auto;
+  width: 800px;
+  max-width: 95vw;
+  transform-origin: center center;
+}
+
+/* Monitor - Fixed proportions */
+.mac-monitor {
+  background: var(--mac-beige);
+  border-radius: 12px 12px 0 0;
+  padding: 20px 20px 15px 20px;
+  box-shadow: 
+    inset -2px -2px 4px var(--mac-shadow),
+    inset 2px 2px 4px var(--system7-white),
+    0 8px 16px rgba(0, 0, 0, 0.15);
+  position: relative;
+  width: 600px;
+  height: 480px;
+}
+
+.mac-screen-bezel {
+  background: var(--system7-black);
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: 
+    inset 2px 2px 4px rgba(0, 0, 0, 0.5),
+    inset -1px -1px 2px rgba(255, 255, 255, 0.1);
+}
+
+.mac-monitor-base {
+  width: 120px;
+  height: 40px;
+  background: var(--mac-beige);
+  margin: 0 auto;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 
+    inset -1px -1px 2px var(--mac-shadow),
+    inset 1px 1px 2px var(--system7-white);
+}
+
+/* Computer Base - Fixed size */
+.mac-base {
+  background: var(--mac-beige);
+  width: 400px;
+  height: 300px;
+  border-radius: 0 0 12px 12px;
+  position: relative;
+  box-shadow: 
+    inset -3px -3px 6px var(--mac-shadow),
+    inset 3px 3px 6px var(--system7-white),
+    0 8px 16px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.mac-disk-slot {
+  width: 80px;
+  height: 3px;
+  background: var(--system7-black);
+  border-radius: 2px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.mac-logo {
+  font-family: 'Times New Roman', serif;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--system7-dark-gray);
+  text-shadow: 1px 1px 0px var(--system7-white);
+}
+
+/* ===================================
+   SYSTEM 7 DESKTOP (COMPACT)
+   =================================== */
+.system7-desktop {
+  width: 100%;
+  height: 400px;
+  background: var(--system7-desktop);
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  user-select: none;
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 9px;
+  border-radius: 4px;
+}
+
+/* ===================================
+   MENU BAR (COMPACT)
+   =================================== */
+.system7-menubar {
+  width: 100%;
+  height: 16px;
+  background: var(--system7-gray);
+  border-bottom: 1px solid var(--system7-dark-gray);
+  display: flex;
+  align-items: center;
+  font-size: 9px;
+  font-weight: bold;
+  position: relative;
+  z-index: 1000;
+  box-shadow: inset 0 -1px 0 var(--system7-white);
+}
+
+.menubar-item {
+  padding: 1px 8px;
+  cursor: pointer;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.1s;
+}
+
+.menubar-item:hover {
+  background: var(--system7-black);
+  color: var(--system7-white);
+}
+
+.apple-menu {
+  padding: 1px 6px;
+}
+
+.apple-logo {
+  font-size: 10px;
+  display: block;
+}
+
+.menubar-spacer {
+  flex: 1;
+}
+
+.menubar-time {
+  padding: 1px 8px;
+  font-size: 8px;
+}
+
+/* ===================================
+   DROPDOWN MENUS (COMPACT)
+   =================================== */
+.system7-dropdown {
+  position: absolute;
+  top: 16px;
+  background: var(--system7-gray);
+  border: 1px outset var(--system7-gray);
+  min-width: 150px;
+  z-index: 1001;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-size: 9px;
+}
+
+.apple-dropdown {
+  left: 0px;
+}
+
+.file-dropdown {
+  left: 36px;
+}
+
+.dropdown-item {
+  padding: 3px 12px;
+  font-size: 9px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dropdown-item:hover {
+  background: var(--system7-black);
+  color: var(--system7-white);
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: var(--system7-dark-gray);
+  margin: 1px 6px;
+}
+
+/* ===================================
+   DESKTOP ICONS (COMPACT)
+   =================================== */
+.system7-icons {
+  position: absolute;
+  top: 25px;
+  right: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.desktop-icon {
+  width: 42px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.icon-image {
+  font-size: 20px;
+  margin-bottom: 2px;
+  filter: drop-shadow(1px 1px 0px rgba(0, 0, 0, 0.5));
+}
+
+.icon-label {
+  font-size: 7px;
+  color: var(--system7-white);
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.8);
+  line-height: 1.1;
+  word-wrap: break-word;
+}
+
+.desktop-icon:hover .icon-image {
+  transform: scale(1.1);
+}
+
+.desktop-icon.selected .icon-label {
+  background: var(--system7-blue);
+  color: var(--system7-white);
+  padding: 0 1px;
+}
+
+/* ===================================
+   WINDOWS (COMPACT)
+   =================================== */
+.system7-windows {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.system7-window {
+  position: absolute;
+  background: var(--system7-gray);
+  border: 1px outset var(--system7-gray);
+  min-width: 120px;
+  min-height: 80px;
+  pointer-events: all;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  font-size: 9px;
+}
+
+.system7-window.active {
+  z-index: 100;
+}
+
+.window-titlebar {
+  height: 14px;
+  background: var(--system7-titlebar-inactive);
+  display: flex;
+  align-items: center;
+  cursor: move;
+  border-bottom: 1px solid var(--system7-dark-gray);
+}
+
+.system7-window.active .window-titlebar {
+  background: var(--system7-titlebar-active);
+}
+
+.window-close {
+  width: 10px;
+  height: 10px;
+  margin: 2px;
+  border: 1px solid var(--system7-black);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6px;
+  background: var(--system7-gray);
+}
+
+.window-close:hover {
+  background: var(--system7-dark-gray);
+}
+
+.window-title {
+  flex: 1;
+  text-align: center;
+  font-size: 9px;
+  font-weight: bold;
+  padding-right: 12px;
+}
+
+.window-content {
+  padding: 6px;
+  background: var(--system7-white);
+  height: calc(100% - 16px);
+  overflow: auto;
+  font-size: 8px;
+  line-height: 1.3;
+}
+
+.window-resizer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  cursor: se-resize;
+  background: linear-gradient(
+    135deg,
+    transparent 45%,
+    var(--system7-dark-gray) 45%,
+    var(--system7-dark-gray) 55%,
+    transparent 55%
+  );
+}
+
+/* ===================================
+   PROJECT GRID (COMPACT)
+   =================================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  gap: 8px;
+  padding: 4px;
+}
+
+.project-item {
+  text-align: center;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 1px;
+  transition: background-color 0.1s;
+}
+
+.project-item:hover {
+  background: rgba(0, 0, 255, 0.1);
+}
+
+.project-item.selected {
+  background: var(--system7-blue);
+  color: var(--system7-white);
+}
+
+.project-icon {
+  font-size: 20px;
+  margin-bottom: 2px;
+  display: block;
+}
+
+.project-name {
+  font-size: 7px;
+  line-height: 1.1;
+  word-wrap: break-word;
+}
+
+/* ===================================
+   SKILLS GRID (COMPACT)
+   =================================== */
+.skills-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skill-category {
+  border: 1px inset var(--system7-gray);
+  padding: 4px;
+}
+
+.skill-category h4 {
+  margin: 0 0 4px 0;
+  font-size: 9px;
+  font-weight: bold;
+  color: var(--system7-black);
+  padding: 1px 2px;
+  background: var(--system7-light-gray);
+}
+
+.skill-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+
+.skill-pill {
+  background: var(--system7-gray);
+  border: 1px outset var(--system7-gray);
+  padding: 1px 3px;
+  font-size: 7px;
+  border-radius: 1px;
+}
+
+/* ===================================
+   ADD PROJECT PANEL
+   =================================== */
+.add-project-panel {
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  margin: var(--space-xl) auto;
+  max-width: 500px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.add-project-panel h3 {
+  margin: 0 0 var(--space-lg) 0;
+  font-size: var(--font-size-xl);
+  color: var(--text);
+}
+
+.project-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--text);
+  font-size: var(--font-size-sm);
+}
+
+.form-group input,
+.form-group textarea {
+  padding: var(--space-sm);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  font-family: inherit;
+}
+
+.form-group textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.form-buttons {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: flex-end;
+  margin-top: var(--space-md);
+}
+
+.form-buttons button {
+  padding: var(--space-sm) var(--space-lg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  color: var(--text);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  transition: var(--transition);
+}
+
+.form-buttons button:first-child {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+}
+
+.form-buttons button:hover {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+}
+
+/* ===================================
+   TECH INFO
+   =================================== */
+.tech-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-xl);
+  margin-top: var(--space-2xl);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tech-note {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  text-align: left;
+}
+
+.tech-note h4 {
+  margin: 0 0 var(--space-sm) 0;
+  font-size: var(--font-size-lg);
+  color: var(--text);
+}
+
+.tech-note p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ===================================
+   CALCULATOR (COMPACT)
+   =================================== */
+.calculator {
+  width: 140px;
+  background: var(--system7-gray);
+}
+
+.calc-display {
+  background: var(--system7-black);
+  color: #00ff00;
+  font-family: 'Courier', monospace;
+  font-size: 10px;
+  padding: 4px;
+  text-align: right;
+  margin: 4px;
+  border: 1px inset var(--system7-gray);
+  min-height: 14px;
+}
+
+.calc-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  padding: 4px;
+}
+
+.calc-button {
+  height: 20px;
+  border: 1px outset var(--system7-gray);
+  background: var(--system7-gray);
+  font-size: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calc-button:hover {
+  background: var(--system7-dark-gray);
+}
+
+.calc-button:active {
+  border: 1px inset var(--system7-gray);
+}
+
+.calc-button.wide {
+  grid-column: span 2;
+}
+
+/* ===================================
+   MODAL DIALOGS
+   =================================== */
+.system7-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: var(--system7-gray);
+  border: 2px outset var(--system7-gray);
+  min-width: 250px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.modal-header {
+  height: 16px;
+  background: var(--system7-titlebar-active);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--system7-dark-gray);
+}
+
+.modal-close {
+  width: 12px;
+  height: 12px;
+  margin: 2px;
+  border: 1px outset var(--system7-gray);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: bold;
+  background: var(--system7-gray);
+}
+
+.modal-close:hover {
+  border: 1px inset var(--system7-gray);
+}
+
+.modal-title {
+  flex: 1;
+  text-align: center;
+  font-size: 9px;
+  font-weight: bold;
+  padding-right: 16px;
+}
+
+.modal-body {
+  padding: 16px;
+  text-align: center;
+  background: var(--system7-white);
+  font-size: 9px;
+}
+
+.about-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.modal-body h3 {
+  margin: 0 0 6px 0;
+  font-size: 11px;
+}
+
+.modal-body p {
+  margin: 3px 0;
+  font-size: 9px;
+}
+
+.about-memory {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--system7-dark-gray);
+}
+
+/* ===================================
+   SCROLLBARS (COMPACT)
+   =================================== */
+.window-content::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.window-content::-webkit-scrollbar-track {
+  background: var(--system7-gray);
+  border: 1px inset var(--system7-gray);
+}
+
+.window-content::-webkit-scrollbar-thumb {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--system7-dark-gray) 0px,
+    var(--system7-dark-gray) 1px,
+    var(--system7-gray) 1px,
+    var(--system7-gray) 2px
+  );
+  border: 1px outset var(--system7-gray);
+}
+
+.window-content::-webkit-scrollbar-thumb:hover {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--system7-black) 0px,
+    var(--system7-black) 1px,
+    var(--system7-dark-gray) 1px,
+    var(--system7-dark-gray) 2px
+  );
+}
+
+.window-content::-webkit-scrollbar-corner {
+  background: var(--system7-gray);
+  border: 1px inset var(--system7-gray);
+}
+
+/* ===================================
+   RESPONSIVE DESIGN - CONSISTENT MAC SIZE
+   =================================== */
+@media (max-width: 900px) {
+  .macintosh-computer {
+    transform: scale(0.9);
+    margin: var(--space-xl) auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .macintosh-computer {
+    transform: scale(0.75);
+    margin: var(--space-lg) auto;
+  }
+  
+  .tech-info {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .add-project-panel {
+    margin: var(--space-lg);
+    padding: var(--space-lg);
+  }
+}
+
+@media (max-width: 600px) {
+  .macintosh-computer {
+    transform: scale(0.65);
+    margin: var(--space-md) auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .macintosh-computer {
+    transform: scale(0.55);
+    margin: var(--space-sm) auto;
+  }
+  
+  .system7-section .section__title {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+}
+
+@media (max-width: 400px) {
+  .macintosh-computer {
+    transform: scale(0.45);
+    margin: 0 auto;
+  }
+}
+
+/* ===================================
+   ANIMATIONS
+   =================================== */
+@keyframes windowOpen {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.system7-window.opening {
+  animation: windowOpen 0.2s ease-out;
+}
+
+@keyframes macBoot {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.macintosh-computer {
+  animation: macBoot 1s ease-out;
+}
+
+/* Hide scrollbars for Firefox */
+.window-content {
+  scrollbar-width: thin;
+  scrollbar-color: var(--system7-dark-gray) var(--system7-gray);
+}
+
+/* ===================================
+   PDF & WEBSITE PREVIEW STYLES
+   =================================== */
+.preview-window {
+  background: var(--system7-white);
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+}
+
+.pdf-viewer {
+  background: var(--system7-white);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px inset var(--system7-gray);
+}
+
+.pdf-controls {
+  background: var(--system7-gray);
+  padding: 4px;
+  border-bottom: 1px solid var(--system7-dark-gray);
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  font-size: 8px;
+}
+
+.pdf-button {
+  background: var(--system7-gray);
+  border: 1px outset var(--system7-gray);
+  padding: 2px 6px;
+  font-size: 8px;
+  cursor: pointer;
+}
+
+.pdf-button:hover {
+  background: var(--system7-dark-gray);
+}
+
+.pdf-button:active {
+  border: 1px inset var(--system7-gray);
+}
+
+.pdf-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  text-align: center;
+  font-size: 8px;
+}
+
+.website-preview {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: var(--system7-white);
+}
+
+.preview-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  font-size: 9px;
+  color: var(--system7-dark-gray);
+}
+
+.preview-error-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.project-actions {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.action-button {
+  background: var(--system7-gray);
+  border: 1px outset var(--system7-gray);
+  padding: 3px 8px;
+  font-size: 8px;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.1s;
+}
+
+.action-button:hover {
+  background: var(--system7-dark-gray);
+  color: var(--system7-white);
+}
+
+.action-button:active {
+  border: 1px inset var(--system7-gray);
+}
+
+.action-button.primary {
+  background: #4a90e2;
+  color: var(--system7-white);
+  border-color: #4a90e2;
+}
+
+.action-button.danger {
+  background: #ff6b6b;
+  color: var(--system7-white);
+  border-color: #ff6b6b;
+}
+
+.form-group.file-input {
+  position: relative;
+}
+
+.file-input-wrapper {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.file-input-button {
+  background: var(--primary);
+  color: var(--white);
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  transition: var(--transition);
+}
+
+.file-input-button:hover {
+  background: color-mix(in srgb, var(--primary) 90%, black);
+}
+
+.file-input-hidden {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.file-info {
+  margin-top: var(--space-xs);
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+/* ===================================
+   FULLSCREEN PDF VIEWER
+   =================================== */
+.pdf-fullscreen-viewer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--system7-white);
+}
+
+.pdf-fullscreen-header {
+  background: var(--system7-gray);
+  border-bottom: 1px solid var(--system7-dark-gray);
+  padding: 6px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 8px;
+  min-height: 20px;
+}
+
+.pdf-header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pdf-project-name {
+  font-weight: bold;
+  font-size: 9px;
+  color: var(--system7-black);
+}
+
+.pdf-file-info {
+  font-size: 7px;
+  color: var(--system7-dark-gray);
+}
+
+.pdf-header-controls {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.pdf-fullscreen-content {
+  flex: 1;
+  background: var(--system7-white);
+  border: 1px inset var(--system7-gray);
+}
+
+.close-btn {
+  background: #ff6b6b !important;
+  color: white !important;
+  border-color: #ff6b6b !important;
+}
+
+.close-btn:hover {
+  background: #ff5252 !important;
+}
+
+/* ===================================
+   PROJECT PDF INDICATORS
+   =================================== */
+.project-pdf-indicator {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: var(--system7-white);
+  border: 1px solid var(--system7-dark-gray);
+  border-radius: 2px;
+  padding: 1px 3px;
+  font-size: 6px;
+  font-weight: bold;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.project-item {
+  position: relative;
+}
+
+/* Enhanced project items for better PDF indication */
+.project-item:has(.project-pdf-indicator) {
+  border: 2px solid var(--system7-blue) !important;
+  background: linear-gradient(135deg, var(--system7-light-gray), var(--system7-white));
+}
+
+.project-item:has(.project-pdf-indicator):hover {
+  background: linear-gradient(135deg, var(--system7-blue), var(--system7-light-gray));
+  transform: translateY(-1px);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ===================================
+   PROJECT BRANDBOOK STYLING
+   =================================== */
+.project-brandbook {
+  padding: 8px;
+  font-size: 8px;
+  background: linear-gradient(135deg, var(--system7-white), var(--system7-light-gray));
+  border: 1px inset var(--system7-gray);
+}
+
+.brandbook-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--system7-dark-gray);
+}
+
+.project-icon-large {
+  font-size: 28px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.project-title-section {
+  flex: 1;
+}
+
+.project-title {
+  margin: 0;
+  font-size: 11px;
+  font-weight: bold;
+  color: var(--system7-black);
+}
+
+.project-subtitle {
+  font-size: 7px;
+  color: var(--system7-dark-gray);
+  margin-top: 2px;
+}
+
+.brandbook-pdf-section {
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  border: 1px solid var(--system7-blue);
+  border-radius: 3px;
+  padding: 6px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.pdf-preview-banner {
+  font-weight: bold;
+  font-size: 8px;
+  color: var(--system7-blue);
+  margin-bottom: 4px;
+}
+
+.pdf-actions-primary {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.action-button.large {
+  padding: 4px 8px;
+  font-size: 8px;
+  font-weight: bold;
+}
+
+.action-button.secondary {
+  background: var(--system7-gray);
+  color: var(--system7-black);
+  border-color: var(--system7-gray);
+}
+
+.action-button.secondary:hover {
+  background: var(--system7-dark-gray);
+  color: var(--system7-white);
+}
+
+.pdf-info {
+  font-size: 6px;
+  color: var(--system7-dark-gray);
+  font-style: italic;
+}
+
+.brandbook-content {
+  margin-bottom: 8px;
+}
+
+.project-description,
+.project-technologies {
+  background: var(--system7-white);
+  border: 1px inset var(--system7-gray);
+  padding: 6px;
+  margin-bottom: 6px;
+  border-radius: 2px;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin-top: 4px;
+}
+
+.tech-tag {
+  background: var(--system7-blue);
+  color: var(--system7-white);
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-size: 6px;
+  font-weight: bold;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.brandbook-footer {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  padding-top: 6px;
+  border-top: 1px solid var(--system7-dark-gray);
+}
+
+/* ===================================
+   DUAL-VIEW PROJECT VIEWER
+   =================================== */
+.project-viewer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--system7-white);
+}
+
+.project-viewer-toolbar {
+  background: var(--system7-gray);
+  border-bottom: 1px solid var(--system7-dark-gray);
+  padding: 4px 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 20px;
+}
+
+.viewer-tab {
+  background: var(--system7-light-gray);
+  border: 1px outset var(--system7-gray);
+  padding: 3px 8px;
+  font-size: 8px;
+  cursor: pointer;
+  border-radius: 3px 3px 0 0;
+  transition: all 0.1s;
+}
+
+.viewer-tab:hover {
+  background: var(--system7-white);
+}
+
+.viewer-tab.active {
+  background: var(--system7-white);
+  border-bottom: 1px solid var(--system7-white);
+  font-weight: bold;
+  color: var(--system7-blue);
+}
+
+.toolbar-spacer {
+  flex: 1;
+}
+
+.viewer-maximize {
+  background: var(--system7-gray);
+  border: 1px outset var(--system7-gray);
+  padding: 2px 6px;
+  font-size: 10px;
+  cursor: pointer;
+  min-width: 20px;
+  text-align: center;
+}
+
+.viewer-maximize:hover {
+  background: var(--system7-dark-gray);
+  color: var(--system7-white);
+}
+
+.viewer-maximize:active {
+  border: 1px inset var(--system7-gray);
+}
+
+.project-viewer-content {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.viewer-pane {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  overflow: auto;
+}
+
+.viewer-pane.active {
+  display: block;
+}
+
+.case-pane {
+  padding: 8px;
+  background: var(--system7-white);
+}
+
+.view-pane {
+  background: var(--system7-light-gray);
+}
+
+/* ===================================
+   CASE STUDY STYLING
+   =================================== */
+.case-study {
+  font-size: 8px;
+  line-height: 1.4;
+}
+
+.case-study h3 {
+  font-size: 11px;
+  margin: 0 0 8px 0;
+  color: var(--system7-black);
+  border-bottom: 1px solid var(--system7-dark-gray);
+  padding-bottom: 4px;
+}
+
+.case-study h4 {
+  font-size: 9px;
+  margin: 6px 0 4px 0;
+  color: var(--system7-blue);
+  font-weight: bold;
+}
+
+.case-section {
+  margin-bottom: 8px;
+  background: var(--system7-light-gray);
+  border: 1px inset var(--system7-gray);
+  padding: 6px;
+  border-radius: 2px;
+}
+
+.case-section p {
+  margin: 0 0 4px 0;
+  line-height: 1.3;
+}
+
+.case-section ul {
+  margin: 4px 0;
+  padding-left: 12px;
+}
+
+.case-section li {
+  margin-bottom: 2px;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.result-item {
+  background: var(--system7-white);
+  border: 1px solid var(--system7-dark-gray);
+  padding: 4px;
+  border-radius: 2px;
+  font-size: 7px;
+}
+
+.result-item strong {
+  color: var(--system7-blue);
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* ===================================
+   PROJECT VIEW (IFRAME) STYLING
+   =================================== */
+.iframe-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: var(--system7-white);
+}
+
+.project-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: var(--system7-white);
+}
+
+.iframe-error,
+.no-live-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 20px;
+  text-align: center;
+  background: var(--system7-light-gray);
+  color: var(--system7-dark-gray);
+}
+
+.error-icon,
+.no-view-icon {
+  font-size: 32px;
+  margin-bottom: 8px;
+  opacity: 0.5;
+}
+
+.error-message,
+.no-view-message {
+  font-size: 9px;
+  margin-bottom: 12px;
+}
+
+/* ===================================
+   FULLSCREEN PROJECT VIEW
+   =================================== */
+.project-fullscreen-view {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--system7-white);
+}
+
+.fullscreen-header {
+  background: var(--system7-gray);
+  border-bottom: 1px solid var(--system7-dark-gray);
+  padding: 4px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 18px;
+}
+
+.project-name {
+  font-size: 9px;
+  font-weight: bold;
+  color: var(--system7-black);
+}
+
+.close-fullscreen {
+  background: #ff6b6b;
+  color: white;
+  border: 1px solid #ff6b6b;
+  padding: 2px 6px;
+  font-size: 7px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.close-fullscreen:hover {
+  background: #ff5252;
+}
+
+.fullscreen-iframe-container {
+  flex: 1;
+  position: relative;
+  background: var(--system7-white);
+}
+
+.fullscreen-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: var(--system7-white);
+}
+
+/* ===================================
+   PROJECT INDICATORS
+   =================================== */
+.project-indicators {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  display: flex;
+  gap: 2px;
+}
+
+.case-indicator,
+.live-indicator {
+  background: var(--system7-white);
+  border: 1px solid var(--system7-dark-gray);
+  border-radius: 2px;
+  padding: 1px 3px;
+  font-size: 6px;
+  font-weight: bold;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.case-indicator {
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  border-color: var(--system7-blue);
+  color: var(--system7-blue);
+}
+
+.live-indicator {
+  background: linear-gradient(135deg, #e8f5e8, #c8e6c9);
+  border-color: #4caf50;
+  color: #2e7d32;
+}
+
+/* Enhanced project items */
+.project-item:has(.case-indicator) {
+  border: 2px solid var(--system7-blue) !important;
+}
+
+.project-item:has(.live-indicator) {
+  background: linear-gradient(135deg, var(--system7-light-gray), var(--system7-white));
+}
+
+.project-item:has(.case-indicator):hover {
+  background: linear-gradient(135deg, var(--system7-blue), var(--system7-light-gray));
+  transform: translateY(-1px);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,141 @@
+    <!-- Footer - AI Portfolio Style -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer__container">
+            <!-- Initial Clean State - Like the image -->
+            <div class="footer__initial" id="footer-initial">
+                <!-- Title -->
+                <div class="footer__title-section">
+                    <h2 class="footer__greeting">Stel je laatste vraag aan Lucas AI</h2>
+                </div>
+                
+                <!-- Large Memoji -->
+                <div class="footer__memoji-large">
+                    <img src="assets/images/lucas-memoji.svg" alt="Lucas Memoji" class="footer__memoji-img">
+                </div>
+                
+                <!-- Input Field -->
+                <div class="footer__input-container">
+                    <input 
+                        type="text" 
+                        placeholder="Ask me anything..." 
+                        class="footer__input"
+                        id="footer-initial-input">
+                    <button class="footer__send" id="footer-initial-send">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                            <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Navigation Pills -->
+                <div class="footer__nav-pills">
+                    <button class="footer__pill" data-action="me">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                        Me
+                    </button>
+                    <button class="footer__pill" data-action="projects">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                            <path d="M14 6V4h-4v2h4zM4 8v11h16V8H4zm16-2c1.11 0 2 .89 2 2v11c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V8c0-1.11.89-2 2-2h16z"/>
+                        </svg>
+                        Projects
+                    </button>
+                    <button class="footer__pill" data-action="skills">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                            <path d="M9.5 15.5L4 10l1.5-1.5L9.5 12.5 18.5 3.5 20 5l-10.5 10.5z"/>
+                        </svg>
+                        Skills
+                    </button>
+                    <button class="footer__pill" data-action="fun">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                        Fun
+                    </button>
+                    <button class="footer__pill" data-action="contact">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        Contact
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chat Interface (Hidden Initially) -->
+            <div class="footer__chat" id="footer-chat" style="display: none;">
+                <!-- Compact Memoji Header -->
+                <div class="footer__chat-header">
+                    <div class="footer__chat-memoji">
+                        <img src="assets/images/lucas-memoji.svg" alt="Lucas Memoji" class="footer__chat-memoji-img">
+                    </div>
+                </div>
+                
+                <!-- Chat Messages -->
+                <div class="footer__chat-messages" id="footer-chat-messages">
+                    <!-- Messages will be added here -->
+                </div>
+                
+                <!-- Typing Indicator -->
+                <div class="footer__typing" id="footer-typing">
+                    <div class="footer__typing-avatar">🤖</div>
+                    <div class="footer__typing-text">
+                        Lucas AI is aan het typen
+                        <div class="footer__typing-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Chat Input -->
+                <div class="footer__chat-input">
+                    <input 
+                        type="text" 
+                        placeholder="Type je vraag..." 
+                        class="footer__chat-input-field"
+                        id="footer-chat-input">
+                    <button class="footer__chat-send" id="footer-chat-send">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                            <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Navigation Pills - Also in chat mode -->
+                <div class="footer__nav-pills footer__nav-pills--chat">
+                    <button class="footer__pill" data-action="me">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                        Me
+                    </button>
+                    <button class="footer__pill" data-action="projects">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                            <path d="M14 6V4h-4v2h4zM4 8v11h16V8H4zm16-2c1.11 0 2 .89 2 2v11c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V8c0-1.11.89-2 2-2h16z"/>
+                        </svg>
+                        Projects
+                    </button>
+                    <button class="footer__pill" data-action="skills">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                            <path d="M9.5 15.5L4 10l1.5-1.5L9.5 12.5 18.5 3.5 20 5l-10.5 10.5z"/>
+                        </svg>
+                        Skills
+                    </button>
+                    <button class="footer__pill" data-action="fun">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                        Fun
+                    </button>
+                    <button class="footer__pill" data-action="contact">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        Contact
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
