@@ -2,7 +2,6 @@
    LUCAS AI PORTFOLIO - MAIN STYLES
    Clean, light design inspired by sleak.chat
    =================================== */
-
 /* CSS Variables */
 :root {
   /* Colors */
@@ -72,6 +71,12 @@ body {
   min-height: 100%;
   overflow-x: hidden;
   height: 100%;
+  cursor: url('../../cursor-lucas.png'), auto;
+}
+
+/* Force custom cursor globally (override defaults on links, inputs, etc.) */
+html, body, *, *::before, *::after {
+  cursor: url('../../cursor-lucas.png'), auto !important;
 }
 
 /* Subtle Background Texture */
