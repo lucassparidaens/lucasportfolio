@@ -79,10 +79,21 @@
 }
 
 /* Progressive color reveal effect */
-.scroll-text__word.color-1 { color: rgba(91, 141, 239, 0.2); }
-.scroll-text__word.color-2 { color: rgba(91, 141, 239, 0.4); }
-.scroll-text__word.color-3 { color: rgba(91, 141, 239, 0.6); }
-.scroll-text__word.color-4 { color: rgba(91, 141, 239, 0.8); }
+/* Scroll saturation control via CSS variable */
+:root {
+  --scroll-saturation: 0; /* 0 = grayscale, 1 = full color */
+}
+
+.scroll-text__word {
+  /* Blend between gray and primary based on --scroll-saturation */
+  color: color-mix(in srgb, rgba(136,136,136,1) calc(100% - (var(--scroll-saturation) * 100%)), var(--primary) calc(var(--scroll-saturation) * 100%));
+}
+
+/* Keep the progressive reveal classes as an additional layer if applied */
+.scroll-text__word.color-1 { color: color-mix(in srgb, rgba(136,136,136,1) 80%, var(--primary) 20%); }
+.scroll-text__word.color-2 { color: color-mix(in srgb, rgba(136,136,136,1) 60%, var(--primary) 40%); }
+.scroll-text__word.color-3 { color: color-mix(in srgb, rgba(136,136,136,1) 40%, var(--primary) 60%); }
+.scroll-text__word.color-4 { color: color-mix(in srgb, rgba(136,136,136,1) 20%, var(--primary) 80%); }
 .scroll-text__word.color-5 { color: var(--primary); }
 
 /* Hero Content Section */

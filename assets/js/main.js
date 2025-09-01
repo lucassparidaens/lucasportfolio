@@ -229,6 +229,7 @@ window.App = (function() {
         init: function() {
             this.setupScrollEffect();
             this.setupFooterScrollEffect();
+            this.setupSaturationOnScroll();
         },
 
         setupScrollEffect: function() {
@@ -323,6 +324,43 @@ window.App = (function() {
                     }
                 }, index * 200);
             });
+        }
+        ,
+        setupSaturationOnScroll: function() {
+            const scrollText = domElements.heroScrollText();
+            if (!scrollText) return;
+
+            const updateSaturation = () => {
+                const rect = scrollText.getBoundingClientRect();
+                const vh = window.innerHeight || document.documentElement.clientHeight;
+                // Start effect when top enters 80% viewport, end when bottom leaves 20%
+                const start = vh * 0.2;
+                const end = vh * 0.8;
+                const centerY = rect.top + rect.height / 2;
+                const progressRaw = (end - centerY) / (end - start);
+                const progress = Math.max(0, Math.min(1, progressRaw));
+                document.documentElement.style.setProperty('--scroll-saturation', progress.toFixed(3));
+            };
+
+            let ticking = false;
+            const onScroll = () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        updateSaturation();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            };
+
+            // Initialize and bind events
+            updateSaturation();
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', updateSaturation);
+
+            // Ensure update when the element enters viewport
+            const io = new IntersectionObserver(() => updateSaturation(), { threshold: [0, 0.25, 0.5, 0.75, 1] });
+            io.observe(scrollText);
         }
     };
 
