@@ -1,0 +1,136 @@
+/* Contact Section Image Overlay Styles */
+
+.section--contact {
+    position: relative;
+    overflow: visible; /* Changed from hidden to visible for debugging */
+}
+
+.contact__image-overlay {
+    position: absolute;
+    top: 20px; /* Added some top margin */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    z-index: 15; /* Increased z-index */
+    pointer-events: none;
+    
+    /* Debug styling - remove later */
+    border: 2px dashed red;
+    background: rgba(255, 255, 0, 0.2);
+    
+    /* Subtle entrance animation */
+    animation: overlayFadeIn 1s ease-out;
+}
+
+.contact__overlay-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 20px;
+    filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.15));
+    
+    /* Subtle floating animation */
+    animation: gentleFloat 6s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes overlayFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-30px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0) scale(1);
+    }
+}
+
+@keyframes gentleFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Ensure the section title and content don't overlap */
+.section--contact .section__title {
+    position: relative;
+    z-index: 10;
+    margin-top: 120px; /* Space for the overlay image */
+    padding-top: var(--space-md);
+}
+
+.section--contact .section__container {
+    position: relative;
+    z-index: 10;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .contact__image-overlay {
+        max-width: 350px;
+    }
+    
+    .section--contact .section__title {
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact__image-overlay {
+        max-width: 280px;
+    }
+    
+    .section--contact .section__title {
+        margin-top: 80px;
+    }
+    
+    .contact__overlay-image {
+        border-radius: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact__image-overlay {
+        max-width: 240px;
+    }
+    
+    .section--contact .section__title {
+        margin-top: 60px;
+    }
+    
+    .contact__overlay-image {
+        border-radius: 12px;
+    }
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+    .contact__overlay-image {
+        filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.3)) brightness(0.95);
+    }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .contact__overlay-image {
+        animation: none;
+    }
+    
+    .contact__image-overlay {
+        animation: none;
+    }
+}
+
+/* Interactive hover effect (only on larger screens) */
+@media (hover: hover) and (pointer: fine) {
+    .contact__image-overlay:hover .contact__overlay-image {
+        transform: translateY(-4px) scale(1.02);
+        filter: drop-shadow(0 12px 40px rgba(0, 0, 0, 0.2)) brightness(1.05);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}

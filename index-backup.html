@@ -50,6 +50,8 @@
     
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/sintra-discount.css">
+    <link rel="stylesheet" href="assets/css/contact-overlay.css">
     
     <!-- Spline Viewer -->
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.53/build/spline-viewer.js"></script>
@@ -73,24 +75,27 @@
                 <div class="navbar__menu" id="navbar-menu">
                     <ul class="navbar__nav">
                         <li class="navbar__item">
-                            <a href="#hero" class="navbar__link">HOME</a>
+                            <a href="#hero" class="navbar__link" data-smart-nav="hero">HOME</a>
                         </li>
                         <li class="navbar__item">
-                            <a href="#projects" class="navbar__link">PROJECTS</a>
+                            <a href="#projects" class="navbar__link" data-smart-nav="projects">PROJECTS</a>
                         </li>
                         <li class="navbar__item">
-                            <a href="#skills" class="navbar__link">SKILLS</a>
+                            <a href="#skills" class="navbar__link" data-smart-nav="skills">SKILLS</a>
                         </li>
                         <li class="navbar__item">
-                            <a href=".footer" class="navbar__link">AI CHAT</a>
+                            <a href="lucas-ai.html" class="navbar__link">LUCAS AI</a>
                         </li>
                         <li class="navbar__item">
-                            <a href="#contact" class="navbar__link">CONTACT</a>
+                            <a href="#footer" class="navbar__link" data-smart-nav="footer">AI CHAT</a>
+                        </li>
+                        <li class="navbar__item">
+                            <a href="#contact" class="navbar__link" data-smart-nav="contact">CONTACT</a>
                         </li>
                     </ul>
                     
                     <div class="navbar__cta">
-                        <a href="#contact" class="navbar__cta-btn">LET'S TALK</a>
+                        <a href="#contact" class="navbar__cta-btn" data-smart-nav="contact">LET'S TALK</a>
                     </div>
                 </div>
                 
@@ -711,5 +716,7 @@
 
     <!-- Scripts -->
     <script src="script.js" defer></script>
+    <script src="assets/js/sintra-discount.js" defer></script>
+    <script src="assets/js/smart-navigation.js" defer></script>
 </body>
 </html>

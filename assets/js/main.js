@@ -95,40 +95,96 @@ window.App = (function() {
     // Navigation Module
     const Navigation = {
         init: function() {
-            this.setupMobileMenu();
-            this.setupSmoothScrolling();
-            this.setupActiveStates();
+            // Wait for navigation component to load before setting up
+            const checkNavigation = () => {
+                const toggle = domElements.navbarToggle();
+                const menu = domElements.navbarMenu();
+                
+                if (toggle && menu) {
+                    console.log('Navigation elements found, setting up...');
+                    this.setupMobileMenu();
+                    this.setupSmoothScrolling();
+                    this.setupActiveStates();
+                } else {
+                    console.log('Navigation elements not ready, retrying...');
+                    setTimeout(checkNavigation, 100);
+                }
+            };
+            
+            checkNavigation();
         },
 
         setupMobileMenu: function() {
             const toggle = domElements.navbarToggle();
             const menu = domElements.navbarMenu();
             
-            if (!toggle || !menu) return;
+            if (!toggle || !menu) {
+                return;
+            }
+            
+            // Prevent duplicate event listeners
+            if (toggle.dataset.mobileMenuSetup === 'true') {
+                return;
+            }
+            toggle.dataset.mobileMenuSetup = 'true';
+            
+            console.log('✅ Mobile menu setup complete');
 
-            toggle.addEventListener('click', () => {
+            const closeMobileMenu = () => {
+                menu.classList.remove('navbar__menu--open');
+                toggle.classList.remove('navbar__toggle--active');
+                toggle.setAttribute('aria-expanded', 'false');
+                document.body.classList.remove('no-scroll');
+            };
+
+            const openMobileMenu = () => {
+                menu.classList.add('navbar__menu--open');
+                toggle.classList.add('navbar__toggle--active');
+                toggle.setAttribute('aria-expanded', 'true');
+                document.body.classList.add('no-scroll');
+            };
+
+            // Toggle menu on button click
+            toggle.addEventListener('click', (e) => {
+                e.stopPropagation();
                 const isOpen = menu.classList.contains('navbar__menu--open');
                 
                 if (isOpen) {
-                    menu.classList.remove('navbar__menu--open');
-                    toggle.classList.remove('navbar__toggle--active');
-                    toggle.setAttribute('aria-expanded', 'false');
-                    document.body.classList.remove('no-scroll');
+                    closeMobileMenu();
                 } else {
-                    menu.classList.add('navbar__menu--open');
-                    toggle.classList.add('navbar__toggle--active');
-                    toggle.setAttribute('aria-expanded', 'true');
-                    document.body.classList.add('no-scroll');
+                    openMobileMenu();
                 }
             });
 
-            // Close menu when clicking outside
+            // Close menu when clicking outside or on menu overlay
             document.addEventListener('click', (e) => {
-                if (!toggle.contains(e.target) && !menu.contains(e.target)) {
-                    menu.classList.remove('navbar__menu--open');
-                    toggle.classList.remove('navbar__toggle--active');
-                    toggle.setAttribute('aria-expanded', 'false');
-                    document.body.classList.remove('no-scroll');
+                const isClickInsideMenu = menu.contains(e.target) && !e.target.classList.contains('navbar__link');
+                const isClickOnToggle = toggle.contains(e.target);
+                
+                if (!isClickInsideMenu && !isClickOnToggle) {
+                    closeMobileMenu();
+                }
+            });
+
+            // Close menu when clicking on menu links
+            const menuLinks = menu.querySelectorAll('.navbar__link');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    setTimeout(closeMobileMenu, 100);
+                });
+            });
+
+            // Close menu on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && menu.classList.contains('navbar__menu--open')) {
+                    closeMobileMenu();
+                }
+            });
+
+            // Prevent scroll on body when menu is open
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768 && menu.classList.contains('navbar__menu--open')) {
+                    closeMobileMenu();
                 }
             });
         },
@@ -380,6 +436,33 @@ window.App = (function() {
         Navigation.init();
         ScrollTextEffect.init();
         FooterAI.init();
+        
+        // Set up mutation observer to re-initialize navigation when component loads
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.type === 'childList') {
+                    const addedNodes = Array.from(mutation.addedNodes);
+                    const hasNavigation = addedNodes.some(node => 
+                        node.nodeType === Node.ELEMENT_NODE && 
+                        (node.querySelector && (
+                            node.querySelector('#navbar-toggle') || 
+                            node.querySelector('#navbar-menu')
+                        ))
+                    );
+                    
+                    if (hasNavigation) {
+                        console.log('Navigation component detected, re-initializing...');
+                        setTimeout(() => Navigation.init(), 50);
+                    }
+                }
+            });
+        });
+        
+        // Start observing for dynamically loaded navigation
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
         
         // Load additional modules when available
         setTimeout(() => {

@@ -3,27 +3,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucas AI — Services & Demos</title>
-    <meta name="description" content="Ontdek Lucas AI: services, demos en use-cases voor AI chatbots en automatisering.">
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <title>Lucas AI - AI Model Expert & Consultant</title>
+    <meta name="description" content="Lucas AI helpt je het perfecte AI model te vinden voor jouw project. Van ChatGPT tot Claude - ontdek welke AI past bij jouw specifieke use-case.">
+    
+    <!-- Import existing CSS -->
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/navigation.css">
+    <link rel="stylesheet" href="assets/css/hero.css">
     <link rel="stylesheet" href="assets/css/components.css">
-    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/sintra-discount.css">
+    <link rel="stylesheet" href="assets/css/contact-overlay.css">
+    
+    <!-- Custom styles for this page -->
+    <style>
+        /* Critical inline styles for faster loading */
+        .hero { min-height: 100vh; display: flex; align-items: center; }
+        .header { position: fixed; top: 16px; left: 50%; transform: translateX(-50%); z-index: 1000; }
+
+        /* iPhone Gallery Section */
+        .gallery-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .gallery-title {
+            text-align: center;
+            max-width: 600px;
+        }
+        
+        .gallery-title h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: #1e293b;
+        }
+        
+        .gallery-title p {
+            font-size: 1.2rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* iPhone Gallery Styles */
+        .gallery-wrap { position: relative; }
+
+        /* iPhone frame */
+        .iphone {
+            width: 340px;
+            aspect-ratio: 1179/2556;
+            border-radius: 44px;
+            background: #111;
+            box-shadow: 0 40px 80px rgba(0,0,0,.35), inset 0 0 0 2px #222, inset 0 0 0 6px #000;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Screen area (bezel inset) */
+        .screen {
+            position: absolute; 
+            inset: 10px;
+            border-radius: 32px;
+            overflow: hidden; 
+            background: #000;
+        }
+        
+        /* Dynamic Island / notch */
+        .island {
+            position: absolute; 
+            top: 10px; 
+            left: 50%; 
+            transform: translateX(-50%);
+            width: 42%; 
+            height: 26px; 
+            background: #000; 
+            border-radius: 20px/18px; 
+            z-index: 3;
+            box-shadow: 0 0 0 1px rgba(255,255,255,.03);
+        }
+
+        /* Carousel */
+        .carousel {
+            height: 100%; 
+            display: flex; 
+            transition: transform .45s ease; 
+            will-change: transform;
+        }
+        
+        .slide {
+            min-width: 100%; 
+            height: 100%; 
+            position: relative; 
+            display: grid; 
+            place-items: center; 
+            background: #000;
+        }
+        
+        .slide img {
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            display: block;
+        }
+
+        /* Controls */
+        .arrow {
+            position: absolute; 
+            z-index: 4; 
+            top: 50%; 
+            transform: translateY(-50%);
+            width: 40px; 
+            height: 40px; 
+            border-radius: 999px; 
+            border: 1px solid rgba(255,255,255,.25);
+            background: rgba(0,0,0,.35); 
+            display: grid; 
+            place-items: center; 
+            cursor: pointer; 
+            user-select: none;
+            backdrop-filter: blur(6px);
+        }
+        
+        .arrow:hover {
+            background: rgba(255,255,255,.08);
+        }
+        
+        .arrow.left {
+            left: 14px;
+        }
+        
+        .arrow.right {
+            right: 14px;
+        }
+        
+        .arrow svg {
+            width: 18px;
+            height: 18px;
+            fill: #fff;
+            opacity: .9;
+        }
+
+        /* Dots */
+        .dots {
+            position: absolute; 
+            bottom: 16px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            display: flex; 
+            gap: 8px; 
+            z-index: 4;
+        }
+        
+        .dot {
+            width: 6px; 
+            height: 6px; 
+            border-radius: 999px; 
+            background: rgba(255,255,255,.35); 
+            transition: all .25s;
+        }
+        
+        .dot.active {
+            width: 18px; 
+            background: #fff;
+        }
+
+        /* Responsief */
+        @media (max-width: 420px) {
+            .iphone { 
+                width: 92vw; 
+            }
+            .arrow { 
+                display: none; 
+            }
+            .gallery-title h2 { 
+                font-size: 2rem; 
+            }
+            .gallery-section { 
+                padding: 60px 16px; 
+            }
+        }
+
+
+
+
+
+
+    </style>
 </head>
 <body>
+    <!-- Load Navigation Component -->
     <div id="navigation-component"></div>
+    
+    <!-- Main Content -->
     <main class="main" role="main">
-        <section class="section" id="lucas-ai">
-            <div class="section__container">
-                <h1 class="section__title">Lucas AI</h1>
-                <p>Hier komen AI-diensten, demos en cases. Laat me weten wat je hier wilt tonen, dan werk ik het uit.</p>
+        <!-- Hero Section for AI Model Choice -->
+        <section class="hero" id="ai-hero">
+        <div class="hero__container">
+            <div class="hero__content">
+                <!-- Floating Elements -->
+                <div class="hero__floating-elements">
+                    <div class="floating-badge">
+                        <span style="font-size: 16px;">🤖</span>
+                        <span class="badge-text">AI Model Expert</span>
+                    </div>
+                    <div class="floating-memoji floating-memoji--1">
+                        <img src="assets/images/lucas-memoji.svg" alt="Lucas Avatar" class="floating-avatar">
+                    </div>
+                    <div class="floating-memoji floating-memoji--2">
+                        <img src="assets/images/lucas-memoji.svg" alt="Lucas Avatar" class="floating-avatar">
+                    </div>
+                    <div class="floating-decoration floating-decoration--bolt">⚡</div>
+                    <div class="floating-decoration floating-decoration--stars">🧠</div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="hero__main-content">
+                    <h1 class="hero__headline">
+                        Welk AI model heb je <span class="hero__highlight">écht</span> nodig?
+                    </h1>
+                    <div class="hero__subtitle">
+                        <p class="hero__description">
+                            Van ChatGPT tot Claude - de keuze is overweldigend. Ik help je AI succesvol te integreren in je bedrijf, van chatbot tot SEO tekst hulp!
+                        </p>
+                    </div>
+                </div>
+            </div>
             </div>
         </section>
+
+        <!-- iPhone Gallery Section -->
+        <section class="gallery-section" id="gallery">
+            <div class="gallery-title">
+                <h2>Lucas AI - Interactive Demo</h2>
+                <p>Swipe door de introductie en ontdek hoe AI jouw bedrijf kan transformeren</p>
+            </div>
+            
+            <div class="gallery-wrap" aria-label="Swipe gallery in iPhone">
+                <div class="iphone" id="iphone">
+                    <div class="screen">
+                        <div class="carousel" id="carousel"></div>
+                        <div class="island" aria-hidden="true"></div>
+                    </div>
+
+                    <!-- Controls -->
+                    <button class="arrow left" id="prev" aria-label="Vorige">
+                        <svg viewBox="0 0 24 24"><path d="M15.5 4.5 9 12l6.5 7.5-1.5 1.25L6 12l8-8.75z"/></svg>
+                    </button>
+                    <button class="arrow right" id="next" aria-label="Volgende">
+                        <svg viewBox="0 0 24 24"><path d="M8.5 19.5 15 12 8.5 4.5l1.5-1.25L18 12l-8 8.75z"/></svg>
+                    </button>
+
+                    <div class="dots" id="dots" aria-hidden="true"></div>
+                </div>
+            </div>
+        </section>
+
     </main>
-    <div id="footer-component"></div>
 
     <script>
+        /* Component Loader */
         async function loadComponent(componentName, targetId) {
             try {
                 const response = await fetch(`components/${componentName}.html`);
@@ -35,20 +276,107 @@
             }
         }
 
-        async function loadAll() {
-            await Promise.all([
-                loadComponent('navigation', 'navigation-component'),
-                loadComponent('footer', 'footer-component')
-            ]);
+        /* Load navigation component */
+        async function loadNavigation() {
+            await loadComponent('navigation', 'navigation-component');
         }
 
+        /* Load navigation when DOM is ready */
         if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', loadAll);
+            document.addEventListener('DOMContentLoaded', loadNavigation);
         } else {
-            loadAll();
+            loadNavigation();
         }
+
+        /* iPhone Gallery JavaScript */
+        document.addEventListener('DOMContentLoaded', function() {
+            // ======= Lokale AI Portfolio Afbeeldingen =======
+            const images = [
+                "iphone-ai-slider/Intro 1.jpg",
+                "iphone-ai-slider/Intro2.jpg",
+                "iphone-ai-slider/Intro3.jpg"
+            ];
+            // =============================================================
+
+            const carousel = document.getElementById('carousel');
+            const dotsWrap = document.getElementById('dots');
+
+            if (!carousel || !dotsWrap) return;
+
+            // Build slides & dots
+            images.forEach((src, i) => {
+                const slide = document.createElement('div');
+                slide.className = 'slide';
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = `AI Portfolio Intro ${i+1}`;
+                slide.appendChild(img);
+                carousel.appendChild(slide);
+
+                const dot = document.createElement('div');
+                dot.className = 'dot';
+                dot.addEventListener('click', () => goTo(i));
+                dotsWrap.appendChild(dot);
+            });
+
+            const slidesCount = images.length;
+            let index = 0;
+            const update = () => {
+                carousel.style.transform = `translateX(${-index * 100}%)`;
+                [...dotsWrap.children].forEach((d, i) => d.classList.toggle('active', i === index));
+            };
+            const next = () => { index = (index + 1) % slidesCount; update(); };
+            const prev = () => { index = (index - 1 + slidesCount) % slidesCount; update(); };
+            const goTo = (i) => { index = (i + slidesCount) % slidesCount; update(); };
+            update();
+
+            // Buttons & keyboard
+            const nextBtn = document.getElementById('next');
+            const prevBtn = document.getElementById('prev');
+            
+            if (nextBtn) nextBtn.addEventListener('click', next);
+            if (prevBtn) prevBtn.addEventListener('click', prev);
+            
+            window.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') next();
+                if (e.key === 'ArrowLeft') prev();
+            });
+
+            // Touch / drag swipe
+            let startX = 0, dx = 0, isDown = false, lock = false;
+
+            const onDown = (x) => { isDown = true; lock = false; startX = x; dx = 0; carousel.style.transition = 'none'; };
+            const onMove = (x) => {
+                if (!isDown) return;
+                dx = x - startX;
+                // Soft follow while dragging
+                const offset = (-index * 100) + (dx / carousel.clientWidth) * 100;
+                carousel.style.transform = `translateX(${offset}%)`;
+                if (Math.abs(dx) > 12) lock = true;
+            };
+            const onUp = () => {
+                if (!isDown) return;
+                isDown = false;
+                carousel.style.transition = '';
+                const threshold = carousel.clientWidth * 0.18; // 18% swipe
+                if (dx < -threshold) next();
+                else if (dx > threshold) prev();
+                else update();
+            };
+
+            // Pointer listeners
+            carousel.addEventListener('pointerdown', (e) => { carousel.setPointerCapture(e.pointerId); onDown(e.clientX); });
+            carousel.addEventListener('pointermove', (e) => onMove(e.clientX));
+            carousel.addEventListener('pointerup', onUp);
+            carousel.addEventListener('pointercancel', onUp);
+            // Prevent click-through while dragging
+            carousel.addEventListener('click', (e) => { if (lock) e.preventDefault(); }, true);
+        });
     </script>
+    
+    <!-- Navigation JavaScript -->
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/sintra-discount.js" defer></script>
+    <script src="assets/js/smart-navigation.js" defer></script>
 </body>
 </html>
-
-
