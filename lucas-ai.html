@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas AI — Services & Demos</title>
+    <meta name="description" content="Ontdek Lucas AI: services, demos en use-cases voor AI chatbots en automatisering.">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/navigation.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+</head>
+<body>
+    <div id="navigation-component"></div>
+    <main class="main" role="main">
+        <section class="section" id="lucas-ai">
+            <div class="section__container">
+                <h1 class="section__title">Lucas AI</h1>
+                <p>Hier komen AI-diensten, demos en cases. Laat me weten wat je hier wilt tonen, dan werk ik het uit.</p>
+            </div>
+        </section>
+    </main>
+    <div id="footer-component"></div>
+
+    <script>
+        async function loadComponent(componentName, targetId) {
+            try {
+                const response = await fetch(`components/${componentName}.html`);
+                if (!response.ok) throw new Error(`Failed to load ${componentName}`);
+                const html = await response.text();
+                document.getElementById(targetId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error loading component ${componentName}:`, error);
+            }
+        }
+
+        async function loadAll() {
+            await Promise.all([
+                loadComponent('navigation', 'navigation-component'),
+                loadComponent('footer', 'footer-component')
+            ]);
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadAll);
+        } else {
+            loadAll();
+        }
+    </script>
+</body>
+</html>
+
+
