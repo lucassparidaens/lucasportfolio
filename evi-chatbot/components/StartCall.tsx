@@ -3,15 +3,29 @@ import { AnimatePresence, motion } from "motion/react";
 import { Button } from "./ui/button";
 import { Phone } from "lucide-react";
 import { toast } from "sonner";
+import { useEffect } from "react";
 
 export default function StartCall({ configId, accessToken }: { configId?: string, accessToken: string }) {
   const { status, connect } = useVoice();
+
+  useEffect(() => {
+    const handler = () => {
+      connect({ 
+        auth: { type: "accessToken", value: accessToken },
+        configId,
+      }).catch(() => {
+        toast.error("Unable to start call");
+      });
+    };
+    window.addEventListener("lucas:start-call", handler);
+    return () => window.removeEventListener("lucas:start-call", handler);
+  }, [accessToken, configId, connect]);
 
   return (
     <AnimatePresence>
       {status.value !== "connected" ? (
         <motion.div
-          className={"fixed inset-0 p-4 flex items-center justify-center bg-background"}
+          className={"absolute inset-0 p-4 flex items-center justify-center bg-background/95"}
           initial="initial"
           animate="enter"
           exit="exit"
@@ -24,9 +38,9 @@ export default function StartCall({ configId, accessToken }: { configId?: string
           <AnimatePresence>
             <motion.div
               variants={{
-                initial: { scale: 0.5 },
+                initial: { scale: 0.9 },
                 enter: { scale: 1 },
-                exit: { scale: 0.5 },
+                exit: { scale: 0.9 },
               }}
             >
               <Button
@@ -35,8 +49,6 @@ export default function StartCall({ configId, accessToken }: { configId?: string
                   connect({ 
                     auth: { type: "accessToken", value: accessToken },
                     configId, 
-                    // additional options can be added here
-                    // like resumedChatGroupId and sessionSettings
                   })
                     .then(() => {})
                     .catch(() => {

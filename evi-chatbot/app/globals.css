@@ -4,39 +4,40 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  /* Align with portfolio main.css */
+  --background: #FCFAF7; /* --bg */
+  --foreground: #0F172A; /* --text */
+  --card: #FFFFFF;
+  --card-foreground: #0F172A;
+  --popover: #FFFFFF;
+  --popover-foreground: #0F172A;
+  --primary: #5B8DEF; /* --primary */
+  --primary-foreground: #FFFFFF;
+  --secondary: #F1F5F9; /* chip-like */
+  --secondary-foreground: #0F172A;
+  --muted: #6B7280; /* --muted */
+  --muted-foreground: #6B7280;
+  --accent: #9AE6B4; /* --accent */
+  --accent-foreground: #0F172A;
+  --destructive: #ef4444;
+  --destructive-foreground: #FFFFFF;
+  --border: #e5e7eb; /* glass-border-ish */
+  --input: #e5e7eb;
+  --ring: #94a3b8; /* slate-400 */
+  --chart-1: #5B8DEF;
+  --chart-2: #9AE6B4;
+  --chart-3: #60a5fa;
+  --chart-4: #f59e0b;
+  --chart-5: #ef4444;
+  --radius: 1rem; /* ~16px aligns between radius-lg (16) and xl (20) */
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #0F172A;
+  --sidebar-primary: #5B8DEF;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F1F5F9;
+  --sidebar-accent-foreground: #0F172A;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #94a3b8;
 }
 
 .dark {
@@ -121,3 +122,20 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Hero animations */
+@keyframes floatRotate {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-8px) rotate(2deg); }
+  50% { transform: translateY(-4px) rotate(0deg); }
+  75% { transform: translateY(-12px) rotate(-2deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+/* Futuristic extras */
+@keyframes rotateSlow { to { transform: rotate(360deg); } }
+@keyframes floatY { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(-6px);} }
