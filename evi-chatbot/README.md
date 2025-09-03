@@ -1,25 +1,35 @@
-<div align="center">
-  <img src="https://storage.googleapis.com/hume-public-logos/hume/hume-banner.png">
-  <h1>EVI Next.js App Router Example</h1>
-</div>
+# Lucas EVI Chatbot (Next.js)
 
-![preview.png](preview.png)
+A Macintosh-styled Empathic Voice Interface (EVI) chatbot embedded in the portfolio under `lucas-ai.html`.
 
-## Overview
+## Quick start
 
-This project features a sample implementation of Hume's [Empathic Voice Interface](https://hume.docs.buildwithfern.com/docs/empathic-voice-interface-evi/overview) using Hume's React SDK. Here, we have a simple EVI that uses the Next.js App Router.
+```bash
+# from evi-chatbot/
+npm install
+npm run dev
+```
 
-## Project deployment
+- App will start at http://localhost:3000
+- The portfolio page `lucas-ai.html` embeds this at `http://localhost:3000`
 
-Click the button below to deploy this example project with Vercel:
+## Environment variables
+Create a `.env.local` in `evi-chatbot/` with:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fhumeai%2Fhume-evi-next-js-starter&env=HUME_API_KEY,HUME_SECRET_KEY)
+```
+HUME_API_KEY=your_api_key
+HUME_SECRET_KEY=your_secret_key
+# Optional: Use a specific EVI config
+NEXT_PUBLIC_HUME_CONFIG_ID=your_config_id
+```
 
-Below are the steps to completing deployment:
+Get your keys from: https://beta.hume.ai/settings/keys
 
-1. Create a Git Repository for your project.
-2. Provide the required environment variables. To get your API key and Client Secret key, log into the portal and visit the [API keys page](https://beta.hume.ai/settings/keys).
+## Scripts
+- `npm run dev` - start dev server
+- `npm run build` - production build
+- `npm start` - run production server
 
-## Support
-
-If you have questions, require assistance, or wish to engage in discussions pertaining to this starter template, [please reach out to us on Discord](https://link.hume.ai/discord).
+## Notes
+- The Start button in the chat header triggers the call inside the app.
+- Microphone permissions are required for voice.
