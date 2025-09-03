@@ -79,7 +79,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px;
+  scroll-padding-top: 60px;
 }
 
 /* Enhanced smooth scrolling */
@@ -3142,11 +3142,11 @@ button:focus-visible {
   }
   
   html {
-    scroll-padding-top: 70px;
+    scroll-padding-top: 50px;
   }
   
   .hero {
-    padding-top: 80px;
+    padding-top: 50px;
   }
   
   .hero__title {

@@ -60,7 +60,7 @@
 .section--contact .section__title {
     position: relative;
     z-index: 10;
-    margin-top: 120px; /* Space for the overlay image */
+    margin-top: 60px; /* Space for the overlay image */
     padding-top: var(--space-md);
 }
 
@@ -76,7 +76,7 @@
     }
     
     .section--contact .section__title {
-        margin-top: 100px;
+        margin-top: 50px;
     }
 }
 
@@ -86,7 +86,7 @@
     }
     
     .section--contact .section__title {
-        margin-top: 80px;
+        margin-top: 40px;
     }
     
     .contact__overlay-image {

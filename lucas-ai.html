@@ -22,8 +22,8 @@
 
         /* iPhone Gallery Section */
         .gallery-section {
-            padding: 80px 20px;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 40px 20px;
+            background: #FCFAF7;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -60,6 +60,7 @@
             box-shadow: 0 40px 80px rgba(0,0,0,.35), inset 0 0 0 2px #222, inset 0 0 0 6px #000;
             position: relative;
             overflow: hidden;
+            z-index: 50;
         }
         
         /* Screen area (bezel inset) */
@@ -112,7 +113,7 @@
         /* Controls */
         .arrow {
             position: absolute; 
-            z-index: 4; 
+            z-index: 100; 
             top: 50%; 
             transform: translateY(-50%);
             width: 40px; 
@@ -121,7 +122,7 @@
             border: 1px solid rgba(255,255,255,.25);
             background: rgba(0,0,0,.35); 
             display: grid; 
-            place-items: center; 
+            place-items: center;
             cursor: pointer; 
             user-select: none;
             backdrop-filter: blur(6px);
@@ -154,7 +155,7 @@
             transform: translateX(-50%); 
             display: flex; 
             gap: 8px; 
-            z-index: 4;
+            z-index: 100;
         }
         
         .dot {
@@ -170,26 +171,461 @@
             background: #fff;
         }
 
-        /* Responsief */
-        @media (max-width: 420px) {
-            .iphone { 
-                width: 92vw; 
+                 /* Responsief */
+         @media (max-width: 420px) {
+             .iphone { 
+                 width: 92vw; 
+             }
+             .arrow { 
+                 display: none; 
+             }
+             .gallery-title h2 { 
+            font-size: 2rem;
+             }
+                         .gallery-section { 
+                padding: 30px 16px; 
             }
-            .arrow { 
-                display: none; 
-            }
-            .gallery-title h2 { 
-                font-size: 2rem; 
-            }
-            .gallery-section { 
-                padding: 60px 16px; 
-            }
-        }
+         }
+
+
+
+         
 
 
 
 
 
+
+
+
+         /* EVI Clean Section - Erft achtergrond van hero class */
+         .evi-clean-section {
+             padding: 60px 20px 80px;
+             /* Geen background override - gebruikt hero styling */
+         }
+
+         .evi-clean-container {
+             max-width: 600px;
+             margin: 0 auto;
+             width: 100%;
+             text-align: center;
+         }
+
+
+
+         /* Main Chat Interface - Centraal zoals afbeelding */
+         .evi-main-chat {
+             margin-bottom: 50px;
+         }
+
+         .evi-chat-window {
+             background: white;
+             border-radius: 24px;
+             overflow: hidden;
+             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+             border: 1px solid rgba(226, 232, 240, 0.8);
+             height: 500px;
+             display: flex;
+             flex-direction: column;
+             max-width: 500px;
+             margin: 0 auto;
+             position: relative;
+             z-index: 100;
+         }
+
+         .evi-chat-header {
+             background: #f8fafc;
+             color: #1e293b;
+             padding: 16px 20px;
+             display: flex;
+             align-items: center;
+             gap: 12px;
+             flex-shrink: 0;
+             border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+         }
+
+         .evi-status-indicator {
+             width: 8px;
+             height: 8px;
+             background: #10b981;
+             border-radius: 50%;
+             animation: pulse 2s infinite;
+         }
+
+         .evi-chat-header span {
+             font-weight: 600;
+             flex: 1;
+             font-size: 0.95rem;
+         }
+
+         .evi-controls {
+             display: flex;
+             gap: 8px;
+         }
+
+         .evi-controls button {
+             background: rgba(100, 116, 139, 0.1);
+             border: none;
+             color: #64748b;
+             width: 24px;
+             height: 24px;
+             border-radius: 4px;
+             cursor: pointer;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             transition: all 0.2s ease;
+             font-size: 14px;
+         }
+
+         .evi-controls button:hover {
+             background: rgba(100, 116, 139, 0.2);
+             color: #1e293b;
+         }
+
+         .evi-iframe-wrapper {
+             position: relative;
+             flex: 1;
+             background: white;
+         }
+
+         #evi-iframe {
+             width: 100%;
+             height: 100%;
+             border: none;
+             background: white;
+         }
+
+         /* Loading Animation - Simpel en clean */
+         .evi-loading {
+             position: absolute;
+             top: 0;
+             left: 0;
+             right: 0;
+             bottom: 0;
+             background: white;
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+             justify-content: center;
+             z-index: 10;
+         }
+
+         .evi-loading-animation {
+             display: flex;
+             gap: 8px;
+             margin-bottom: 20px;
+         }
+
+         .evi-pulse {
+             width: 10px;
+             height: 10px;
+             background: #3b82f6;
+             border-radius: 50%;
+             animation: pulse-wave 1.5s ease-in-out infinite;
+         }
+
+         .evi-pulse:nth-child(2) {
+             animation-delay: 0.3s;
+         }
+
+         .evi-pulse:nth-child(3) {
+             animation-delay: 0.6s;
+         }
+
+         @keyframes pulse-wave {
+             0%, 60%, 100% {
+                 transform: scale(0.8);
+                 opacity: 0.5;
+             }
+             30% {
+                 transform: scale(1.2);
+                 opacity: 1;
+             }
+         }
+
+         .evi-loading p {
+             color: #64748b;
+             font-weight: 500;
+             font-size: 0.9rem;
+         }
+
+         /* Error State - Clean */
+         .evi-error {
+             position: absolute;
+             top: 0;
+             left: 0;
+             right: 0;
+             bottom: 0;
+             background: white;
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+             justify-content: center;
+             z-index: 10;
+             padding: 20px;
+         }
+
+         .evi-error-icon {
+             font-size: 2.5rem;
+             margin-bottom: 16px;
+         }
+
+         .evi-error p {
+             color: #64748b;
+             margin-bottom: 20px;
+             text-align: center;
+             font-size: 0.95rem;
+         }
+
+         .evi-retry-btn {
+             background: #3b82f6;
+             color: white;
+             border: none;
+             padding: 12px 24px;
+             border-radius: 12px;
+             font-weight: 600;
+             cursor: pointer;
+             transition: all 0.3s ease;
+             font-size: 0.9rem;
+         }
+
+         .evi-retry-btn:hover {
+             background: #1d4ed8;
+             transform: translateY(-1px);
+         }
+
+         /* Feature Cards Grid - Altijd 3 naast elkaar met animaties */
+         .evi-features-grid {
+             display: grid;
+             grid-template-columns: repeat(3, 1fr);
+             gap: 16px;
+             margin-bottom: 40px;
+             max-width: 550px;
+             margin-left: auto;
+             margin-right: auto;
+             opacity: 0;
+             transform: translateY(30px);
+             animation: slideInUp 0.8s ease-out 0.3s forwards;
+         }
+
+         .evi-feature-card {
+             background: white;
+             border-radius: 20px;
+             padding: 20px 16px;
+             text-align: center;
+             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+             border: 1px solid rgba(226, 232, 240, 0.8);
+             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+             position: relative;
+             overflow: hidden;
+             opacity: 0;
+             transform: translateY(20px);
+             animation: cardFadeIn 0.6s ease-out forwards;
+         }
+
+         .evi-feature-card:nth-child(1) {
+             animation-delay: 0.1s;
+         }
+
+         .evi-feature-card:nth-child(2) {
+             animation-delay: 0.2s;
+         }
+
+         .evi-feature-card:nth-child(3) {
+             animation-delay: 0.3s;
+         }
+
+         .evi-feature-card::before {
+             content: '';
+             position: absolute;
+             top: 0;
+             left: -100%;
+             width: 100%;
+             height: 100%;
+             background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+             transition: left 0.6s ease;
+         }
+
+         .evi-feature-card:hover::before {
+             left: 100%;
+         }
+
+         .evi-feature-card:hover {
+             transform: translateY(-8px) scale(1.02);
+             box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+             border-color: rgba(59, 130, 246, 0.3);
+         }
+
+         .evi-feature-icon {
+             font-size: 2.2rem;
+             margin-bottom: 12px;
+             display: block;
+             transition: transform 0.3s ease;
+             position: relative;
+             z-index: 1;
+         }
+
+         .evi-feature-card:hover .evi-feature-icon {
+             transform: scale(1.1) rotate(5deg);
+         }
+
+         .evi-feature-card h3 {
+             font-size: 1rem;
+             font-weight: 700;
+             color: #1e293b;
+             margin-bottom: 8px;
+             position: relative;
+             z-index: 1;
+             transition: color 0.3s ease;
+         }
+
+         .evi-feature-card:hover h3 {
+             color: #3b82f6;
+         }
+
+         .evi-feature-card p {
+             color: #64748b;
+             line-height: 1.4;
+             font-size: 0.8rem;
+             margin: 0;
+             position: relative;
+             z-index: 1;
+         }
+
+         @keyframes slideInUp {
+             from {
+                 opacity: 0;
+                 transform: translateY(30px);
+             }
+             to {
+                 opacity: 1;
+                 transform: translateY(0);
+             }
+         }
+
+         @keyframes cardFadeIn {
+             from {
+                 opacity: 0;
+                 transform: translateY(20px);
+             }
+             to {
+                 opacity: 1;
+                 transform: translateY(0);
+             }
+         }
+
+         /* Footer - Simpel */
+         .evi-footer-simple {
+             text-align: center;
+         }
+
+         .evi-github-simple {
+             color: #64748b;
+             text-decoration: none;
+             font-size: 0.9rem;
+             transition: color 0.3s ease;
+         }
+
+         .evi-github-simple:hover {
+             color: #3b82f6;
+         }
+
+         /* Responsive Design */
+         @media (max-width: 768px) {
+             .evi-chat-window {
+                 height: 450px;
+                 max-width: 90%;
+             }
+             
+             .evi-features-grid {
+                 grid-template-columns: repeat(3, 1fr);
+                 gap: 12px;
+                 max-width: 100%;
+                 padding: 0 10px;
+             }
+             
+             .evi-feature-card {
+                 padding: 16px 12px;
+             }
+
+             .evi-feature-card h3 {
+                 font-size: 0.9rem;
+             }
+
+             .evi-feature-card p {
+                 font-size: 0.75rem;
+             }
+
+             .evi-feature-icon {
+                 font-size: 1.8rem;
+             }
+         }
+
+         @media (max-width: 480px) {
+             .evi-clean-section {
+                 padding: 40px 12px 60px;
+             }
+             
+             .evi-chat-window {
+                 height: 400px;
+                 max-width: 95%;
+             }
+
+             .evi-features-grid {
+                 gap: 8px;
+                 padding: 0 5px;
+             }
+             
+             .evi-feature-card {
+                 padding: 14px 8px;
+             }
+
+             .evi-feature-card h3 {
+                 font-size: 0.85rem;
+                 margin-bottom: 6px;
+             }
+
+             .evi-feature-card p {
+                 font-size: 0.7rem;
+             }
+
+             .evi-feature-icon {
+                 font-size: 1.6rem;
+                 margin-bottom: 8px;
+             }
+         }
+
+         
+         /* Body achtergrond - exact hetzelfde als index.html */
+         body {
+             background: #FCFAF7;
+             position: relative;
+             min-height: 100%;
+             overflow-x: hidden;
+         }
+
+         /* Subtle Background Texture - exact kopie van index.html */
+         body::before {
+             content: "";
+             position: fixed;
+             top: 0;
+             left: 0;
+             width: 100%;
+             height: 100%;
+             background-image: 
+                 radial-gradient(circle at 25% 25%, rgba(91, 141, 239, 0.04) 0%, transparent 30%),
+                 radial-gradient(circle at 75% 75%, rgba(154, 230, 180, 0.04) 0%, transparent 30%),
+                 repeating-linear-gradient(
+                     45deg,
+                     transparent,
+                     transparent 2px,
+                     rgba(15, 23, 42, 0.02) 2px,
+                     rgba(15, 23, 42, 0.02) 4px
+                 );
+             z-index: -9999;
+             pointer-events: none;
+         }
 
     </style>
 </head>
@@ -234,6 +670,8 @@
             </div>
         </section>
 
+
+
         <!-- iPhone Gallery Section -->
         <section class="gallery-section" id="gallery">
             <div class="gallery-title">
@@ -257,9 +695,118 @@
                     </button>
 
                     <div class="dots" id="dots" aria-hidden="true"></div>
+            </div>
+        </div>
+    </section>
+
+        <!-- EVI Hero Section -->
+        <section class="hero" id="evi-hero">
+            <div class="hero__container">
+                <div class="hero__content">
+                    <!-- Floating Elements -->
+                    <div class="hero__floating-elements">
+                        <div class="floating-badge">
+                            <span style="font-size: 16px;">🎙️</span>
+                            <span class="badge-text">Live AI Voice</span>
+                        </div>
+                        <div class="floating-memoji floating-memoji--1">
+                            <img src="assets/images/lucas-memoji.svg" alt="Lucas Avatar" class="floating-avatar">
+                        </div>
+                        <div class="floating-memoji floating-memoji--2">
+                            <img src="assets/images/lucas-memoji.svg" alt="Lucas Avatar" class="floating-avatar">
+                        </div>
+                        <div class="floating-decoration floating-decoration--bolt">⚡</div>
+                        <div class="floating-decoration floating-decoration--stars">🧠</div>
+                    </div>
+
+                    <!-- Main Content -->
+                    <div class="hero__main-content">
+                        <h1 class="hero__headline">
+                            Praat met de AI en bekijk <span class="hero__highlight">hoe je je voelt</span> door deze portfolio!
+                        </h1>
+                        <div class="hero__subtitle">
+                            <p class="hero__description">
+                                Ervaar revolutionaire emotie-herkenning technologie. Deze AI luistert niet alleen naar wat je zegt, maar voelt ook hoe je het zegt.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+
+                <!-- EVI Clean Interface Section -->
+        <section class="hero evi-clean-section" id="evi-interface">
+            <div class="evi-clean-container">
+                <!-- Main Chat Interface -->
+                <div class="evi-main-chat">
+                    <div class="evi-chat-window">
+                        <div class="evi-chat-header">
+                            <div class="evi-status-indicator"></div>
+                            <span>Lucas AI Assistant</span>
+                            <div class="evi-controls">
+                                <button class="evi-minimize">−</button>
+                                <button class="evi-expand">□</button>
+                            </div>
+                        </div>
+                        
+                        <div class="evi-iframe-wrapper">
+                            <iframe 
+                                id="evi-iframe"
+                                src="http://localhost:3000" 
+                                title="Lucas AI - Empathic Voice Interface"
+                                allow="microphone; camera; autoplay"
+                                allowfullscreen>
+                            </iframe>
+                            
+                            <div class="evi-loading" id="evi-loading">
+                                <div class="evi-loading-animation">
+                                    <div class="evi-pulse"></div>
+                                    <div class="evi-pulse"></div>
+                                    <div class="evi-pulse"></div>
+                                </div>
+                                <p>Connecting to AI...</p>
+                            </div>
+                            
+                            <div class="evi-error" id="evi-error" style="display: none;">
+                                <div class="evi-error-icon">⚠️</div>
+                                <p>Kon geen verbinding maken</p>
+                                <button onclick="startEviServer()" class="evi-retry-btn">Probeer Opnieuw</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature Cards Below Chat -->
+                <div class="evi-features-grid">
+                    <div class="evi-feature-card">
+                        <div class="evi-feature-icon">🧠</div>
+                        <h3>Emotie Detectie</h3>
+                        <p>AI herkent je gevoelens door je stem</p>
+                    </div>
+                    
+                    <div class="evi-feature-card">
+                        <div class="evi-feature-icon">🗣️</div>
+                        <h3>Natuurlijke Spraak</h3>
+                        <p>Praat gewoon zoals je normaal doet</p>
+                    </div>
+                    
+                    <div class="evi-feature-card">
+                        <div class="evi-feature-icon">⚡</div>
+                        <h3>Real-time</h3>
+                        <p>Directe response zonder vertraging</p>
+                    </div>
+                </div>
+
+                <!-- GitHub Link -->
+                <div class="evi-footer-simple">
+                    <a href="https://github.com/lucassparidaens/new.git" target="_blank" class="evi-github-simple">
+                        🔗 Open Source Project - Bekijk op GitHub
+                    </a>
+            </div>
+        </div>
+    </section>
+
+
 
     </main>
 
@@ -370,8 +917,134 @@
             carousel.addEventListener('pointerup', onUp);
             carousel.addEventListener('pointercancel', onUp);
             // Prevent click-through while dragging
-            carousel.addEventListener('click', (e) => { if (lock) e.preventDefault(); }, true);
-        });
+                         carousel.addEventListener('click', (e) => { if (lock) e.preventDefault(); }, true);
+         });
+
+         /* EVI Integration JavaScript */
+         document.addEventListener('DOMContentLoaded', function() {
+             const iframe = document.getElementById('evi-iframe');
+             const loading = document.getElementById('evi-loading');
+             const error = document.getElementById('evi-error');
+             const statusIndicator = document.querySelector('.evi-status-indicator');
+
+             if (!iframe || !loading || !error) return;
+
+             // Function to check if EVI server is running
+             async function checkEviServer() {
+                 try {
+                     const response = await fetch('http://localhost:3000', { 
+                         mode: 'no-cors',
+                         method: 'HEAD'
+                     });
+                     return true;
+                 } catch (err) {
+                     return false;
+                 }
+             }
+
+             // Function to update status indicator
+             function updateStatus(connected) {
+                 if (statusIndicator) {
+                     statusIndicator.style.background = connected ? '#10b981' : '#ef4444';
+                 }
+             }
+
+             // Function to handle iframe load
+             function handleIframeLoad() {
+                 setTimeout(() => {
+                     loading.style.display = 'none';
+                     updateStatus(true);
+                 }, 3000); // Give iframe more time to fully load
+             }
+
+             // Function to handle iframe error
+             function handleIframeError() {
+                 loading.style.display = 'none';
+                 error.style.display = 'flex';
+                 updateStatus(false);
+             }
+
+             // Function to start EVI server (placeholder)
+             window.startEviServer = function() {
+                 const instructions = [
+                     '🚀 EVI Server Starten:',
+                     '',
+                     '1. Open Terminal',
+                     '2. cd evi-chatbot',
+                     '3. npm run dev',
+                     '4. Wacht tot "Ready" verschijnt',
+                     '5. Klik "Probeer Opnieuw"',
+                     '',
+                     '💡 API Keys nodig? Ga naar:',
+                     'https://beta.hume.ai/settings/keys'
+                 ].join('\\n');
+                 alert(instructions);
+             };
+
+             // Enhanced connection check
+             async function connectToEvi() {
+                 loading.style.display = 'flex';
+                 error.style.display = 'none';
+                 updateStatus(false);
+
+                 const isRunning = await checkEviServer();
+                 
+                 if (isRunning) {
+                     iframe.onload = handleIframeLoad;
+                     iframe.onerror = handleIframeError;
+                     // Force reload iframe
+                     iframe.src = iframe.src + '?t=' + Date.now();
+                 } else {
+                     handleIframeError();
+                 }
+             }
+
+             // Initial connection attempt
+             connectToEvi();
+
+             // Retry button functionality
+             const retryBtn = document.querySelector('.evi-retry-btn');
+             if (retryBtn) {
+                 retryBtn.addEventListener('click', connectToEvi);
+             }
+
+             // Window controls functionality
+             const minimizeBtn = document.querySelector('.evi-minimize');
+             const expandBtn = document.querySelector('.evi-expand');
+             const chatFrame = document.querySelector('.evi-chat-window');
+
+             if (minimizeBtn && chatFrame) {
+                 minimizeBtn.addEventListener('click', () => {
+                     chatFrame.style.height = chatFrame.style.height === '60px' ? '' : '60px';
+                     minimizeBtn.textContent = chatFrame.style.height === '60px' ? '+' : '−';
+                 });
+             }
+
+             if (expandBtn && chatFrame) {
+                 expandBtn.addEventListener('click', () => {
+                     if (chatFrame.style.position === 'fixed') {
+                         // Exit fullscreen
+                         chatFrame.style.position = '';
+                         chatFrame.style.top = '';
+                         chatFrame.style.left = '';
+                         chatFrame.style.width = '';
+                         chatFrame.style.height = '';
+                         chatFrame.style.zIndex = '';
+                         expandBtn.textContent = '□';
+                     } else {
+                         // Enter fullscreen
+                         chatFrame.style.position = 'fixed';
+                         chatFrame.style.top = '20px';
+                         chatFrame.style.left = '20px';
+                         chatFrame.style.width = 'calc(100vw - 40px)';
+                         chatFrame.style.height = 'calc(100vh - 40px)';
+                         chatFrame.style.zIndex = '9999';
+                         expandBtn.textContent = '×';
+                     }
+                 });
+             }
+         });
+
     </script>
     
     <!-- Navigation JavaScript -->
