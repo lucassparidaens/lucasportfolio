@@ -108,6 +108,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
       </div>
       <LoaderWrapper />
       <div className="hero-content absolute inset-x-0 top-0 h-dvh">
+
         <Bounded
           fullWidth
           className="absolute inset-x-0 top-18 md:top-24 md:left-[8vw]"
