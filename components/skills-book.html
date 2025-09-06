@@ -1,129 +1,139 @@
-        <!-- Skills Section -->
+        <!-- Skills Keyboard Section -->
         <section class="section section--skills" id="skills">
             <div class="section__container">
-                <h2 class="section__title">Skills & Expertise</h2>
-                <div class="skills-menu-book">
-                    <!-- Book Cover & Binding -->
-                    <div class="menu-book">
-                        <div class="book-spine"></div>
-                        
-                        <!-- Page Navigation -->
-                        <div class="book-navigation">
-                            <button class="nav-btn nav-btn--prev" id="prevPage" aria-label="Previous page">
-                                <svg viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-                                </svg>
+                <!-- Section Header -->
+                <div class="skills-header">
+                    <h2 class="section__title">Mijn Skills Toetsenbord</h2>
+                    <p class="skills-subtitle">
+                        Elke toets vertegenwoordigt een skill die ik beheers. Klik op de toetsen om mijn expertise te ontdekken!
+                    </p>
+                </div>
+
+                <!-- Keyboard Container -->
+                <div class="keyboard-container">
+                    <!-- Keyboard Instructions -->
+                    <div class="keyboard-instructions">
+                        <div class="instruction-item">
+                            <div class="instruction-icon">💻</div>
+                            <span>Klik op toetsen om skills te ontdekken</span>
+                        </div>
+                        <div class="instruction-item">
+                            <div class="instruction-icon">🎵</div>
+                            <span>Elke toets maakt geluid</span>
+                        </div>
+                        <div class="instruction-item">
+                            <div class="instruction-icon">⭐</div>
+                            <span>Geavanceerde skills zijn geel gemarkeerd</span>
+                        </div>
+                    </div>
+
+                    <!-- Keyboard Layout -->
+                    <div class="keyboard-layout">
+                        <!-- Row 1 -->
+                        <div class="keyboard-row keyboard-row--1">
+                            <button class="key key--skill key--expert" data-skill="HTML" data-level="Expert" data-description="Semantische HTML5, accessibility best practices">
+                                HTML
                             </button>
-                            <div class="page-indicator">
-                                <span class="current-page">1</span> / <span class="total-pages">6</span>
-                            </div>
-                            <button class="nav-btn nav-btn--next" id="nextPage" aria-label="Next page">
-                                <svg viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
-                                </svg>
+                            <button class="key key--skill key--expert" data-skill="CSS" data-level="Expert" data-description="Modern CSS, Flexbox, Grid, Animations">
+                                CSS
+                            </button>
+                            <button class="key key--skill key--expert" data-skill="JavaScript" data-level="Expert" data-description="ES6+, Async/Await, DOM manipulation">
+                                JS
+                            </button>
+                            <button class="key key--skill key--advanced" data-skill="TypeScript" data-level="Advanced" data-description="Type safety, interfaces, generics">
+                                TS
+                            </button>
+                            <button class="key key--skill key--expert" data-skill="React" data-level="Expert" data-description="Hooks, Context API, component design">
+                                React
+                            </button>
+                            <button class="key key--skill key--advanced" data-skill="Next.js" data-level="Advanced" data-description="SSR, SSG, App Router, API routes">
+                                Next
                             </button>
                         </div>
 
-                        <!-- Book Pages Container -->
-                        <div class="book-pages" id="bookPages">
-                            
-                            <!-- Page 1: Frontend Development -->
-                            <div class="book-page book-page--active" data-page="1">
-                                <div class="page-content">
-                                    <div class="page-header">
-                                        <div class="page-number">01</div>
-                                        <div class="page-category">
-                                            <span class="category-icon">⚡</span>
-                                            <h3>Frontend Development</h3>
-                                        </div>
-                                    </div>
-                                    <div class="page-body">
-                                        <div class="skills-menu">
-                                            <div class="menu-item">
-                                                <span class="menu-skill">HTML & Semantics</span>
-                                                <span class="menu-dots"></span>
-                                                <span class="menu-level">Expert</span>
-                                            </div>
-                                            <div class="menu-item">
-                                                <span class="menu-skill">CSS & Animations</span>
-                                                <span class="menu-dots"></span>
-                                                <span class="menu-level">Expert</span>
-                                            </div>
-                                            <div class="menu-item">
-                                                <span class="menu-skill">JavaScript/TypeScript</span>
-                                                <span class="menu-dots"></span>
-                                                <span class="menu-level">Expert</span>
-                                            </div>
-                                            <div class="menu-item">
-                                                <span class="menu-skill">React & Next.js</span>
-                                                <span class="menu-dots"></span>
-                                                <span class="menu-level">Advanced</span>
-                                            </div>
-                                            <div class="menu-item">
-                                                <span class="menu-skill">Tailwind CSS</span>
-                                                <span class="menu-dots"></span>
-                                                <span class="menu-level">Expert</span>
-                                            </div>
-                                            <div class="menu-item">
-                                                <span class="menu-skill">GSAP Animations</span>
-                                                <span class="menu-dots"></span>
-                                                <span class="menu-level">Advanced</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Page 2: Backend & Systems -->
-                            <div class="book-page" data-page="2">
-                                <div class="page-content">
-                                    <div class="page-header">
-                                        <div class="page-number">02</div>
-                                        <div class="page-category">
-                                            <span class="category-icon">⚙️</span>
-                                            <h3>Backend & Systems</h3>
-                                        </div>
-                                    </div>
-                                    <div class="page-body">
-                                        <div class="skills-menu">
-                                            <div class="menu-item">
-                                                <span class="menu-skill">Python Development</span>
-                                                <span class="menu-dots"></span>
-                                                <span class="menu-level">Advanced</span>
-                                            </div>
-                                            <div class="menu-item">
-                                                <span class="menu-skill">Unix & Command Line</span>
-                                                <span class="menu-dots"></span>
-                                                <span class="menu-level">Expert</span>
-                                            </div>
-                                            <div class="menu-item">
-                                                <span class="menu-skill">Git & GitHub</span>
-                                                <span class="menu-dots"></span>
-                                                <span class="menu-level">Expert</span>
-                                            </div>
-                                            <div class="menu-item">
-                                                <span class="menu-skill">Docker & Containers</span>
-                                                <span class="menu-dots"></span>
-                                                <span class="menu-level">Intermediate</span>
-                                            </div>
-                                            <div class="menu-item">
-                                                <span class="menu-skill">Google Cloud Platform</span>
-                                                <span class="menu-dots"></span>
-                                                <span class="menu-level">Intermediate</span>
-                                            </div>
-                                            <div class="menu-item">
-                                                <span class="menu-skill">PostgreSQL</span>
-                                                <span class="menu-dots"></span>
-                                                <span class="menu-level">Intermediate</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Remaining pages will be loaded as needed -->
-                            
+                        <!-- Row 2 -->
+                        <div class="keyboard-row keyboard-row--2">
+                            <button class="key key--skill key--expert" data-skill="Tailwind" data-level="Expert" data-description="Utility-first CSS framework">
+                                Tailwind
+                            </button>
+                            <button class="key key--skill key--advanced" data-skill="Sass" data-level="Advanced" data-description="SCSS, mixins, variables">
+                                Sass
+                            </button>
+                            <button class="key key--skill key--advanced" data-skill="Python" data-level="Advanced" data-description="Django, Flask, data processing">
+                                Python
+                            </button>
+                            <button class="key key--skill key--intermediate" data-skill="Node.js" data-level="Intermediate" data-description="Express, API development">
+                                Node
+                            </button>
+                            <button class="key key--skill key--expert" data-skill="Git" data-level="Expert" data-description="Version control, branching strategies">
+                                Git
+                            </button>
                         </div>
+
+                        <!-- Row 3 -->
+                        <div class="keyboard-row keyboard-row--3">
+                            <button class="key key--skill key--intermediate" data-skill="Docker" data-level="Intermediate" data-description="Containerization, Docker Compose">
+                                Docker
+                            </button>
+                            <button class="key key--skill key--intermediate" data-skill="AWS" data-level="Intermediate" data-description="S3, EC2, Lambda functions">
+                                AWS
+                            </button>
+                            <button class="key key--skill key--advanced" data-skill="PostgreSQL" data-level="Advanced" data-description="Database design, queries, optimization">
+                                SQL
+                            </button>
+                            <button class="key key--skill key--expert" data-skill="Figma" data-level="Expert" data-description="UI/UX design, prototyping">
+                                Figma
+                            </button>
+                            <button class="key key--skill key--advanced" data-skill="Three.js" data-level="Advanced" data-description="3D graphics, WebGL">
+                                3D
+                            </button>
+                        </div>
+
+                        <!-- Row 4 - Spacebar -->
+                        <div class="keyboard-row keyboard-row--4">
+                            <button class="key key--spacebar" data-skill="Fullstack Development" data-level="Expert" data-description="End-to-end web development met moderne tech stack">
+                                <span class="spacebar-text">🚀 FULLSTACK DEVELOPMENT</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Skill Detail Panel -->
+                    <div class="skill-detail-panel" id="skillPanel">
+                        <div class="skill-detail-content">
+                            <div class="skill-detail-header">
+                                <h3 class="skill-name">Selecteer een toets</h3>
+                                <span class="skill-level">om details te zien</span>
+                            </div>
+                            <p class="skill-description">
+                                Klik op een toets hierboven om meer te leren over mijn expertise in die technologie.
+                            </p>
+                            <div class="skill-projects">
+                                <span class="projects-label">Projecten:</span>
+                                <div class="projects-list">
+                                    <span>Selecteer een skill om gerelateerde projecten te zien</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Summary Stats -->
+                <div class="skills-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">Expert Level</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">7</div>
+                        <div class="stat-label">Advanced Level</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Intermediate Level</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Jaar Ervaring</div>
                     </div>
                 </div>
             </div>
