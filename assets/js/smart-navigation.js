@@ -23,16 +23,28 @@
         const targetSection = link.getAttribute('data-smart-nav');
         const href = link.getAttribute('href');
         
-        // Check if we're on index.html (or root)
-        const currentPage = window.location.pathname;
-        const isOnIndex = currentPage === '/' || 
-                         currentPage === '/index.html' || 
-                         currentPage.endsWith('/index.html') ||
-                         currentPage.split('/').pop() === 'index.html' ||
-                         currentPage === '';
+        // Skip processing if no data-smart-nav attribute
+        if (!targetSection) {
+            return; // Let browser handle normally
+        }
         
-        // If we're on index.html and the target section exists, scroll to it instead
-        if (isOnIndex) {
+        // Check if we're on the homepage
+        const currentPage = window.location.pathname;
+        const isOnHomepage = currentPage === '/' || 
+                            currentPage === '/index.html' || 
+                            currentPage.endsWith('/index.html') ||
+                            currentPage.split('/').pop() === 'index.html' ||
+                            currentPage === '' ||
+                            currentPage.split('/').pop() === '';
+        
+        // Handle home/logo clicks
+        if (targetSection === 'home' && !isOnHomepage) {
+            // Let browser navigate to homepage normally
+            return;
+        }
+        
+        // If we're on homepage and target section exists, scroll to it
+        if (isOnHomepage && targetSection !== 'home') {
             const targetElement = document.getElementById(targetSection);
             if (targetElement) {
                 e.preventDefault();
@@ -52,8 +64,8 @@
             }
         }
         
-        // Otherwise, let the link work normally (go to index.html)
-        // The browser will handle the navigation
+        // If we're not on homepage, let the link navigate normally
+        // This will go to /#section which should work correctly
     }
     
     // Handle back/forward browser navigation

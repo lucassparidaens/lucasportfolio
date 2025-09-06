@@ -800,6 +800,16 @@
         /* Load navigation component */
         async function loadNavigation() {
             await loadComponent('navigation', 'navigation-component');
+            
+            // Initialize navigation functionality after component loads
+            setTimeout(() => {
+                if (window.App) {
+                    console.log('Initializing navigation from App...');
+                    window.App.Navigation.init();
+                } else {
+                    console.error('App not found for navigation initialization!');
+                }
+            }, 100);
         }
 
         /* Load navigation when DOM is ready */

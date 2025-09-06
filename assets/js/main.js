@@ -119,11 +119,14 @@ window.App = (function() {
             const menu = domElements.navbarMenu();
             
             if (!toggle || !menu) {
+                console.log('❌ Mobile menu elements not found, retrying...');
+                setTimeout(() => this.setupMobileMenu(), 100);
                 return;
             }
             
             // Prevent duplicate event listeners
             if (toggle.dataset.mobileMenuSetup === 'true') {
+                console.log('⚠️ Mobile menu already setup, skipping...');
                 return;
             }
             toggle.dataset.mobileMenuSetup = 'true';
