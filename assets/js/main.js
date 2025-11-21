@@ -4,7 +4,7 @@
    =================================== */
 
 // Main Application Module
-window.App = (function() {
+window.App = (function () {
     'use strict';
 
     // DOM Elements Cache
@@ -13,16 +13,23 @@ window.App = (function() {
         navbar: () => document.querySelector('.navbar'),
         navbarToggle: () => document.getElementById('navbar-toggle'),
         navbarMenu: () => document.getElementById('navbar-menu'),
+        navbarToggle: () => document.getElementById('navbar-toggle'),
+        navbarMenu: () => document.getElementById('navbar-menu'),
         navbarLinks: () => document.querySelectorAll('.navbar__link'),
-        
+
+        // Mobile Menu Overlay
+        mobileMenuOverlay: () => document.getElementById('mobile-menu-overlay'),
+        mobileMenuClose: () => document.getElementById('mobile-menu-close'),
+        mobileMenuLinks: () => document.querySelectorAll('.mobile-menu__link, .mobile-menu__sublink, .mobile-menu__cta'),
+
         // Hero
         heroScrollText: () => document.getElementById('scroll-text'),
         scrollTextWords: () => document.querySelectorAll('.scroll-text__word'),
-        
+
         // Footer Scroll Text
         footerScrollText: () => document.getElementById('footer-scroll-text'),
         footerScrollTextWords: () => document.querySelectorAll('.footer-scroll-text__word'),
-        
+
         // Skills Book
         skillsBook: () => document.querySelector('.skills-menu-book'),
         bookPages: () => document.getElementById('bookPages'),
@@ -30,11 +37,11 @@ window.App = (function() {
         nextPageBtn: () => document.getElementById('nextPage'),
         currentPageSpan: () => document.querySelector('.current-page'),
         totalPagesSpan: () => document.querySelector('.total-pages'),
-        
+
         // Partners
         partnersContainer: () => document.querySelector('.partners__content'),
         partnersRows: () => document.querySelectorAll('.partners__row'),
-        
+
         // Footer AI States
         footerAiInitial: () => document.getElementById('footer-ai-initial'),
         footerAiChat: () => document.getElementById('footer-ai-chat'),
@@ -44,10 +51,10 @@ window.App = (function() {
         footerSendBtn: () => document.getElementById('footer-send-btn'),
         footerChatMessages: () => document.getElementById('footer-chat-messages'),
         footerNavPills: () => document.querySelectorAll('.footer__pill'),
-        
+
         // Contact Form
         contactForm: () => document.getElementById('contact-form'),
-        
+
         // Modals
         aboutModal: () => document.getElementById('about-modal'),
         modalClose: () => document.querySelector('.modal__close')
@@ -55,7 +62,7 @@ window.App = (function() {
 
     // Utility Functions
     const utils = {
-        debounce: function(func, wait, immediate) {
+        debounce: function (func, wait, immediate) {
             let timeout;
             return function executedFunction(...args) {
                 const later = () => {
@@ -68,10 +75,10 @@ window.App = (function() {
                 if (callNow) func(...args);
             };
         },
-        
-        throttle: function(func, limit) {
+
+        throttle: function (func, limit) {
             let inThrottle;
-            return function(...args) {
+            return function (...args) {
                 if (!inThrottle) {
                     func.apply(this, args);
                     inThrottle = true;
@@ -80,26 +87,26 @@ window.App = (function() {
             };
         },
 
-        generateId: function() {
+        generateId: function () {
             return Math.random().toString(36).substr(2, 9);
         },
 
-        formatTime: function() {
-            return new Date().toLocaleTimeString('nl-NL', { 
-                hour: '2-digit', 
-                minute: '2-digit' 
+        formatTime: function () {
+            return new Date().toLocaleTimeString('nl-NL', {
+                hour: '2-digit',
+                minute: '2-digit'
             });
         }
     };
 
     // Navigation Module
     const Navigation = {
-        init: function() {
+        init: function () {
             // Wait for navigation component to load before setting up
             const checkNavigation = () => {
                 const toggle = domElements.navbarToggle();
                 const menu = domElements.navbarMenu();
-                
+
                 if (toggle && menu) {
                     console.log('Navigation elements found, setting up...');
                     this.setupMobileMenu();
@@ -110,109 +117,96 @@ window.App = (function() {
                     setTimeout(checkNavigation, 100);
                 }
             };
-            
+
             checkNavigation();
         },
 
-        setupMobileMenu: function() {
+        setupMobileMenu: function () {
             const toggle = domElements.navbarToggle();
-            const menu = domElements.navbarMenu();
-            
-            if (!toggle || !menu) {
+            const overlay = domElements.mobileMenuOverlay();
+            const closeBtn = domElements.mobileMenuClose();
+
+            if (!toggle || !overlay) {
                 console.log('❌ Mobile menu elements not found, retrying...');
                 setTimeout(() => this.setupMobileMenu(), 100);
                 return;
             }
-            
+
             // Prevent duplicate event listeners
             if (toggle.dataset.mobileMenuSetup === 'true') {
-                console.log('⚠️ Mobile menu already setup, skipping...');
                 return;
             }
             toggle.dataset.mobileMenuSetup = 'true';
-            
-            console.log('✅ Mobile menu setup complete');
+
+            console.log('✅ Mobile menu setup complete (Hard Coded Version)');
 
             const closeMobileMenu = () => {
-                menu.classList.remove('navbar__menu--open');
+                overlay.classList.remove('active');
                 toggle.classList.remove('navbar__toggle--active');
                 toggle.setAttribute('aria-expanded', 'false');
                 document.body.classList.remove('no-scroll');
             };
 
             const openMobileMenu = () => {
-                menu.classList.add('navbar__menu--open');
+                overlay.classList.add('active');
                 toggle.classList.add('navbar__toggle--active');
                 toggle.setAttribute('aria-expanded', 'true');
                 document.body.classList.add('no-scroll');
             };
 
-            // Toggle menu on button click
+            // Toggle menu on hamburger click
             toggle.addEventListener('click', (e) => {
                 e.stopPropagation();
-                const isOpen = menu.classList.contains('navbar__menu--open');
-                
-                if (isOpen) {
-                    closeMobileMenu();
-                } else {
-                    openMobileMenu();
-                }
+                const isOpen = overlay.classList.contains('active');
+                if (isOpen) closeMobileMenu();
+                else openMobileMenu();
             });
 
-            // Close menu when clicking outside or on menu overlay
-            document.addEventListener('click', (e) => {
-                const isClickInsideMenu = menu.contains(e.target) && !e.target.classList.contains('navbar__link');
-                const isClickOnToggle = toggle.contains(e.target);
-                
-                if (!isClickInsideMenu && !isClickOnToggle) {
+            // Close on X button click
+            if (closeBtn) {
+                closeBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
                     closeMobileMenu();
-                }
-            });
+                });
+            }
 
-            // Close menu when clicking on menu links
-            const menuLinks = menu.querySelectorAll('.navbar__link');
-            menuLinks.forEach(link => {
+            // Close when clicking links
+            const links = domElements.mobileMenuLinks();
+            links.forEach(link => {
                 link.addEventListener('click', () => {
                     setTimeout(closeMobileMenu, 100);
                 });
             });
 
-            // Close menu on escape key
+            // Close on Escape key
             document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && menu.classList.contains('navbar__menu--open')) {
-                    closeMobileMenu();
-                }
-            });
-
-            // Prevent scroll on body when menu is open
-            window.addEventListener('resize', () => {
-                if (window.innerWidth > 768 && menu.classList.contains('navbar__menu--open')) {
+                if (e.key === 'Escape' && overlay.classList.contains('active')) {
                     closeMobileMenu();
                 }
             });
         },
 
-        setupSmoothScrolling: function() {
+        setupSmoothScrolling: function () {
             const links = domElements.navbarLinks();
-            
+
             links.forEach(link => {
                 link.addEventListener('click', (e) => {
                     const href = link.getAttribute('href');
-                    
+
                     if (href.startsWith('#') || href.startsWith('.')) {
                         e.preventDefault();
-                        
+
                         const targetId = href.replace('#', '').replace('.', '');
-                        const targetElement = document.getElementById(targetId) || 
-                                            document.querySelector(`.${targetId}`);
-                        
+                        const targetElement = document.getElementById(targetId) ||
+                            document.querySelector(`.${targetId}`);
+
                         if (targetElement) {
                             const headerOffset = 100;
                             const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
                             const offsetPosition = elementPosition - headerOffset;
-                            
+
                             this.smoothScrollTo(offsetPosition);
-                            
+
                             // Close mobile menu if open
                             const menu = domElements.navbarMenu();
                             const toggle = domElements.navbarToggle();
@@ -227,7 +221,7 @@ window.App = (function() {
             });
         },
 
-        smoothScrollTo: function(targetY) {
+        smoothScrollTo: function (targetY) {
             const startY = window.pageYOffset;
             const distance = targetY - startY;
             const duration = Math.min(Math.abs(distance) / 2, 800);
@@ -242,9 +236,9 @@ window.App = (function() {
                 const timeElapsed = currentTime - startTime;
                 const progress = Math.min(timeElapsed / duration, 1);
                 const ease = easeInOutCubic(progress);
-                
+
                 window.scrollTo(0, startY + distance * ease);
-                
+
                 if (timeElapsed < duration) {
                     requestAnimationFrame(animation);
                 }
@@ -253,17 +247,17 @@ window.App = (function() {
             requestAnimationFrame(animation);
         },
 
-        setupActiveStates: function() {
+        setupActiveStates: function () {
             const links = domElements.navbarLinks();
             const sections = document.querySelectorAll('section[id]');
-            
+
             if (!links.length || !sections.length) return;
 
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const activeId = entry.target.id;
-                        
+
                         links.forEach(link => {
                             const href = link.getAttribute('href');
                             if (href === `#${activeId}`) {
@@ -285,16 +279,16 @@ window.App = (function() {
 
     // Scroll Text Effects Module
     const ScrollTextEffect = {
-        init: function() {
+        init: function () {
             this.setupScrollEffect();
             this.setupFooterScrollEffect();
             this.setupSaturationOnScroll();
         },
 
-        setupScrollEffect: function() {
+        setupScrollEffect: function () {
             const scrollText = domElements.heroScrollText();
             const words = domElements.scrollTextWords();
-            
+
             if (!scrollText || !words.length) return;
 
             const observer = new IntersectionObserver((entries) => {
@@ -310,10 +304,10 @@ window.App = (function() {
             observer.observe(scrollText);
         },
 
-        setupFooterScrollEffect: function() {
+        setupFooterScrollEffect: function () {
             const footerScrollText = domElements.footerScrollText();
             const footerWords = domElements.footerScrollTextWords();
-            
+
             if (!footerScrollText || !footerWords.length) return;
 
             // Add scroll listener for continuous effect
@@ -327,11 +321,11 @@ window.App = (function() {
                     ticking = true;
                 }
             };
-            
+
             window.addEventListener('scroll', handleScroll, { passive: true });
         },
 
-        updateFooterScrollColors: function(footerScrollText, footerWords) {
+        updateFooterScrollColors: function (footerScrollText, footerWords) {
             const scrollPosition = window.scrollY;
             const windowHeight = window.innerHeight;
             const textRect = footerScrollText.getBoundingClientRect();
@@ -363,7 +357,7 @@ window.App = (function() {
             });
         },
 
-        animateWords: function(words) {
+        animateWords: function (words) {
             words.forEach((word, index) => {
                 setTimeout(() => {
                     // Reset all words
@@ -371,12 +365,12 @@ window.App = (function() {
                         w.classList.remove('color-1', 'color-2', 'color-3', 'color-4', 'color-5');
                         w.classList.remove('scroll-text__word--active');
                     });
-                    
+
                     // Add progressive color to current and previous words
                     for (let i = 0; i <= index; i++) {
                         const colorClass = Math.min(index - i + 1, 5);
                         words[i].classList.add(`color-${colorClass}`);
-                        
+
                         if (i === index) {
                             words[i].classList.add('scroll-text__word--active');
                         }
@@ -385,7 +379,7 @@ window.App = (function() {
             });
         }
         ,
-        setupSaturationOnScroll: function() {
+        setupSaturationOnScroll: function () {
             const scrollText = domElements.heroScrollText();
             if (!scrollText) return;
 
@@ -425,7 +419,7 @@ window.App = (function() {
 
     // Footer AI Module - Moved to footer-chat.js
     const FooterAI = {
-        init: function() {
+        init: function () {
             // Functionality moved to footer-chat.js
             console.log('Footer AI functionality loaded from footer-chat.js');
         }
@@ -434,25 +428,25 @@ window.App = (function() {
     // Initialize application
     function start() {
         console.log('🚀 Lucas Portfolio - Modular Architecture Initialized');
-        
+
         // Initialize core modules
         Navigation.init();
         ScrollTextEffect.init();
         FooterAI.init();
-        
+
         // Set up mutation observer to re-initialize navigation when component loads
         const observer = new MutationObserver((mutations) => {
             mutations.forEach((mutation) => {
                 if (mutation.type === 'childList') {
                     const addedNodes = Array.from(mutation.addedNodes);
-                    const hasNavigation = addedNodes.some(node => 
-                        node.nodeType === Node.ELEMENT_NODE && 
+                    const hasNavigation = addedNodes.some(node =>
+                        node.nodeType === Node.ELEMENT_NODE &&
                         (node.querySelector && (
-                            node.querySelector('#navbar-toggle') || 
+                            node.querySelector('#navbar-toggle') ||
                             node.querySelector('#navbar-menu')
                         ))
                     );
-                    
+
                     if (hasNavigation) {
                         console.log('Navigation component detected, re-initializing...');
                         setTimeout(() => Navigation.init(), 50);
@@ -460,13 +454,13 @@ window.App = (function() {
                 }
             });
         });
-        
+
         // Start observing for dynamically loaded navigation
         observer.observe(document.body, {
             childList: true,
             subtree: true
         });
-        
+
         // Load additional modules when available
         setTimeout(() => {
             if (window.SkillsBook) window.SkillsBook.init();

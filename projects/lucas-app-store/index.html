@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas App Store — Projects & Experiments</title>
+
+    <!-- Import Global Styles -->
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/navigation.css">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom App Store Animations -->
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        /* Hide scrollbar but keep functionality */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Glassmorphism utilities */
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+
+<body class="bg-[#FCFAF7] text-slate-900 h-screen overflow-hidden flex flex-col">
+
+    <!-- Navigation (Reused from main site, simplified for this view or injected) -->
+    <!-- We will use a custom header that mimics the main site but fits the app store context -->
+    <div id="navigation-component"></div>
+
+    <!-- Main App Store Layout -->
+    <div class="flex-1 flex overflow-hidden pt-20"> <!-- pt-20 to account for fixed header -->
+
+        <!-- Sidebar (Desktop) / Bottom Bar (Mobile) -->
+        <nav
+            class="hidden md:flex flex-col w-64 bg-[#F5F5F7]/80 backdrop-blur-xl border-r border-gray-200 pt-8 px-4 space-y-2 z-20">
+            <div class="px-4 mb-8">
+                <h2 class="text-xs font-bold text-gray-400 uppercase tracking-wider">Browse</h2>
+            </div>
+
+            <button
+                class="app-store-nav-item w-full text-left px-4 py-3 rounded-xl flex items-center gap-3 text-[var(--primary)] bg-blue-50/50 transition-all hover:bg-blue-50"
+                data-tab="today">
+                <span class="text-xl">📅</span>
+                <span class="font-semibold">Today</span>
+            </button>
+
+            <button
+                class="app-store-nav-item w-full text-left px-4 py-3 rounded-xl flex items-center gap-3 text-gray-400 hover:bg-gray-100 transition-all"
+                data-tab="apps">
+                <span class="text-xl">📱</span>
+                <span class="font-semibold">Apps</span>
+            </button>
+
+            <button
+                class="app-store-nav-item w-full text-left px-4 py-3 rounded-xl flex items-center gap-3 text-gray-400 hover:bg-gray-100 transition-all"
+                data-tab="charts">
+                <span class="text-xl">🏆</span>
+                <span class="font-semibold">Charts</span>
+            </button>
+
+            <div class="px-4 mt-8 mb-2">
+                <h2 class="text-xs font-bold text-gray-400 uppercase tracking-wider">Search</h2>
+            </div>
+            <div class="px-2">
+                <div class="relative">
+                    <span class="absolute left-3 top-2.5 text-gray-400">🔍</span>
+                    <input type="text" id="app-store-search" placeholder="Search"
+                        class="w-full bg-white/50 border border-gray-200 rounded-lg pl-10 pr-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:bg-white transition-all">
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Bottom Nav -->
+        <nav
+            class="md:hidden fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-xl border-t border-gray-200 z-50 pb-safe">
+            <div class="flex justify-around p-2">
+                <button class="app-store-nav-item flex flex-col items-center p-2 text-[var(--primary)]"
+                    data-tab="today">
+                    <span class="text-xl mb-1">📅</span>
+                    <span class="text-[10px] font-medium">Today</span>
+                </button>
+                <button class="app-store-nav-item flex flex-col items-center p-2 text-gray-400" data-tab="apps">
+                    <span class="text-xl mb-1">📱</span>
+                    <span class="text-[10px] font-medium">Apps</span>
+                </button>
+                <button class="app-store-nav-item flex flex-col items-center p-2 text-gray-400" data-tab="charts">
+                    <span class="text-xl mb-1">🏆</span>
+                    <span class="text-[10px] font-medium">Charts</span>
+                </button>
+                <button class="app-store-nav-item flex flex-col items-center p-2 text-gray-400" data-tab="search">
+                    <span class="text-xl mb-1">🔍</span>
+                    <span class="text-[10px] font-medium">Search</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Content Area -->
+        <main id="app-store-content" class="flex-1 overflow-y-auto relative no-scrollbar pb-24 md:pb-0">
+            <!-- Dynamic Content Injected Here -->
+        </main>
+
+    </div>
+
+    <!-- App Detail Modal -->
+    <div id="app-modal" class="fixed inset-0 z-[100] hidden transition-all duration-300 opacity-0 translate-y-full">
+        <div class="absolute inset-0 bg-black/20 backdrop-blur-sm" id="app-modal-close"></div>
+        <div
+            class="absolute inset-x-0 bottom-0 md:inset-0 md:flex md:items-center md:justify-center pointer-events-none">
+            <div
+                class="bg-white w-full h-[90vh] md:h-[85vh] md:max-w-4xl md:rounded-3xl shadow-2xl overflow-hidden flex flex-col pointer-events-auto transform transition-transform">
+
+                <!-- Modal Header (Sticky) -->
+                <div
+                    class="sticky top-0 right-0 p-4 flex justify-end z-10 bg-gradient-to-b from-white/80 to-transparent pointer-events-none">
+                    <button onclick="window.AppStore.closeModal()"
+                        class="pointer-events-auto bg-gray-100 hover:bg-gray-200 text-gray-500 rounded-full w-8 h-8 flex items-center justify-center font-bold transition-colors">
+                        ✕
+                    </button>
+                </div>
+
+                <!-- Modal Content (Scrollable) -->
+                <div id="app-modal-content" class="overflow-y-auto h-full -mt-16 pt-16">
+                    <!-- Injected Content -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load Navigation -->
+    <script>
+        // Simple loader for the main navigation to keep consistency
+        fetch('../../components/navigation.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('navigation-component').innerHTML = html;
+                // Initialize App if loaded
+                if (window.App && window.App.Navigation) {
+                    setTimeout(() => window.App.Navigation.init(), 100);
+                }
+            });
+    </script>
+
+    <!-- Main Site Logic (Navigation, etc.) -->
+    <script src="../../assets/js/main.js" defer></script>
+
+    <!-- App Store Logic -->
+    <script type="module" src="app-store.js"></script>
+</body>
+
+</html>

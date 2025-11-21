@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucas — AI Portfolio (Web/App Dev, Marketing, Chatbots)</title>
-    <meta name="description" content="Lucas is een ervaren web developer, marketing specialist en AI chatbot expert uit Tilburg. Ontdek mijn portfolio met projecten in e-commerce, web development en marketing automatisering.">
-    
+    <meta name="description"
+        content="Lucas is een ervaren web developer, marketing specialist en AI chatbot expert uit Tilburg. Ontdek mijn portfolio met projecten in e-commerce, web development en marketing automatisering.">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://lucasportfolio.com/">
     <meta property="og:title" content="Lucas — AI Portfolio (Web/App Dev, Marketing, Chatbots)">
-    <meta property="og:description" content="Ervaren web developer en marketing specialist uit Tilburg. Specialisatie in AI chatbots, e-commerce en marketing automatisering.">
+    <meta property="og:description"
+        content="Ervaren web developer en marketing specialist uit Tilburg. Specialisatie in AI chatbots, e-commerce en marketing automatisering.">
     <meta property="og:image" content="https://lucasportfolio.com/assets/og-image.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://lucasportfolio.com/">
     <meta property="twitter:title" content="Lucas — AI Portfolio (Web/App Dev, Marketing, Chatbots)">
-    <meta property="twitter:description" content="Ervaren web developer en marketing specialist uit Tilburg. Specialisatie in AI chatbots, e-commerce en marketing automatisering.">
+    <meta property="twitter:description"
+        content="Ervaren web developer en marketing specialist uit Tilburg. Specialisatie in AI chatbots, e-commerce en marketing automatisering.">
     <meta property="twitter:image" content="https://lucasportfolio.com/assets/twitter-image.jpg">
 
     <!-- Structured Data -->
@@ -44,15 +48,15 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
-    
+
     <!-- Modular CSS Imports -->
     <link rel="preload" as="style" href="assets/css/main.css">
     <link rel="preload" as="style" href="assets/css/navigation.css">
     <link rel="preload" as="style" href="assets/css/hero.css">
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/navigation.css">
     <link rel="stylesheet" href="assets/css/hero.css">
@@ -61,43 +65,55 @@
     <link rel="stylesheet" href="assets/css/system7.css">
     <link rel="stylesheet" href="assets/css/components.css">
     <link rel="stylesheet" href="assets/css/footer.css">
-    
+
     <!-- Performance optimization -->
     <link rel="preload" href="assets/js/main.js" as="script">
     <style>
         /* Critical inline styles for faster loading */
-        .hero { min-height: 100vh; display: flex; align-items: center; }
-        .header { position: fixed; top: 16px; left: 50%; transform: translateX(-50%); z-index: 1000; }
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .header {
+            position: fixed;
+            top: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+        }
     </style>
 </head>
+
 <body>
     <!-- Load Navigation Component -->
     <div id="navigation-component"></div>
-    
+
     <!-- Main Content -->
     <main class="main" role="main">
         <!-- Load Hero Component -->
         <div id="hero-component"></div>
-        
+
         <!-- Load Partners Component -->
         <div id="partners-component"></div>
-        
+
         <!-- Load Scroll Text Component -->
         <div id="scroll-text-component"></div>
-        
+
         <!-- Load Me Component -->
         <div id="me-component"></div>
-        
+
         <!-- Load Projects Component -->
         <div id="projects-component"></div>
     </main>
-    
+
     <!-- Load Footer Component -->
     <div id="footer-component"></div>
-    
+
     <!-- Load Contact Component -->
     <div id="contact-component"></div>
-    
+
     <!-- Load Modals Component -->
     <div id="modals-component"></div>
 
@@ -130,7 +146,7 @@
             ];
 
             // Load components in parallel for better performance
-            await Promise.all(components.map(comp => 
+            await Promise.all(components.map(comp =>
                 loadComponent(comp.name, comp.target)
             ));
 
@@ -152,7 +168,7 @@
             loadAllComponents();
         }
     </script>
-    
+
     <!-- Load main JavaScript modules -->
     <script src="assets/js/main.js" defer></script>
     <script src="assets/js/skills-keyboard.js" defer></script>
@@ -160,4 +176,5 @@
     <script src="assets/js/footer-chat.js" defer></script>
     <script src="assets/js/smart-navigation.js" defer></script>
 </body>
+
 </html>
