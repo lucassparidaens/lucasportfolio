@@ -1,0 +1,296 @@
+{
+    "apps": [
+        {
+            "id": "margriet-ai",
+            "name": "Margriet AI",
+            "tagline": "Smart Dementia Care",
+            "category": "Healthcare & Life",
+            "platform": "Cross-platform",
+            "meta": {
+                "rating": 4.9,
+                "ratingsLabel": "1.2K Ratings",
+                "ageRating": "4+ Years",
+                "downloadsLabel": "15K+ downloads",
+                "primaryLanguage": "NL",
+                "otherLanguagesCount": 2,
+                "languagesLabel": "NL + 2 More",
+                "sizeMB": 85.4,
+                "sizeLabel": "85.4 MB",
+                "developerName": "Lucas Health Labs",
+                "developerSubtitle": "AI for Better Care"
+            },
+            "icon": {
+                "styleGuide": "Warm, approachable, medical but modern",
+                "prompt": "1024x1024, ultra-sharp, app icon, no words, no border. A stylized white daisy flower on a soft gradient background of warm coral and calming teal. Minimalist vector style, soft drop shadow, rounded corners implied.",
+                "aspectRatio": "1:1",
+                "exportNotes": "Render as 1024x1024 PNG with transparent background safe zone."
+            },
+            "screenshots": [
+                {
+                    "index": 1,
+                    "headline": "Your Care Assistant",
+                    "subline": "Always there to help with daily care tasks.",
+                    "layoutIdea": "Phone centered, large welcoming chat interface with AI avatar.",
+                    "visualStyle": "Clean white interface, soft coral accents, friendly typography.",
+                    "prompt": "iPhone 15 Pro mockup showing a chat interface with a friendly AI avatar named Margriet. Message bubbles discussing daily schedule. Soft warm lighting, clean background.",
+                    "aspectRatio": "9:19.5"
+                },
+                {
+                    "index": 2,
+                    "headline": "Smart Agenda",
+                    "subline": "Never miss a medication or appointment.",
+                    "layoutIdea": "Calendar view with clear, color-coded events.",
+                    "visualStyle": "Organized, legible, high contrast for accessibility.",
+                    "prompt": "iPhone 15 Pro mockup displaying a daily timeline view. Cards for 'Medication', 'Lunch', 'Doctor Visit'. Big clear text, checkmarks for completed tasks.",
+                    "aspectRatio": "9:19.5"
+                },
+                {
+                    "index": 3,
+                    "headline": "Care Community",
+                    "subline": "Connect with family and caregivers easily.",
+                    "layoutIdea": "Feed view showing updates from family members.",
+                    "visualStyle": "Social media vibe but private and secure.",
+                    "prompt": "iPhone 15 Pro mockup showing a private social feed. Photos of family, updates on well-being, comments from caregivers. Warm and connected feel.",
+                    "aspectRatio": "9:19.5"
+                },
+                {
+                    "index": 4,
+                    "headline": "Expert Knowledge",
+                    "subline": "Instant answers to your care questions.",
+                    "layoutIdea": "Knowledge base search with AI suggestions.",
+                    "visualStyle": "Information-rich but not overwhelming.",
+                    "prompt": "iPhone 15 Pro mockup showing a search screen. 'How to handle sundowning?' typed in. AI providing a summarized, helpful answer with source links.",
+                    "aspectRatio": "9:19.5"
+                },
+                {
+                    "index": 5,
+                    "headline": "Certified Quality",
+                    "subline": "Trusted by professionals and families.",
+                    "layoutIdea": "Profile screen showing badges and certifications.",
+                    "visualStyle": "Trustworthy, blue and white, official look.",
+                    "prompt": "iPhone 15 Pro mockup showing a 'Certificates' screen. Gold badges for 'Dementia Care Certified', 'Privacy First'. Highlighting trust and security.",
+                    "aspectRatio": "9:19.5"
+                }
+            ]
+        },
+        {
+            "id": "commerce-console",
+            "name": "Commerce Console",
+            "tagline": "Business Intelligence",
+            "category": "E-commerce & Business Dashboards",
+            "platform": "Web",
+            "meta": {
+                "rating": 4.8,
+                "ratingsLabel": "850 Ratings",
+                "ageRating": "4+ Years",
+                "downloadsLabel": "5K+ users",
+                "primaryLanguage": "EN",
+                "otherLanguagesCount": 5,
+                "languagesLabel": "EN + 5 More",
+                "sizeMB": 42.1,
+                "sizeLabel": "42.1 MB",
+                "developerName": "Lucas Commerce",
+                "developerSubtitle": "Data-Driven Growth Tools"
+            },
+            "icon": {
+                "styleGuide": "Sleek, professional, data-focused",
+                "prompt": "1024x1024, ultra-sharp, app icon, no words, no border. Abstract rising bar chart combined with a lightning bolt, glowing neon blue on a deep midnight blue background. Glassmorphism style, subtle gloss.",
+                "aspectRatio": "1:1",
+                "exportNotes": "Render as 1024x1024 PNG with transparent background safe zone."
+            },
+            "screenshots": [
+                {
+                    "index": 1,
+                    "headline": "Real-time Analytics",
+                    "subline": "Track your sales as they happen.",
+                    "layoutIdea": "Dashboard overview with live ticker and main graph.",
+                    "visualStyle": "Dark mode, neon data lines, professional dashboard.",
+                    "prompt": "iPhone 15 Pro mockup showing a dark mode dashboard. Large number '$12,450' for daily sales. Live graph fluctuating. Sleek, modern UI.",
+                    "aspectRatio": "9:19.5"
+                },
+                {
+                    "index": 2,
+                    "headline": "Conversion Insights",
+                    "subline": "Understand why visitors buy (or don't).",
+                    "layoutIdea": "Funnel visualization screen.",
+                    "visualStyle": "Clean data viz, color-coded funnel stages.",
+                    "prompt": "iPhone 15 Pro mockup showing a conversion funnel chart. 'Visitor' -> 'Cart' -> 'Checkout' -> 'Sale'. Percentages shown at each drop-off point.",
+                    "aspectRatio": "9:19.5"
+                },
+                {
+                    "index": 3,
+                    "headline": "Marketing Automation",
+                    "subline": "Trigger campaigns based on user behavior.",
+                    "layoutIdea": "Flowchart builder interface.",
+                    "visualStyle": "Node-based interface, connecting actions.",
+                    "prompt": "iPhone 15 Pro mockup showing an automation flow. 'Abandoned Cart' node connected to 'Send Email' node. Visual programming style.",
+                    "aspectRatio": "9:19.5"
+                },
+                {
+                    "index": 4,
+                    "headline": "Multi-Channel",
+                    "subline": "All your stores in one place.",
+                    "layoutIdea": "List of connected platforms (Shopify, Amazon, etc.).",
+                    "visualStyle": "Grid of logos, unified status indicators.",
+                    "prompt": "iPhone 15 Pro mockup showing 'Connected Stores'. Icons for Shopify, Amazon, Bol.com. Green status lights next to each.",
+                    "aspectRatio": "9:19.5"
+                },
+                {
+                    "index": 5,
+                    "headline": "Smart Alerts",
+                    "subline": "Get notified of spikes and drops instantly.",
+                    "layoutIdea": "Notification center or lock screen view.",
+                    "visualStyle": "Urgent but clean notification cards.",
+                    "prompt": "iPhone 15 Pro mockup showing push notifications. 'Sales Spike! +200% vs avg'. 'Inventory Low: SKU-123'. Highlighting real-time awareness.",
+                    "aspectRatio": "9:19.5"
+                }
+            ]
+        },
+        {
+            "id": "lucas-airlines",
+            "name": "Lucas Airlines",
+            "tagline": "Interactive Portfolio",
+            "category": "Gaming & Interactive",
+            "platform": "Web",
+            "meta": {
+                "rating": 5.0,
+                "ratingsLabel": "2.4K Ratings",
+                "ageRating": "4+ Years",
+                "downloadsLabel": "50K+ flights",
+                "primaryLanguage": "EN",
+                "otherLanguagesCount": 0,
+                "languagesLabel": "EN",
+                "sizeMB": 120.5,
+                "sizeLabel": "120.5 MB",
+                "developerName": "Lucas Creative",
+                "developerSubtitle": "Immersive Web Experiences"
+            },
+            "icon": {
+                "styleGuide": "Playful, 3D, aviation theme",
+                "prompt": "1024x1024, ultra-sharp, app icon, no words, no border. A cute 3D rendered paper airplane flying through a fluffy white cloud loop. Sky blue background, vibrant colors, toy-like texture.",
+                "aspectRatio": "1:1",
+                "exportNotes": "Render as 1024x1024 PNG with transparent background safe zone."
+            },
+            "screenshots": [
+                {
+                    "index": 1,
+                    "headline": "Take Flight",
+                    "subline": "Explore a portfolio like never before.",
+                    "layoutIdea": "Cockpit view or plane flying over a landscape.",
+                    "visualStyle": "3D low-poly art style, bright colors.",
+                    "prompt": "iPhone 15 Pro mockup showing a 3D plane flying over a digital landscape labeled 'Projects'. HUD overlay with 'Altitude: High'.",
+                    "aspectRatio": "9:19.5"
+                },
+                {
+                    "index": 2,
+                    "headline": "Interactive World",
+                    "subline": "Fly to different destinations to see skills.",
+                    "layoutIdea": "Map view with flight paths.",
+                    "visualStyle": "Gamified map, waypoints as skills.",
+                    "prompt": "iPhone 15 Pro mockup showing a world map. Flight paths connecting 'Design City', 'Code Island', 'Marketing Mountain'.",
+                    "aspectRatio": "9:19.5"
+                },
+                {
+                    "index": 3,
+                    "headline": "Collect Passports",
+                    "subline": "Earn stamps for every project you visit.",
+                    "layoutIdea": "Passport book UI.",
+                    "visualStyle": "Skeuomorphic passport texture, colorful stamps.",
+                    "prompt": "iPhone 15 Pro mockup showing an open digital passport. Stamps for 'React', 'Three.js', 'UI/UX'. Gamification element.",
+                    "aspectRatio": "9:19.5"
+                },
+                {
+                    "index": 4,
+                    "headline": "First Class",
+                    "subline": "Experience premium web design.",
+                    "layoutIdea": "Ticket or boarding pass UI.",
+                    "visualStyle": "Premium, gold and navy details.",
+                    "prompt": "iPhone 15 Pro mockup showing a detailed digital boarding pass. 'Passenger: You', 'Destination: Excellence'. QR code for contact.",
+                    "aspectRatio": "9:19.5"
+                },
+                {
+                    "index": 5,
+                    "headline": "Pilot Mode",
+                    "subline": "Take control of the experience.",
+                    "layoutIdea": "Settings or controls screen.",
+                    "visualStyle": "Tech-focused, toggles and sliders.",
+                    "prompt": "iPhone 15 Pro mockup showing control panel. 'Speed: Mach 2', 'Graphics: Ultra'. Fun configuration options.",
+                    "aspectRatio": "9:19.5"
+                }
+            ]
+        },
+        {
+            "id": "dakkie",
+            "name": "Dakkie",
+            "tagline": "Smart Housing Search",
+            "category": "AI & Housing",
+            "platform": "iOS",
+            "meta": {
+                "rating": 4.7,
+                "ratingsLabel": "320 Ratings",
+                "ageRating": "4+ Years",
+                "downloadsLabel": "10K+ seekers",
+                "primaryLanguage": "NL",
+                "otherLanguagesCount": 1,
+                "languagesLabel": "NL + 1 More",
+                "sizeMB": 65.2,
+                "sizeLabel": "65.2 MB",
+                "developerName": "Lucas Real Estate",
+                "developerSubtitle": "Housing Market AI"
+            },
+            "icon": {
+                "styleGuide": "Modern, architectural, Dutch orange hint",
+                "prompt": "1024x1024, ultra-sharp, app icon, no words, no border. Minimalist outline of a canal house roof (trapgevel) in white on a vibrant Dutch orange gradient background. Clean lines, modern flat design with subtle depth.",
+                "aspectRatio": "1:1",
+                "exportNotes": "Render as 1024x1024 PNG with transparent background safe zone."
+            },
+            "screenshots": [
+                {
+                    "index": 1,
+                    "headline": "Find Your Roof",
+                    "subline": "The smartest way to find a home in NL.",
+                    "layoutIdea": "Map view with house pins.",
+                    "visualStyle": "Clean map interface, orange accent pins.",
+                    "prompt": "iPhone 15 Pro mockup showing a map of Amsterdam. Pins popping up. Search bar at top 'Where do you want to live?'.",
+                    "aspectRatio": "9:19.5"
+                },
+                {
+                    "index": 2,
+                    "headline": "Instant Alerts",
+                    "subline": "Be the first to know about new listings.",
+                    "layoutIdea": "Notification list or alert setup.",
+                    "visualStyle": "Fast, urgent, clear typography.",
+                    "prompt": "iPhone 15 Pro mockup showing a push notification 'New Match! 2 Bedroom in Pijp'. User tapping it.",
+                    "aspectRatio": "9:19.5"
+                },
+                {
+                    "index": 3,
+                    "headline": "Price Psychology",
+                    "subline": "AI analyzes if the price is fair.",
+                    "layoutIdea": "Listing detail with AI analysis card.",
+                    "visualStyle": "Data-rich, trust indicators, green/red signals.",
+                    "prompt": "iPhone 15 Pro mockup showing a house listing. AI card overlay: 'Fair Price: High confidence'. 'Undervalued by 5%'.",
+                    "aspectRatio": "9:19.5"
+                },
+                {
+                    "index": 4,
+                    "headline": "Smart Filters",
+                    "subline": "Filter by what really matters to you.",
+                    "layoutIdea": "Filter modal with chips.",
+                    "visualStyle": "Easy to use, touch-friendly controls.",
+                    "prompt": "iPhone 15 Pro mockup showing filter options. 'Balcony', 'Energy Label A', 'Near Station'. Selected filters highlighted in orange.",
+                    "aspectRatio": "9:19.5"
+                },
+                {
+                    "index": 5,
+                    "headline": "Application Help",
+                    "subline": "Generate the perfect viewing request.",
+                    "layoutIdea": "AI writing assistant screen.",
+                    "visualStyle": "Text editor with magic wand icon.",
+                    "prompt": "iPhone 15 Pro mockup showing a message draft to a landlord. AI button 'Make it professional'. Text transforming.",
+                    "aspectRatio": "9:19.5"
+                }
+            ]
+        }
+    ]
+}

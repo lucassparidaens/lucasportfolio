@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agents That Deliver 150% ROI — Lucas AI</title>
+    <meta name="description"
+        content="AI agents that automate 70-95% of workflows, save 20-40 hours per week, and reduce costs by 50%. Built for businesses ready to scale with AI.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+            background: #FFFFFF;
+            color: #1D1D1F;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 24px 80px;
+            background: linear-gradient(180deg, #FFFFFF 0%, #F9FAFB 100%);
+        }
+
+        .hero-content {
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            background: rgba(108, 99, 255, 0.08);
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #6C63FF;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 7vw, 80px);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: #1D1D1F;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(18px, 2.5vw, 24px);
+            color: #6E6E73;
+            max-width: 720px;
+            margin: 0 auto 48px;
+            line-height: 1.5;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            max-width: 1200px;
+            margin: 64px auto;
+            padding: 0 24px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 32px 24px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #6C63FF;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #6E6E73;
+            font-weight: 500;
+        }
+
+        /* Section */
+        .section {
+            padding: 120px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-tag {
+            font-size: 14px;
+            font-weight: 600;
+            color: #6C63FF;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: #1D1D1F;
+        }
+
+        .section-description {
+            font-size: 20px;
+            color: #6E6E73;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-top: 64px;
+        }
+
+        .feature-card {
+            padding: 40px;
+            background: #FFFFFF;
+            border-radius: 24px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(108, 99, 255, 0.12);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 24px;
+        }
+
+        .feature-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1D1D1F;
+        }
+
+        .feature-description {
+            font-size: 16px;
+            color: #6E6E73;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .feature-benefits {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-benefits li {
+            font-size: 14px;
+            color: #6E6E73;
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .feature-benefits li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #6C63FF;
+            font-weight: 700;
+        }
+
+        /* Industry Grid */
+        .industry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 64px;
+        }
+
+        .industry-card {
+            padding: 32px;
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.04) 0%, rgba(167, 169, 255, 0.04) 100%);
+            border-radius: 20px;
+            border: 1px solid rgba(108, 99, 255, 0.1);
+        }
+
+        .industry-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1D1D1F;
+        }
+
+        .industry-examples {
+            list-style: none;
+            padding: 0;
+        }
+
+        .industry-examples li {
+            font-size: 14px;
+            color: #6E6E73;
+            padding: 6px 0;
+            line-height: 1.5;
+        }
+
+        .industry-roi {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            font-size: 14px;
+            font-weight: 600;
+            color: #6C63FF;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 120px 24px;
+            text-align: center;
+            background: linear-gradient(180deg, #F9FAFB 0%, #FFFFFF 100%);
+        }
+
+        .cta-content {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: #1D1D1F;
+        }
+
+        .cta-description {
+            font-size: 20px;
+            color: #6E6E73;
+            margin-bottom: 40px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 100px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #6C63FF;
+            color: #FFFFFF;
+            box-shadow: 0 4px 16px rgba(108, 99, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #5A52E0;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(108, 99, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(108, 99, 255, 0.08);
+            color: #6C63FF;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(108, 99, 255, 0.12);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Visual Prompts Section */
+        .visual-prompts {
+            padding: 80px 24px;
+            background: #F9FAFB;
+        }
+
+        .visual-prompt-card {
+            max-width: 900px;
+            margin: 0 auto 40px;
+            padding: 40px;
+            background: #FFFFFF;
+            border-radius: 24px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .visual-prompt-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1D1D1F;
+        }
+
+        .visual-prompt-text {
+            font-size: 16px;
+            color: #6E6E73;
+            line-height: 1.8;
+            font-family: 'SF Mono', 'Monaco', monospace;
+            background: rgba(108, 99, 255, 0.04);
+            padding: 24px;
+            border-radius: 12px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 20px 60px;
+            }
+
+            .section {
+                padding: 80px 20px;
+            }
+
+            .features-grid,
+            .industry-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .btn-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span>🤖</span>
+                <span>AI Agents Platform</span>
+            </div>
+            <h1>AI Agents That Deliver<br>150% ROI — Automatically</h1>
+            <p class="hero-subtitle">
+                Autonomous AI that makes decisions, takes action, and delivers measurable business results.
+                Automate 70-95% of workflows, save 20-40 hours per week, and reduce costs by 50%.
+            </p>
+            <div class="btn-group">
+                <a href="#contact" class="btn btn-primary">Start Your AI Journey</a>
+                <a href="#features" class="btn btn-secondary">See What's Possible</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-number">150%</div>
+            <div class="stat-label">ROI binnen 60 dagen</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">70-95%</div>
+            <div class="stat-label">Workflow automatisering</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">20-40h</div>
+            <div class="stat-label">Besparing per week</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">3×</div>
+            <div class="stat-label">Snellere responstijd</div>
+        </div>
+    </div>
+
+    <!-- What AI Agents Do -->
+    <section class="section">
+        <div class="section-header">
+            <div class="section-tag">Autonome AI</div>
+            <h2 class="section-title">Meer dan chatbots.<br>Echte AI-medewerkers.</h2>
+            <p class="section-description">
+                AI Agents nemen beslissingen, voeren acties uit, en werken autonoom binnen jouw systemen.
+                Van klantenservice tot logistiek — altijd aan, altijd accuraat.
+            </p>
+        </div>
+
+        <div class="features-grid" id="features">
+            <div class="feature-card">
+                <div class="feature-icon">🧠</div>
+                <h3 class="feature-title">Autonome Besluitvorming</h3>
+                <p class="feature-description">
+                    AI agents analyseren context, nemen beslissingen en handelen — zonder menselijke tussenkomst.
+                </p>
+                <ul class="feature-benefits">
+                    <li>Verwerk 1000+ verzoeken per dag</li>
+                    <li>97% nauwkeurigheid in beslissingen</li>
+                    <li>Leer en verbeter automatisch</li>
+                    <li>Reduceer fouten met 90%</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title">Real-time Acties</h3>
+                <p class="feature-description">
+                    Verbind met je systemen en laat AI direct acties uitvoeren — van orders tot afspraken.
+                </p>
+                <ul class="feature-benefits">
+                    <li>Shopify, WooCommerce, Magento integraties</li>
+                    <li>CRM & ticketing systemen</li>
+                    <li>Automatische data-sync</li>
+                    <li>Van uren naar seconden</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3 class="feature-title">EU Privacy & Veiligheid</h3>
+                <p class="feature-description">
+                    GDPR-compliant, on-device AI opties, en volledige controle over je data.
+                </p>
+                <ul class="feature-benefits">
+                    <li>Privacy by design</li>
+                    <li>Nederlandse servers beschikbaar</li>
+                    <li>End-to-end encryptie</li>
+                    <li>Audit logs & compliance</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3 class="feature-title">Data-gedreven Inzichten</h3>
+                <p class="feature-description">
+                    Analyseer patronen, voorspel trends, en optimaliseer processen met AI-dashboards.
+                </p>
+                <ul class="feature-benefits">
+                    <li>Real-time analytics</li>
+                    <li>Voorspellende modellen</li>
+                    <li>Automatische rapportage</li>
+                    <li>Verhoog productiviteit 20-45%</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
+                <h3 class="feature-title">Multi-channel Support</h3>
+                <p class="feature-description">
+                    Website, WhatsApp, Instagram, Messenger, telefonie — één AI, overal beschikbaar.
+                </p>
+                <ul class="feature-benefits">
+                    <li>24/7 beschikbaarheid</li>
+                    <li>Consistente ervaring</li>
+                    <li>Reduceer support kosten 50%</li>
+                    <li>CSAT score +22%</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔗</div>
+                <h3 class="feature-title">Workflow Automatisering</h3>
+                <p class="feature-description">
+                    Zapier, Make, custom APIs — verbind alles en automatiseer multi-step processen.
+                </p>
+                <ul class="feature-benefits">
+                    <li>Geen code nodig</li>
+                    <li>1000+ integraties</li>
+                    <li>Automatiseer 70-95% van taken</li>
+                    <li>Bespaar 20-30 uur per week</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Use Cases -->
+    <section class="section" style="background: #F9FAFB;">
+        <div class="section-header">
+            <div class="section-tag">Sectoren</div>
+            <h2 class="section-title">AI Agents voor elke industrie</h2>
+            <p class="section-description">
+                Van defensie tot e-commerce — AI agents leveren meetbare resultaten in elke sector.
+            </p>
+        </div>
+
+        <div class="industry-grid">
+            <div class="industry-card">
+                <h3 class="industry-title">🛡️ Defensie</h3>
+                <ul class="industry-examples">
+                    <li>Secure knowledge retrieval agents</li>
+                    <li>Classified search & intelligence briefs</li>
+                    <li>Automatische threat analysis</li>
+                </ul>
+                <div class="industry-roi">Reduceer research tijd 90%</div>
+            </div>
+
+            <div class="industry-card">
+                <h3 class="industry-title">🎓 Onderwijs</h3>
+                <ul class="industry-examples">
+                    <li>AI tutors & lesplan generators</li>
+                    <li>Automatische grading & feedback</li>
+                    <li>Student support 24/7</li>
+                </ul>
+                <div class="industry-roi">Bespaar docenten 40% tijd</div>
+            </div>
+
+            <div class="industry-card">
+                <h3 class="industry-title">🏥 Zorg & Mental Health</h3>
+                <ul class="industry-examples">
+                    <li>AI triage & intake automatisering</li>
+                    <li>Patiënt instructies & protocollen</li>
+                    <li>Admin workload reductie</li>
+                </ul>
+                <div class="industry-roi">Intake tijd -80%, admin -60%</div>
+            </div>
+
+            <div class="industry-card">
+                <h3 class="industry-title">🏛️ Overheid</h3>
+                <ul class="industry-examples">
+                    <li>Burgerservice bots</li>
+                    <li>Beleidsdocument analyse</li>
+                    <li>Begrijpelijke taal conversie</li>
+                </ul>
+                <div class="industry-roi">Verhoog toegankelijkheid 3×</div>
+            </div>
+
+            <div class="industry-card">
+                <h3 class="industry-title">💰 Finance & Banking</h3>
+                <ul class="industry-examples">
+                    <li>Rapport samenvattingen & analyse</li>
+                    <li>Risico detectie & compliance</li>
+                    <li>Customer onboarding automation</li>
+                </ul>
+                <div class="industry-roi">Compliance tijd -70%</div>
+            </div>
+
+            <div class="industry-card">
+                <h3 class="industry-title">🛍️ E-commerce</h3>
+                <ul class="industry-examples">
+                    <li>Productadvies & upsell agents</li>
+                    <li>Order tracking & retouren</li>
+                    <li>Review analyse & sentiment</li>
+                </ul>
+                <div class="industry-roi">Conversie +12-28%, support -50%</div>
+            </div>
+
+            <div class="industry-card">
+                <h3 class="industry-title">🍽️ Retail & Horeca</h3>
+                <ul class="industry-examples">
+                    <li>Reserveringen & tafelbeheer</li>
+                    <li>Menu aanbevelingen</li>
+                    <li>Klacht afhandeling</li>
+                </ul>
+                <div class="industry-roi">No-shows -40%, reviews +30%</div>
+            </div>
+
+            <div class="industry-card">
+                <h3 class="industry-title">💻 Tech & SaaS</h3>
+                <ul class="industry-examples">
+                    <li>Technical support automation</li>
+                    <li>Onboarding & training bots</li>
+                    <li>API documentation agents</li>
+                </ul>
+                <div class="industry-roi">Support tickets -60%</div>
+            </div>
+
+            <div class="industry-card">
+                <h3 class="industry-title">🏭 Manufacturing</h3>
+                <ul class="industry-examples">
+                    <li>Productie planning optimalisatie</li>
+                    <li>Quality control automation</li>
+                    <li>Supply chain intelligence</li>
+                </ul>
+                <div class="industry-roi">Downtime -35%, efficiency +25%</div>
+            </div>
+
+            <div class="industry-card">
+                <h3 class="industry-title">🚚 Logistiek</h3>
+                <ul class="industry-examples">
+                    <li>Route optimalisatie</li>
+                    <li>Anomaly detection</li>
+                    <li>Automatische rapportage</li>
+                </ul>
+                <div class="industry-roi">Kosten -20%, snelheid +30%</div>
+            </div>
+
+            <div class="industry-card">
+                <h3 class="industry-title">🏋️ Sport & Fitness</h3>
+                <ul class="industry-examples">
+                    <li>Persoonlijke training plannen</li>
+                    <li>Voedingsadvies automation</li>
+                    <li>Member engagement bots</li>
+                </ul>
+                <div class="industry-roi">Retention +25%, leads +2-4×</div>
+            </div>
+
+            <div class="industry-card">
+                <h3 class="industry-title">🏠 Real Estate</h3>
+                <ul class="industry-examples">
+                    <li>Bezichtiging scheduling</li>
+                    <li>Property matching agents</li>
+                    <li>Document processing</li>
+                </ul>
+                <div class="industry-roi">Lead response 10× sneller</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Prompts -->
+    <section class="visual-prompts">
+        <div class="section-header">
+            <div class="section-tag">Visual Design</div>
+            <h2 class="section-title">Premium Visual Prompts</h2>
+        </div>
+
+        <div class="visual-prompt-card">
+            <h3 class="visual-prompt-title">Visual Prompt 1: Hero Section</h3>
+            <p class="visual-prompt-text">
+                Flighty-style ultra-clean Apple-white composition. Floating iPhone 15 Pro displaying an AI agent
+                dashboard with real-time metrics (97% accuracy, 1,247 tasks completed, €12,450 saved). MacBook Pro
+                showing workflow automation interface with connected nodes. Premium soft shadows beneath devices.
+                Minimal blue/purple accent glow (#6C63FF). Hyper realistic UI mockups with clean typography. Pure white
+                background. Zero clutter. Feels like a €50k brand identity.
+            </p>
+        </div>
+
+        <div class="visual-prompt-card">
+            <h3 class="visual-prompt-title">Visual Prompt 2: Industry Showcase</h3>
+            <p class="visual-prompt-text">
+                Flighty-white aesthetic. Grid of floating iPad Pros, each displaying different industry AI agent
+                interfaces: healthcare triage screen, e-commerce product recommendation engine, logistics route
+                optimizer, finance risk dashboard. Devices arranged in elegant composition with soft natural shadows.
+                Soft gradient backgrounds per device (healthcare: soft blue, e-commerce: soft purple, logistics: soft
+                green). Minimal line icons. Clean sans-serif typography. Apple-level premium quality. Pure white
+                environment.
+            </p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2 class="cta-title">Klaar voor 150% ROI?</h2>
+            <p class="cta-description">
+                Start vandaag met AI agents die écht werken. Geen hype, alleen meetbare resultaten.
+            </p>
+            <div class="btn-group">
+                <a href="#contact" class="btn btn-primary">Plan een AI-sessie</a>
+                <a href="#cases" class="btn btn-secondary">Bekijk use cases</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

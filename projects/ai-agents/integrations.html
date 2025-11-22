@@ -13,6 +13,10 @@
     <link rel="stylesheet" href="../../assets/css/navigation.css">
     <link rel="stylesheet" href="../../assets/css/lucas-ai.css">
     <link rel="stylesheet" href="../../assets/css/footer.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -219,6 +223,12 @@
 
     </main>
 
+    <!-- Load AI Chatbot Component -->
+    <div id="ai-chatbot-component"></div>
+
+    <!-- Load Contact Component -->
+    <div id="contact-component"></div>
+
     <!-- Load Footer Component -->
     <div id="footer-component"></div>
 
@@ -226,7 +236,7 @@
         /* Component Loader */
         async function loadComponent(componentName, targetId) {
             try {
-                const response = await fetch(`../../components/${componentName}.html`);
+                const response = await fetch(`../../components/${componentName}.html?v=${new Date().getTime()}`);
                 if (!response.ok) throw new Error(`Failed to load ${componentName}`);
                 const html = await response.text();
                 document.getElementById(targetId).innerHTML = html;
@@ -249,6 +259,8 @@
         /* Load components */
         document.addEventListener('DOMContentLoaded', () => {
             loadComponent('navigation', 'navigation-component');
+            loadComponent('ai-chatbot', 'ai-chatbot-component');
+            loadComponent('contact', 'contact-component');
             loadComponent('footer', 'footer-component');
         });
     </script>

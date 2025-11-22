@@ -1,6 +1,6 @@
 /* ===================================
-   LUCAS AI PORTFOLIO - MAIN STYLES
-   Clean, light design inspired by sleak.chat
+   LUCAS AI PORTFOLIO - STYLES
+   Clean, light design inspired by premium apps
    =================================== */
 /* CSS Variables */
 :root {
@@ -16,7 +16,7 @@
   --glass-border: rgba(255, 255, 255, 0.2);
   --shadow: rgba(0, 0, 0, 0.04);
   --shadow-hover: rgba(0, 0, 0, 0.08);
-  
+
   /* Typography */
   --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-size-base: 16px;
@@ -27,23 +27,26 @@
   --font-size-3xl: 48px;
   --line-height: 1.6;
   --line-height-tight: 1.25;
-  
+
   /* Spacing */
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 1.5rem;
   --space-lg: 2rem;
-  --space-xl: 2rem;         /* Reduced from 3rem to 2rem */
-  --space-2xl: 2.5rem;      /* Reduced from 4rem to 2.5rem */
-  --space-3xl: 3.5rem;      /* Reduced from 6rem to 3.5rem */
-  
+  --space-xl: 2rem;
+  /* Reduced from 3rem to 2rem */
+  --space-2xl: 2.5rem;
+  /* Reduced from 4rem to 2.5rem */
+  --space-3xl: 3.5rem;
+  /* Reduced from 6rem to 3.5rem */
+
   /* Border radius */
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
   --radius-xl: 20px;
   --radius-2xl: 24px;
-  
+
   /* Transitions */
   --transition: all 0.2s ease;
   --transition-slow: all 0.3s ease;
@@ -75,7 +78,11 @@ body {
 }
 
 /* Force custom cursor globally (override defaults on links, inputs, etc.) */
-html, body, *, *::before, *::after {
+html,
+body,
+*,
+*::before,
+*::after {
   cursor: url('../../cursor-lucas.png'), auto !important;
 }
 
@@ -87,22 +94,25 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: 
+  background-image:
     radial-gradient(circle at 25% 25%, rgba(91, 141, 239, 0.04) 0%, transparent 30%),
     radial-gradient(circle at 75% 75%, rgba(154, 230, 180, 0.04) 0%, transparent 30%),
-    repeating-linear-gradient(
-      45deg,
+    repeating-linear-gradient(45deg,
       transparent,
       transparent 2px,
       rgba(15, 23, 42, 0.02) 2px,
-      rgba(15, 23, 42, 0.02) 4px
-    );
+      rgba(15, 23, 42, 0.02) 4px);
   z-index: -1;
   pointer-events: none;
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 600;
   line-height: var(--line-height-tight);
   color: var(--text);
@@ -228,7 +238,7 @@ a:focus {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  
+
   html {
     scroll-behavior: auto;
   }

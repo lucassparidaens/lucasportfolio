@@ -1,151 +1,25 @@
-<!-- Lucas AI Footer Component - Based on Skills Keyboard Implementation -->
-<footer class="relative bg-white/50 backdrop-blur-sm border-t border-slate-200/30 min-h-[400px] overflow-hidden">
+<!-- Lucas AI Footer Component - Links Only -->
+<footer class="relative bg-white/50 backdrop-blur-sm border-t border-slate-200/30 overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 py-10">
-        <!-- Initial State -->
-        <div id="footer-initial-state" class="text-center space-y-8">
-            <div>
-                <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
-                    Stel je laatste vraag aan Lucas AI
-                </h2>
-            </div>
-            
-            <div class="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white shadow-lg">
-                <img 
-                    src="assets/images/lucas-memoji.svg" 
-                    alt="Lucas Memoji" 
-                    class="w-full h-full object-cover"
-                />
-            </div>
-            
-            <div class="max-w-md mx-auto">
-                <div class="flex gap-2">
-                    <input 
-                        type="text" 
-                        id="footer-chat-input"
-                        placeholder="Ask me anything..." 
-                        class="flex-1 px-4 py-3 rounded-full border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#5B8DEF] focus:border-transparent"
-                    />
-                    <button 
-                        id="footer-send-btn"
-                        class="px-6 py-3 bg-gradient-to-r from-[#5B8DEF] to-[#9AE6B4] text-white rounded-full hover:shadow-lg transition-all duration-200"
-                    >
-                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                            <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            
-            <div class="flex flex-wrap justify-center gap-3">
-                <button data-action="me" class="footer-pill flex items-center gap-2 px-4 py-2 bg-white/70 hover:bg-white border border-slate-200 rounded-full text-slate-600 hover:text-[#5B8DEF] transition-all duration-200 backdrop-blur-sm">
-                    <span>👨‍💻</span>
-                    <span class="font-medium">Me</span>
-                </button>
-                <button data-action="projects" class="footer-pill flex items-center gap-2 px-4 py-2 bg-white/70 hover:bg-white border border-slate-200 rounded-full text-slate-600 hover:text-[#5B8DEF] transition-all duration-200 backdrop-blur-sm">
-                    <span>💼</span>
-                    <span class="font-medium">Projects</span>
-                </button>
-                <button data-action="skills" class="footer-pill flex items-center gap-2 px-4 py-2 bg-white/70 hover:bg-white border border-slate-200 rounded-full text-slate-600 hover:text-[#5B8DEF] transition-all duration-200 backdrop-blur-sm">
-                    <span>⚡</span>
-                    <span class="font-medium">Skills</span>
-                </button>
-                <button data-action="fun" class="footer-pill flex items-center gap-2 px-4 py-2 bg-white/70 hover:bg-white border border-slate-200 rounded-full text-slate-600 hover:text-[#5B8DEF] transition-all duration-200 backdrop-blur-sm">
-                    <span>🎮</span>
-                    <span class="font-medium">Fun</span>
-                </button>
-                <button data-action="contact" class="footer-pill flex items-center gap-2 px-4 py-2 bg-white/70 hover:bg-white border border-slate-200 rounded-full text-slate-600 hover:text-[#5B8DEF] transition-all duration-200 backdrop-blur-sm">
-                    <span>📧</span>
-                    <span class="font-medium">Contact</span>
-                </button>
-            </div>
-        </div>
-
-        <!-- Chat State (Hidden by default) -->
-        <div id="footer-chat-state" class="max-w-2xl mx-auto hidden">
-            <div class="flex items-center gap-3 mb-6">
-                <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-sm">
-                    <img 
-                        src="assets/images/lucas-memoji.svg" 
-                        alt="Lucas Memoji" 
-                        class="w-full h-full object-cover"
-                    />
-                </div>
-                <div>
-                    <h3 class="font-semibold text-slate-800">Lucas AI</h3>
-                    <p class="text-sm text-slate-500">Skills Keyboard Assistant</p>
-                </div>
-            </div>
-            
-            <div id="footer-messages" class="space-y-4 mb-6 max-h-64 overflow-y-auto">
-                <!-- Messages will be inserted here -->
-            </div>
-            
-            <!-- Typing Indicator -->
-            <div id="footer-typing" class="flex justify-start mb-4 hidden">
-                <div class="flex items-center gap-2 px-4 py-2 bg-white rounded-2xl border border-slate-200">
-                    <span class="text-slate-500">Lucas AI is aan het typen</span>
-                    <div class="flex gap-1">
-                        <div class="w-2 h-2 bg-slate-400 rounded-full animate-bounce"></div>
-                        <div class="w-2 h-2 bg-slate-400 rounded-full animate-bounce" style="animation-delay: 0.1s;"></div>
-                        <div class="w-2 h-2 bg-slate-400 rounded-full animate-bounce" style="animation-delay: 0.2s;"></div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="flex gap-2 mb-4">
-                <input 
-                    type="text" 
-                    id="footer-chat-input-active"
-                    placeholder="Type je vraag..." 
-                    class="flex-1 px-4 py-2 rounded-full border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#5B8DEF] focus:border-transparent"
-                />
-                <button 
-                    id="footer-send-btn-active"
-                    class="px-4 py-2 bg-gradient-to-r from-[#5B8DEF] to-[#9AE6B4] text-white rounded-full hover:shadow-lg transition-all duration-200"
-                >
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
-                        <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
-                    </svg>
-                </button>
-            </div>
-            
-            <div class="flex flex-wrap justify-center gap-2">
-                <button data-action="me" class="footer-pill-active flex items-center gap-1 px-3 py-1 bg-white/70 hover:bg-white border border-slate-200 rounded-full text-sm text-slate-600 hover:text-[#5B8DEF] transition-all duration-200">
-                    <span>👨‍💻</span>
-                    <span>Me</span>
-                </button>
-                <button data-action="projects" class="footer-pill-active flex items-center gap-1 px-3 py-1 bg-white/70 hover:bg-white border border-slate-200 rounded-full text-sm text-slate-600 hover:text-[#5B8DEF] transition-all duration-200">
-                    <span>💼</span>
-                    <span>Projects</span>
-                </button>
-                <button data-action="skills" class="footer-pill-active flex items-center gap-1 px-3 py-1 bg-white/70 hover:bg-white border border-slate-200 rounded-full text-sm text-slate-600 hover:text-[#5B8DEF] transition-all duration-200">
-                    <span>⚡</span>
-                    <span>Skills</span>
-                </button>
-                <button data-action="contact" class="footer-pill-active flex items-center gap-1 px-3 py-1 bg-white/70 hover:bg-white border border-slate-200 rounded-full text-sm text-slate-600 hover:text-[#5B8DEF] transition-all duration-200">
-                    <span>📧</span>
-                    <span>Contact</span>
-                </button>
-            </div>
-        </div>
-        
         <!-- Footer Links -->
-        <div class="mt-12 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
             <div class="flex items-center gap-2">
-                <a href="#hero" class="flex items-center gap-2 text-lg font-bold text-slate-800 hover:text-[#5B8DEF] transition-colors">
+                <a href="/"
+                    class="flex items-center gap-2 text-lg font-bold text-slate-800 hover:text-[#5B8DEF] transition-colors">
                     <div class="w-6 h-6 rounded-full overflow-hidden">
-                        <img src="assets/images/lucas-memoji.svg" alt="Lucas" class="w-full h-full object-cover" />
+                        <img src="/assets/images/lucas-memoji.svg" alt="Lucas" class="w-full h-full object-cover" />
                     </div>
                     LUCAS
                 </a>
                 <span class="text-slate-500">© 2024</span>
             </div>
-            
+
             <nav class="flex gap-6">
-                <a href="#hero" class="text-slate-600 hover:text-[#5B8DEF] transition-colors">Home</a>
-                <a href="#projects" class="text-slate-600 hover:text-[#5B8DEF] transition-colors">Projecten</a>
-                <a href="http://localhost:3001" class="text-slate-600 hover:text-[#5B8DEF] transition-colors" target="_blank">Skills</a>
-                <a href="#contact" class="text-slate-600 hover:text-[#5B8DEF] transition-colors">Contact</a>
+                <a href="/" class="text-slate-600 hover:text-[#5B8DEF] transition-colors">Home</a>
+                <a href="/#projects" class="text-slate-600 hover:text-[#5B8DEF] transition-colors">Projecten</a>
+                <a href="http://localhost:3001" class="text-slate-600 hover:text-[#5B8DEF] transition-colors"
+                    target="_blank">Skills</a>
+                <a href="/#contact" class="text-slate-600 hover:text-[#5B8DEF] transition-colors">Contact</a>
             </nav>
         </div>
     </div>

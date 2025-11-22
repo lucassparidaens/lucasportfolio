@@ -75,6 +75,30 @@
             </div>
         </section>
 
+        <!-- STATS SECTION -->
+        <section class="container" style="margin-top: -40px; position: relative; z-index: 10;">
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; background: var(--ai-surface); border: 1px solid var(--ai-border); backdrop-filter: blur(20px); border-radius: 24px; padding: 40px; box-shadow: var(--ai-shadow);">
+                <div style="text-align: center;">
+                    <div style="font-size: 36px; font-weight: 800; color: #60A5FA; margin-bottom: 8px;">120%</div>
+                    <div style="color: var(--ai-text-muted); font-size: 14px; font-weight: 500;">ROI in eerste jaar
+                    </div>
+                </div>
+                <div style="text-align: center; border-left: 1px solid var(--ai-border);">
+                    <div style="font-size: 36px; font-weight: 800; color: #60A5FA; margin-bottom: 8px;">50%</div>
+                    <div style="color: var(--ai-text-muted); font-size: 14px; font-weight: 500;">Betere reviews</div>
+                </div>
+                <div style="text-align: center; border-left: 1px solid var(--ai-border);">
+                    <div style="font-size: 36px; font-weight: 800; color: #60A5FA; margin-bottom: 8px;">92%</div>
+                    <div style="color: var(--ai-text-muted); font-size: 14px; font-weight: 500;">Automatisering</div>
+                </div>
+                <div style="text-align: center; border-left: 1px solid var(--ai-border);">
+                    <div style="font-size: 36px; font-weight: 800; color: #60A5FA; margin-bottom: 8px;">24/7</div>
+                    <div style="color: var(--ai-text-muted); font-size: 14px; font-weight: 500;">Beschikbaarheid</div>
+                </div>
+            </div>
+        </section>
+
         <!-- 2. OVER LUCAS AI -->
         <section class="section-padding">
             <div class="container">
@@ -116,7 +140,7 @@
         </section>
 
         <!-- 3. CORE SERVICES -->
-        <section class="section-padding" style="background: white;">
+        <section class="section-padding">
             <div class="container">
                 <div style="text-align: center; margin-bottom: 60px;">
                     <span class="ai-role-tag">DIENSTEN</span>
@@ -264,7 +288,7 @@
         </section>
 
         <!-- 5. PROCES -->
-        <section class="section-padding" style="background: white;">
+        <section class="section-padding">
             <div class="container">
                 <div style="text-align: center; margin-bottom: 60px;">
                     <span class="ai-role-tag">WERKWIJZE</span>
@@ -402,11 +426,31 @@
 
     </main>
 
+    <!-- EVI Integration -->
+    <section class="evi-section" id="evi-demo">
+        <div class="container">
+            <div class="evi-wrapper">
+                <iframe id="evi-iframe" src="http://localhost:3000" title="Lucas AI - Empathic Voice Interface Demo"
+                    allow="microphone; camera; autoplay" allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Load AI Chatbot Component (Legacy/Fallback) -->
+    <!-- <div id="ai-chatbot-component"></div> -->
+
+    <!-- Load Contact Component -->
+    <div id="contact-component"></div>
+
+    <!-- Load Footer Component -->
+    <div id="footer-component"></div>
+
     <script>
         /* Component Loader */
         async function loadComponent(componentName, targetId) {
             try {
-                const response = await fetch(`components/${componentName}.html`);
+                const response = await fetch(`components/${componentName}.html?v=${new Date().getTime()}`);
                 if (!response.ok) throw new Error(`Failed to load ${componentName}`);
                 const html = await response.text();
                 document.getElementById(targetId).innerHTML = html;
@@ -420,14 +464,22 @@
                     script.src = 'assets/js/main.js';
                     document.body.appendChild(script);
                 }
+                if (componentName === 'footer') {
+                    const footerScript = document.createElement('script');
+                    footerScript.src = 'assets/js/footer-chat.js';
+                    document.body.appendChild(footerScript);
+                }
             } catch (error) {
                 console.error(`Error loading component ${componentName}:`, error);
             }
         }
 
-        /* Load navigation component */
+        /* Load components */
         document.addEventListener('DOMContentLoaded', () => {
             loadComponent('navigation', 'navigation-component');
+            loadComponent('ai-chatbot', 'ai-chatbot-component');
+            loadComponent('contact', 'contact-component');
+            loadComponent('footer', 'footer-component');
         });
     </script>
 </body>

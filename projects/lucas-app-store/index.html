@@ -159,7 +159,7 @@
     <!-- Load Navigation -->
     <script>
         // Simple loader for the main navigation to keep consistency
-        fetch('../../components/navigation.html')
+        fetch(`../../components/navigation.html?v=${new Date().getTime()}`)
             .then(response => response.text())
             .then(html => {
                 document.getElementById('navigation-component').innerHTML = html;
