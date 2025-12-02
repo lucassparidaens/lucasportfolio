@@ -4,484 +4,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucas AI - AI Solutions & Automation</title>
+    <title>Lucas AI — Jouw eigen AI, gebouwd voor jouw bedrijf</title>
     <meta name="description"
-        content="Lucas AI ontwerpt, bouwt en implementeert AI-oplossingen zoals chatbots, automatiseringen en analyses. Maatwerk AI voor jouw bedrijf.">
+        content="Bespaar tijd, verhoog efficiëntie en laat AI het zware werk doen. Custom AI oplossingen voor bedrijven.">
 
-    <!-- Import existing CSS -->
+    <!-- Tailwind CSS (Utility) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Modular CSS Imports -->
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/navigation.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/lucas-ai.css">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Load Navigation Component -->
+    <!-- Navigation -->
     <div id="navigation-component"></div>
 
     <main>
-        <!-- 1. HERO SECTION -->
-        <section class="ai-hero">
-            <div class="container">
-                <div class="ai-hero__content">
-                    <div class="ai-hero__badge">
-                        <span>✨</span>
-                        <span>AI Solution Architect</span>
-                    </div>
-                    <h1 class="ai-hero__title">
-                        AI die jouw business <br>
-                        slimmer maakt
-                    </h1>
-                    <p class="ai-hero__subtitle">
-                        Ik ontwerp, bouw en implementeer AI-oplossingen zoals chatbots, automatiseringen, analyses en
-                        sector-specifieke AI-tools — volledig aangepast aan jouw bedrijf, jouw systemen en jouw
-                        workflows.
-                    </p>
-
-                    <div class="ai-hero__usp-list">
-                        <div class="ai-hero__usp-item">
-                            <div class="ai-hero__usp-icon">🤖</div>
-                            <span>AI-chatbots voor service & sales</span>
-                        </div>
-                        <div class="ai-hero__usp-item">
-                            <div class="ai-hero__usp-icon">⚡</div>
-                            <span>Automatiseringen voor elk systeem</span>
-                        </div>
-                        <div class="ai-hero__usp-item">
-                            <div class="ai-hero__usp-icon">📊</div>
-                            <span>AI-analyses van data & processen</span>
-                        </div>
-                        <div class="ai-hero__usp-item">
-                            <div class="ai-hero__usp-icon">🔒</div>
-                            <span>GDPR-ready & privacy-bewust</span>
-                        </div>
-                    </div>
-
-                    <div class="ai-btn-group">
-                        <a href="#contact" class="ai-btn ai-btn--primary">Ontdek jouw AI-kansen</a>
-                        <a href="#contact" class="ai-btn ai-btn--secondary">Plan een AI-sessie</a>
-                    </div>
+        <!-- Hero Section -->
+        <section class="hero visible">
+            <div class="container hero-content">
+                <div class="badge"
+                    style="margin-bottom: 20px; display: inline-block; background: #f5f5f7; padding: 8px 16px; border-radius: 20px; font-size: 14px; font-weight: 600; color: #0071e3;">
+                    ✨ Nieuw: AI voor Bedrijven
                 </div>
+                <h1>Jouw eigen AI,<br>gebouwd voor jouw bedrijf.</h1>
+                <p>Bespaar tijd, verhoog efficiëntie en laat AI het zware werk doen. Van slimme chatbots tot volledige
+                    workflow automatisering.</p>
 
-                <!-- Hero Image -->
-                <div class="ai-hero__image-wrapper">
-                    <img src="assets/images/ai-hero-illustration.png" alt="Lucas AI Solutions Visualization"
-                        class="ai-hero__image">
+                <div class="hero-buttons">
+                    <a href="#builder-section" class="btn btn-primary">Start Gratis Scan</a>
+                    <a href="#features" class="btn btn-secondary">Ontdek Mogelijkheden</a>
                 </div>
             </div>
-        </section>
 
-        <!-- STATS SECTION -->
-        <section class="container" style="margin-top: -40px; position: relative; z-index: 10;">
+            <!-- Abstract Visual Element (CSS only for performance) -->
             <div
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; background: var(--ai-surface); border: 1px solid var(--ai-border); backdrop-filter: blur(20px); border-radius: 24px; padding: 40px; box-shadow: var(--ai-shadow);">
-                <div style="text-align: center;">
-                    <div style="font-size: 36px; font-weight: 800; color: #60A5FA; margin-bottom: 8px;">120%</div>
-                    <div style="color: var(--ai-text-muted); font-size: 14px; font-weight: 500;">ROI in eerste jaar
-                    </div>
-                </div>
-                <div style="text-align: center; border-left: 1px solid var(--ai-border);">
-                    <div style="font-size: 36px; font-weight: 800; color: #60A5FA; margin-bottom: 8px;">50%</div>
-                    <div style="color: var(--ai-text-muted); font-size: 14px; font-weight: 500;">Betere reviews</div>
-                </div>
-                <div style="text-align: center; border-left: 1px solid var(--ai-border);">
-                    <div style="font-size: 36px; font-weight: 800; color: #60A5FA; margin-bottom: 8px;">92%</div>
-                    <div style="color: var(--ai-text-muted); font-size: 14px; font-weight: 500;">Automatisering</div>
-                </div>
-                <div style="text-align: center; border-left: 1px solid var(--ai-border);">
-                    <div style="font-size: 36px; font-weight: 800; color: #60A5FA; margin-bottom: 8px;">24/7</div>
-                    <div style="color: var(--ai-text-muted); font-size: 14px; font-weight: 500;">Beschikbaarheid</div>
-                </div>
+                style="width: 100%; max-width: 1000px; height: 400px; background: radial-gradient(circle at center, rgba(0,113,227,0.1) 0%, rgba(255,255,255,0) 70%); margin-top: -100px; z-index: -1; pointer-events: none;">
             </div>
         </section>
 
-        <!-- 2. OVER LUCAS AI -->
-        <section class="section-padding">
+        <!-- Features Grid -->
+        <section id="features">
             <div class="container">
-                <div class="ai-about">
-                    <div class="ai-about__grid">
-                        <div class="ai-about__content">
-                            <span class="ai-role-tag" style="margin-bottom: 16px; display: inline-block;">OVER LUCAS
-                                AI</span>
-                            <h2>Meer dan alleen code. <br>Ik bouw oplossingen.</h2>
-                            <p style="color: var(--ai-text-muted); margin-bottom: 24px;">
-                                Met 7+ jaar ervaring in marketing, automatisering en development, zet ik AI in voor
-                                praktische, meetbare bedrijfsresultaten. Geen hype, maar tools die werken.
-                            </p>
-
-                            <div class="ai-about__roles">
-                                <span class="ai-role-tag">AI-solution builder</span>
-                                <span class="ai-role-tag">Automation architect</span>
-                                <span class="ai-role-tag">Chatbot specialist</span>
-                                <span class="ai-role-tag">Sectorbreed adviseur</span>
-                                <span class="ai-role-tag">Privacy-minded dev</span>
-                            </div>
-                        </div>
-                        <div class="ai-about__tools">
-                            <h3 style="font-size: 18px; margin-bottom: 16px;">Mijn Tech Stack</h3>
-                            <div class="ai-tools-grid">
-                                <div class="ai-tool-item">ChatGPT</div>
-                                <div class="ai-tool-item">Claude</div>
-                                <div class="ai-tool-item">Gemini</div>
-                                <div class="ai-tool-item">Mistral</div>
-                                <div class="ai-tool-item">Zapier</div>
-                                <div class="ai-tool-item">Make</div>
-                                <div class="ai-tool-item">Shopify</div>
-                                <div class="ai-tool-item">Python</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. CORE SERVICES -->
-        <section class="section-padding">
-            <div class="container">
-                <div style="text-align: center; margin-bottom: 60px;">
-                    <span class="ai-role-tag">DIENSTEN</span>
-                    <h2 style="font-size: 40px; margin-top: 16px;">Wat ik bouw met AI</h2>
+                <div class="text-center" style="max-width: 600px; margin: 0 auto 60px;">
+                    <h2>Alles wat je nodig hebt om te groeien.</h2>
+                    <p>Geen ingewikkelde tech-talk, maar concrete oplossingen die direct resultaat leveren.</p>
                 </div>
 
-                <div class="ai-services__grid">
-                    <!-- 3.1 Chatbots -->
-                    <div class="ai-service-card">
-                        <span class="ai-service-icon">💬</span>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <span class="feature-icon">🤖</span>
                         <h3>AI Chatbots</h3>
-                        <p style="color: var(--ai-text-muted);">Voor klantenservice, sales en interne teams.</p>
-                        <ul class="ai-service-list">
-                            <li><strong>Klantenservice:</strong> FAQ, retour-status, 24/7 support</li>
-                            <li><strong>Sales:</strong> Productadvies, upsell funnels</li>
-                            <li><strong>Intern:</strong> HR-vragen, knowledge base assistants</li>
-                            <li><strong>Integraties:</strong> Shopify, WordPress, Zendesk, Slack</li>
-                        </ul>
+                        <p>24/7 klantenservice die nooit slaapt. Beantwoord vragen direct en verhoog klanttevredenheid.
+                        </p>
                     </div>
-
-                    <!-- 3.2 Automatisering -->
-                    <div class="ai-service-card">
-                        <span class="ai-service-icon">⚡</span>
-                        <h3>Automatisering & Workflows</h3>
-                        <p style="color: var(--ai-text-muted);">Slimme koppelingen die tijd besparen.</p>
-                        <ul class="ai-service-list">
-                            <li>Supporttickets automatisch indelen</li>
-                            <li>Productbeschrijvingen genereren & vertalen</li>
-                            <li>Leads kwalificeren & checken</li>
-                            <li>Marketingcampagnes analyseren</li>
-                            <li><strong>Tools:</strong> Zapier, Make, Shopify Flow, API's</li>
-                        </ul>
+                    <div class="feature-card">
+                        <span class="feature-icon">⚡</span>
+                        <h3>Workflow Automatisering</h3>
+                        <p>Verbind je favoriete apps en automatiseer saaie taken. Van facturatie tot e-mail marketing.
+                        </p>
                     </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🧠</span>
+                        <h3>Kennisbank AI</h3>
+                        <p>Maak je bedrijfsdata doorzoekbaar. Vind documenten en antwoorden in seconden.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">📈</span>
+                        <h3>Data Analyse</h3>
+                        <p>Zet ruwe data om in inzichten. Voorspel trends en neem betere beslissingen.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <!-- 3.3 Analyses -->
-                    <div class="ai-service-card">
-                        <span class="ai-service-icon">📊</span>
-                        <h3>AI-Analyses & Data</h3>
-                        <p style="color: var(--ai-text-muted);">Van ruwe data naar heldere inzichten.</p>
-                        <ul class="ai-service-list">
-                            <li>Reviews & feedback analyseren</li>
-                            <li>Documenten & contracten uitlezen</li>
-                            <li>Rapportages in mensentaal</li>
-                            <li>Dashboards & actiepunten</li>
-                            <li>Segmentaties & voorspellingen</li>
-                        </ul>
-                        <div style="margin-top: 20px;">
-                            <img src="assets/images/ai-dashboard.png" alt="Dashboard Mockup"
-                                style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+        <!-- Interactive Builder Section -->
+        <section id="builder-section" class="builder-section">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 60px;">
+                    <h2>Bouw jouw oplossing.</h2>
+                    <p>Beantwoord 3 simpele vragen en krijg direct een voorstel op maat.</p>
+                </div>
+
+                <div class="builder-container">
+                    <!-- The existing JS will target this ID -->
+                    <div id="ai-builder-module">
+                        <!-- Steps Indicator -->
+                        <div class="ai-builder-steps">
+                            <div class="ai-step active" data-step="1">1</div>
+                            <div class="ai-step" data-step="2">2</div>
+                            <div class="ai-step" data-step="3">3</div>
                         </div>
-                    </div>
 
-                    <!-- 3.4 Maatwerk -->
-                    <div class="ai-service-card">
-                        <span class="ai-service-icon">🛠️</span>
-                        <h3>Maatwerk & Sector Tools</h3>
-                        <p style="color: var(--ai-text-muted);">Specifieke oplossingen voor jouw branche.</p>
-                        <ul class="ai-service-list">
-                            <li>Zorg: Protocollen uitleggen</li>
-                            <li>Legal: Documenten vergelijken</li>
-                            <li>HR: Onboarding & communicatie</li>
-                            <li>Logistiek: Planning & anomalies</li>
-                            <li>Finance: Risico-indicatoren</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. SECTOREN -->
-        <section class="section-padding">
-            <div class="container">
-                <div style="text-align: center; margin-bottom: 60px;">
-                    <span class="ai-role-tag">SECTOREN</span>
-                    <h2 style="font-size: 40px; margin-top: 16px;">Voor wie is Lucas AI?</h2>
-                </div>
-
-                <div class="ai-sectors__grid">
-                    <div class="ai-sector-card">
-                        <h3>🏥 Zorg & Gezondheid</h3>
-                        <ul>
-                            <li>Protocol uitleg bots</li>
-                            <li>Safe-by-design info</li>
-                            <li>Admin ondersteuning</li>
-                        </ul>
-                    </div>
-                    <div class="ai-sector-card">
-                        <h3>💰 Finance & Banken</h3>
-                        <ul>
-                            <li>Rapport samenvattingen</li>
-                            <li>Risico analyses</li>
-                            <li>Compliance assistenten</li>
-                        </ul>
-                    </div>
-                    <div class="ai-sector-card">
-                        <h3>🏛️ Overheid</h3>
-                        <ul>
-                            <li>Beleidsdocumenten</li>
-                            <li>Burgerservice bots</li>
-                            <li>Begrijpelijke taal</li>
-                        </ul>
-                    </div>
-                    <div class="ai-sector-card">
-                        <h3>🛍️ E-commerce</h3>
-                        <ul>
-                            <li>Productadvies bots</li>
-                            <li>Review analyses</li>
-                            <li>Marketing flows</li>
-                        </ul>
-                    </div>
-                    <div class="ai-sector-card">
-                        <h3>🚚 Logistiek</h3>
-                        <ul>
-                            <li>AI-planning</li>
-                            <li>Slimme rapportage</li>
-                            <li>Anomaly detection</li>
-                        </ul>
-                    </div>
-                    <div class="ai-sector-card">
-                        <h3>🎓 Onderwijs</h3>
-                        <ul>
-                            <li>AI tutors</li>
-                            <li>Lesstof samenvatten</li>
-                            <li>Toetsanalyse</li>
-                        </ul>
-                    </div>
-                    <div class="ai-sector-card">
-                        <h3>⚖️ Legal</h3>
-                        <ul>
-                            <li>Contractanalyse</li>
-                            <li>Clausule vergelijking</li>
-                            <li>Memo-assistent</li>
-                        </ul>
-                    </div>
-                    <div class="ai-sector-card">
-                        <h3>👥 HR & Bedrijf</h3>
-                        <ul>
-                            <li>Onboarding bots</li>
-                            <li>Policy uitleg</li>
-                            <li>Flow automatisering</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. PROCES -->
-        <section class="section-padding">
-            <div class="container">
-                <div style="text-align: center; margin-bottom: 60px;">
-                    <span class="ai-role-tag">WERKWIJZE</span>
-                    <h2 style="font-size: 40px; margin-top: 16px;">Het AI-traject</h2>
-                    <p style="color: var(--ai-text-muted);">Simpel, helder en resultaatgericht.</p>
-                </div>
-
-                <div style="max-width: 800px; margin: 0 auto 60px auto;">
-                    <img src="assets/images/ai-process-flow.png" alt="AI Process Flow"
-                        style="width: 100%; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-                </div>
-
-                <div class="ai-process__steps">
-                    <div class="ai-step-card">
-                        <div class="ai-step-number">1</div>
-                        <h3>Discovery Call</h3>
-                        <p style="font-size: 14px; color: var(--ai-text-muted);">Kennismaking & doelen.</p>
-                    </div>
-                    <div class="ai-step-card">
-                        <div class="ai-step-number">2</div>
-                        <h3>Analyse</h3>
-                        <p style="font-size: 14px; color: var(--ai-text-muted);">Processen & systemen.</p>
-                    </div>
-                    <div class="ai-step-card">
-                        <div class="ai-step-number">3</div>
-                        <h3>Blueprint</h3>
-                        <p style="font-size: 14px; color: var(--ai-text-muted);">Architectuur & plan.</p>
-                    </div>
-                    <div class="ai-step-card">
-                        <div class="ai-step-number">4</div>
-                        <h3>Bouw</h3>
-                        <p style="font-size: 14px; color: var(--ai-text-muted);">Development & integratie.</p>
-                    </div>
-                    <div class="ai-step-card">
-                        <div class="ai-step-number">5</div>
-                        <h3>Training</h3>
-                        <p style="font-size: 14px; color: var(--ai-text-muted);">Fine-tuning modellen.</p>
-                    </div>
-                    <div class="ai-step-card">
-                        <div class="ai-step-number">6</div>
-                        <h3>Live</h3>
-                        <p style="font-size: 14px; color: var(--ai-text-muted);">Monitoring & optimalisatie.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. WAAROM LUCAS AI & FAQ -->
-        <section class="section-padding">
-            <div class="container">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px;">
-                    <!-- USP -->
-                    <div>
-                        <span class="ai-role-tag" style="margin-bottom: 24px; display: inline-block;">WAAROM LUCAS
-                            AI?</span>
-                        <div class="ai-usp-grid" style="grid-template-columns: 1fr; gap: 24px;">
-                            <div class="ai-usp-item">
-                                <div class="ai-usp-icon">🚀</div>
-                                <div>
-                                    <h3>Resultaatgericht</h3>
-                                    <p style="color: var(--ai-text-muted); font-size: 14px;">Geen hype, maar echte
-                                        oplossingen die werken.</p>
+                        <!-- Step 1: Goal -->
+                        <div class="ai-interactive-step-content active" id="step-1">
+                            <h3 class="text-center" style="margin-bottom: 30px;">Wat is je belangrijkste doel?</h3>
+                            <div class="ai-options-grid">
+                                <div class="ai-option-card">
+                                    <span class="ai-option-icon">⚡</span>
+                                    <span class="ai-option-title">Efficiëntie</span>
+                                    <span class="ai-option-desc">Tijd besparen</span>
                                 </div>
-                            </div>
-                            <div class="ai-usp-item">
-                                <div class="ai-usp-icon">🔒</div>
-                                <div>
-                                    <h3>Privacy First</h3>
-                                    <p style="color: var(--ai-text-muted); font-size: 14px;">Veiligheid en GDPR staan
-                                        centraal in elk ontwerp.</p>
+                                <div class="ai-option-card">
+                                    <span class="ai-option-icon">💰</span>
+                                    <span class="ai-option-title">Omzet</span>
+                                    <span class="ai-option-desc">Meer verkoop</span>
                                 </div>
-                            </div>
-                            <div class="ai-usp-item">
-                                <div class="ai-usp-icon">⚡</div>
-                                <div>
-                                    <h3>Snel & Flexibel</h3>
-                                    <p style="color: var(--ai-text-muted); font-size: 14px;">Korte lijnen, snelle
-                                        turnaround. Van startup tot enterprise.</p>
-                                </div>
-                            </div>
-                            <div class="ai-usp-item">
-                                <div class="ai-usp-icon">🧠</div>
-                                <div>
-                                    <h3>Business + Tech</h3>
-                                    <p style="color: var(--ai-text-muted); font-size: 14px;">De brug tussen technische
-                                        mogelijkheden en bedrijfsdoelen.</p>
+                                <div class="ai-option-card">
+                                    <span class="ai-option-icon">🤝</span>
+                                    <span class="ai-option-title">Service</span>
+                                    <span class="ai-option-desc">Klanttevredenheid</span>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- FAQ -->
-                    <div>
-                        <span class="ai-role-tag" style="margin-bottom: 24px; display: inline-block;">VEELGESTELDE
-                            VRAGEN</span>
-                        <div class="ai-faq-grid" style="grid-template-columns: 1fr; gap: 16px;">
-                            <div class="ai-faq-item">
-                                <h3>Hoe snel kan je iets live zetten?</h3>
-                                <p>Afhankelijk van de complexiteit, vaak al binnen 1-2 weken een eerste versie.</p>
+                        <!-- Step 2: Tools -->
+                        <div class="ai-interactive-step-content" id="step-2">
+                            <h3 class="text-center" style="margin-bottom: 30px;">Welke tools gebruik je?</h3>
+                            <div class="ai-options-grid">
+                                <div class="ai-option-card">
+                                    <span class="ai-option-icon">📧</span>
+                                    <span class="ai-option-title">Email</span>
+                                </div>
+                                <div class="ai-option-card">
+                                    <span class="ai-option-icon">💬</span>
+                                    <span class="ai-option-title">Slack/Teams</span>
+                                </div>
+                                <div class="ai-option-card">
+                                    <span class="ai-option-icon">📊</span>
+                                    <span class="ai-option-title">Excel/CRM</span>
+                                </div>
                             </div>
-                            <div class="ai-faq-item">
-                                <h3>Hoe werkt AI met Shopify / WordPress?</h3>
-                                <p>Ik bouw naadloze integraties via API's en tools als Zapier, zodat het voelt als één
-                                    systeem.</p>
+                        </div>
+
+                        <!-- Step 3: Proposal -->
+                        <div class="ai-interactive-step-content" id="step-3">
+                            <div class="text-center">
+                                <h3 style="margin-bottom: 20px;">Jouw Advies</h3>
+                                <div class="feature-card" style="background: #f0f8ff; border: 1px solid #0071e3;">
+                                    <h4 style="color: #0071e3; margin-bottom: 10px;">Custom AI Agent</h4>
+                                    <p style="margin-bottom: 20px;">Op basis van jouw keuzes bouwen we een agent die
+                                        jouw tools koppelt en taken automatiseert.</p>
+                                    <ul
+                                        style="text-align: left; list-style: none; padding: 0; margin: 0 auto; display: inline-block;">
+                                        <li style="margin-bottom: 8px;">✅ 24/7 Beschikbaar</li>
+                                        <li style="margin-bottom: 8px;">✅ Koppeling met jouw tools</li>
+                                        <li>✅ Direct resultaat</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="ai-faq-item">
-                                <h3>Is AI veilig voor mijn data?</h3>
-                                <p>Absoluut. Ik werk volgens 'Privacy by Design' principes en zorg dat data veilig
-                                    blijft.</p>
-                            </div>
-                            <div class="ai-faq-item">
-                                <h3>Wat kost een AI-chatbot?</h3>
-                                <p>Dit is maatwerk. We starten vaak met een MVP om waarde te bewijzen, daarna schalen we
-                                    op.</p>
-                            </div>
+                        </div>
+
+                        <!-- Navigation -->
+                        <div class="ai-cta-group">
+                            <button id="ai-back-btn" class="btn btn-secondary" style="display: none;">Terug</button>
+                            <button id="ai-next-btn" class="btn btn-primary">Volgende</button>
+                            <a href="mailto:lucas@example.com" id="ai-final-cta-btn" class="btn btn-primary"
+                                style="display: none;">Vraag Offerte Aan</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 7. CTA -->
-        <section class="container" style="padding-bottom: 100px;">
-            <div class="ai-cta">
-                <h2>Klaar om AI écht voor je te laten werken?</h2>
-                <p>Ontdek welke taken, processen of sectoruitdagingen we vandaag al kunnen automatiseren.</p>
-                <div class="ai-btn-group" style="justify-content: center;">
-                    <a href="#contact" class="ai-btn ai-btn--secondary">Start je AI-traject</a>
-                    <a href="#contact" class="ai-btn"
-                        style="background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.4);">Vraag
-                        een demo aan</a>
+        <!-- ROI / Stats Section -->
+        <section>
+            <div class="container">
+                <div class="text-center">
+                    <h2>Bewezen resultaat.</h2>
                 </div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>40%</h3>
+                        <p>Minder tijd aan admin</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>24/7</h3>
+                        <p>Beschikbaarheid</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>3x</h3>
+                        <p>Snellere respons</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="text-center" style="padding-bottom: 160px;">
+            <div class="container">
+                <h2>Klaar voor de toekomst?</h2>
+                <p style="margin-bottom: 40px;">Start vandaag nog met het optimaliseren van je bedrijf.</p>
+                <a href="mailto:lucas@example.com" class="btn btn-primary">Neem Contact Op</a>
             </div>
         </section>
 
     </main>
 
-    <!-- EVI Integration -->
-    <section class="evi-section" id="evi-demo">
-        <div class="container">
-            <div class="evi-wrapper">
-                <iframe id="evi-iframe" src="http://localhost:3000" title="Lucas AI - Empathic Voice Interface Demo"
-                    allow="microphone; camera; autoplay" allowfullscreen>
-                </iframe>
-            </div>
-        </div>
-    </section>
-
-    <!-- Load AI Chatbot Component (Legacy/Fallback) -->
-    <!-- <div id="ai-chatbot-component"></div> -->
-
-    <!-- Load Contact Component -->
-    <div id="contact-component"></div>
-
-    <!-- Load Footer Component -->
+    <!-- Footer -->
     <div id="footer-component"></div>
 
+    <!-- Modals -->
+    <div id="modals-component"></div>
+
+    <!-- Scripts -->
     <script>
-        /* Component Loader */
+        // Component Loader
         async function loadComponent(componentName, targetId) {
             try {
                 const response = await fetch(`components/${componentName}.html?v=${new Date().getTime()}`);
                 if (!response.ok) throw new Error(`Failed to load ${componentName}`);
                 const html = await response.text();
                 document.getElementById(targetId).innerHTML = html;
-
-                // Re-initialize navigation scripts if needed
-                if (componentName === 'navigation') {
-                    // Check if main.js is loaded, if not, we might need to manually init nav
-                    // But usually main.js handles the event listeners on DOMContentLoaded
-                    // Since we load async, we might need to re-trigger or manually bind
-                    const script = document.createElement('script');
-                    script.src = 'assets/js/main.js';
-                    document.body.appendChild(script);
-                }
-                if (componentName === 'footer') {
-                    const footerScript = document.createElement('script');
-                    footerScript.src = 'assets/js/footer-chat.js';
-                    document.body.appendChild(footerScript);
-                }
             } catch (error) {
                 console.error(`Error loading component ${componentName}:`, error);
             }
         }
 
-        /* Load components */
+        async function loadAllComponents() {
+            await loadComponent('navigation', 'navigation-component');
+            await loadComponent('footer', 'footer-component');
+            await loadComponent('modals', 'modals-component');
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
-            loadComponent('navigation', 'navigation-component');
-            loadComponent('ai-chatbot', 'ai-chatbot-component');
-            loadComponent('contact', 'contact-component');
-            loadComponent('footer', 'footer-component');
+            loadAllComponents();
+
+            // Scroll Animation Observer
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('section').forEach(section => {
+                observer.observe(section);
+            });
         });
     </script>
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/lucas-ai.js" defer></script>
+    <script src="assets/js/footer-chat.js" defer></script>
 </body>
 
 </html>

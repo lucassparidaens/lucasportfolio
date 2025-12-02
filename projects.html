@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects — Lucas AI Portfolio</title>
+    <meta name="description" content="Explore my projects in a classic Macintosh interface.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Modular CSS Imports -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/navigation.css">
+    <link rel="stylesheet" href="assets/css/system7.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/projects.css">
+
+    <style>
+        /* Page specific styles */
+        body {
+            background-color: #ffffff;
+            /* Pure white as requested */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <div id="navigation-component"></div>
+
+    <main class="main">
+        <section class="projects-hero">
+            <div class="section__container">
+                <div class="interactive-story-container">
+                    <div class="rich-text-block">
+                        <p class="rich-text-line">
+                            When you were a kid, heading to the airport was magical. An adventure.
+                            <span class="inline-icon-wrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="inline-icon icon-sparkle">
+                                    <path
+                                        d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+                                </svg>
+                            </span>
+                        </p>
+                        <p class="rich-text-line dimmed">
+                            Now, it feels like guesswork. Trip-changing delays.
+                            <span class="inline-badge badge-yellow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <polyline points="12 6 12 12 16 14" />
+                                </svg>
+                            </span>
+                            Last-minute gate changes.
+                            <span class="inline-badge badge-yellow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
+                                    <path d="M12 9v4" />
+                                    <path d="M12 17h.01" />
+                                </svg>
+                            </span>
+                            Tight-lipped gate agents. Does it really need to feel so stressful?
+                        </p>
+                        <p class="rich-text-line">
+                            We were frustrated, too.
+                        </p>
+                        <p class="rich-text-line">
+                            And as flight nerds, we know that there’s way more information about your flight than what
+                            your airline tells you. Tired of the status quo, we created Flighty.
+                            <span class="inline-icon-wrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="inline-icon icon-computer">
+                                    <rect width="20" height="14" x="2" y="3" rx="2" />
+                                    <line x1="8" x2="16" y1="21" y2="21" />
+                                    <line x1="12" x2="12" y1="17" y2="21" />
+                                </svg>
+                            </span>
+                        </p>
+                        <p class="rich-text-line dimmed">
+                            We track the main causes of flight delays to predict delays in advance. Tell you about
+                            official airport conditions.
+                            <span class="inline-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                    height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" class="inline-icon">
+                                    <path d="M17.5 19c0-1.7-1.3-3-3-3c-1.1 0-2 .6-2.6 1.5c-.4.6-.5 1.3-.3 2" />
+                                    <path
+                                        d="M22 11.5A5.5 5.5 0 0 0 16.5 6c-1.6 0-3 .7-4 1.8c-1-1.1-2.4-1.8-4-1.8A5.5 5.5 0 0 0 3 11.5C3 14.5 5.5 17 8.5 17c.6 0 1.2-.1 1.8-.3" />
+                                    <path d="M8 19v2" />
+                                    <path d="M8 13v2" />
+                                    <path d="M12 19v2" />
+                                    <path d="M12 13v2" />
+                                </svg></span>
+                            Send you helpful notifications on the move.
+                            <span class="inline-badge badge-red">5</span>
+                            Let you share your flying with family and friends.
+                        </p>
+                        <p class="rich-text-line">
+                            Flighty is how millions of flyers enjoy flying with peace of mind again, at last.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Reusing the System 7 Component Structure directly here for control -->
+                <div class="macintosh-computer">
+                    <div class="mac-monitor">
+                        <div class="mac-screen-bezel">
+                            <div class="system7-desktop" id="system7-desktop">
+                                <!-- Menu Bar -->
+                                <div class="system7-menubar">
+                                    <div class="menubar-item apple-menu" onclick="System7.toggleAppleMenu()">
+                                        <span class="apple-logo">🍎</span>
+                                    </div>
+                                    <div class="menubar-item file-menu" onclick="System7.toggleFileMenu()">File</div>
+                                    <div class="menubar-item edit-menu">Edit</div>
+                                    <div class="menubar-spacer"></div>
+                                    <div class="menubar-time" id="system7-time">12:00</div>
+                                </div>
+
+                                <!-- Apple Menu Dropdown -->
+                                <div class="system7-dropdown apple-dropdown" id="apple-dropdown" style="display: none;">
+                                    <div class="dropdown-item" onclick="System7.showAbout()">About Lucas Portfolio...
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <div class="dropdown-item" onclick="System7.openCalculator()">🧮 Calculator</div>
+                                    <div class="dropdown-item" onclick="System7.openProjects()">📁 Projects</div>
+                                    <div class="dropdown-item" onclick="System7.openSkills()">⚡ Skills</div>
+                                </div>
+
+                                <!-- File Menu Dropdown -->
+                                <div class="system7-dropdown file-dropdown" id="file-dropdown" style="display: none;">
+                                    <div class="dropdown-item" onclick="System7.openItem()">Open ⌘O</div>
+                                    <div class="dropdown-divider"></div>
+                                    <div class="dropdown-item" onclick="System7.closeWindow()">Close Window ⌘W</div>
+                                </div>
+
+                                <!-- Desktop Icons -->
+                                <div class="system7-icons">
+                                    <div class="desktop-icon" onclick="System7.openProjects()"
+                                        oncontextmenu="return false;">
+                                        <div class="icon-image">📁</div>
+                                        <div class="icon-label">Projects</div>
+                                    </div>
+                                    <div class="desktop-icon" onclick="System7.openSkills()"
+                                        oncontextmenu="return false;">
+                                        <div class="icon-image">⚡</div>
+                                        <div class="icon-label">Skills</div>
+                                    </div>
+                                    <div class="desktop-icon" onclick="System7.openTrash()"
+                                        oncontextmenu="return false;">
+                                        <div class="icon-image">🗑️</div>
+                                        <div class="icon-label">Trash</div>
+                                    </div>
+                                </div>
+
+                                <!-- Windows Container -->
+                                <div class="system7-windows" id="system7-windows"></div>
+                            </div>
+                        </div>
+                        <div class="mac-monitor-base"></div>
+                    </div>
+                    <div class="mac-base">
+                        <div class="mac-disk-slot"></div>
+                        <div class="mac-logo">
+                            <span>Lucas Portfolio Computer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-component"></div>
+
+    <!-- Modals -->
+    <div id="modals-component"></div>
+
+    <!-- About Dialog (Hidden) -->
+    <div class="system7-modal" id="about-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-close" onclick="System7.closeModal('about-modal')">×</div>
+                <div class="modal-title">About Lucas Portfolio</div>
+            </div>
+            <div class="modal-body">
+                <div class="about-icon">💻</div>
+                <h3>Lucas Portfolio System 7</h3>
+                <p>Version 1.0</p>
+                <p>Built with HTML, CSS & JavaScript</p>
+                <p>© 2024 Lucas Rijnen</p>
+                <div class="about-memory">
+                    <p>Memory: 32MB Available</p>
+                    <p>System: Web Browser OS</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Component Loader (Simplified for this page)
+        async function loadComponent(componentName, targetId) {
+            try {
+                const response = await fetch(`components/${componentName}.html?v=${new Date().getTime()}`);
+                if (!response.ok) throw new Error(`Failed to load ${componentName}`);
+                const html = await response.text();
+                document.getElementById(targetId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error loading component ${componentName}:`, error);
+            }
+        }
+
+        async function loadAllComponents() {
+            await loadComponent('navigation', 'navigation-component');
+            await loadComponent('footer', 'footer-component');
+            await loadComponent('modals', 'modals-component');
+
+            // Initialize System 7
+            if (window.System7) {
+                window.System7.init();
+                // Auto open projects window after a delay
+                setTimeout(() => {
+                    window.System7.openProjects();
+                }, 1500);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadAllComponents);
+    </script>
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/system7.js" defer></script>
+    <script src="assets/js/footer-chat.js" defer></script>
+</body>
+
+</html>

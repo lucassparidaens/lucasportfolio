@@ -1,0 +1,272 @@
+/* Projects Page Specific Styles */
+
+/* Hero Section */
+.projects-hero {
+    padding: 4rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.section__container {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+/* Interactive Story Container */
+.interactive-story-container {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.rich-text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.rich-text-line {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.6;
+    color: #1d1d1f;
+    margin: 0;
+    opacity: 0;
+    /* Start hidden for animation */
+    transform: translateY(20px);
+    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.rich-text-line.dimmed {
+    color: #86868b;
+    font-weight: 500;
+}
+
+.rich-text-line.highlight {
+    color: #000000;
+    font-weight: 700;
+}
+
+/* Animation Delays */
+.rich-text-line:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.rich-text-line:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.rich-text-line:nth-child(3) {
+    animation-delay: 1.0s;
+}
+
+.rich-text-line:nth-child(4) {
+    animation-delay: 1.4s;
+}
+
+.rich-text-line:nth-child(5) {
+    animation-delay: 1.8s;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Inline Icons & Badges */
+.inline-icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    margin-left: 0.25rem;
+}
+
+.inline-icon {
+    width: 1.5em;
+    height: 1.5em;
+    color: #000;
+}
+
+.icon-sparkle {
+    color: #FFD700;
+    fill: #FFD700;
+}
+
+/* Gold */
+.icon-joystick {
+    color: #FF453A;
+}
+
+/* Red */
+.icon-computer {
+    color: #0A84FF;
+}
+
+/* Blue */
+
+.inline-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2em 0.6em;
+    border-radius: 999px;
+    vertical-align: middle;
+    margin: 0 0.2rem;
+    font-size: 0.8em;
+    height: 1.8em;
+    min-width: 1.8em;
+}
+
+.badge-yellow {
+    background-color: #FFD60A;
+    color: #000;
+}
+
+.badge-red {
+    background-color: #FF453A;
+    color: #fff;
+}
+
+.badge-gray {
+    background-color: #E5E5EA;
+    color: #000;
+}
+
+/* Macintosh Computer Container */
+.macintosh-computer {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Removed opacity and animation to keep computer visible */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.mac-monitor {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: #e0e0e0;
+    border-radius: 20px 20px 0 0;
+    border: 2px solid #b0b0b0;
+    box-shadow:
+        inset 2px 2px 5px rgba(255, 255, 255, 0.8),
+        inset -2px -2px 5px rgba(0, 0, 0, 0.1),
+        0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mac-screen-bezel {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border-radius: 10px;
+    padding: 2px;
+    /* Bezel thickness */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.system7-desktop {
+    width: 100%;
+    height: 100%;
+    background-color: #808080;
+    /* Classic Mac Gray */
+    background-image: url("data:image/svg+xml,%3Csvg width='2' height='2' viewBox='0 0 2 2' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M1 0h1v1H1zM0 1h1v1H0z'/%3E%3C/g%3E%3C/svg%3E");
+    position: relative;
+    font-family: "Chicago", sans-serif;
+    /* Fallback if font not loaded */
+    overflow: hidden;
+}
+
+.mac-monitor-base {
+    width: 100%;
+    height: 30px;
+    background: #d0d0d0;
+    border-radius: 0 0 20px 20px;
+    border: 2px solid #b0b0b0;
+    border-top: none;
+    box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.05);
+}
+
+.mac-base {
+    width: 80%;
+    height: 80px;
+    background: #e0e0e0;
+    margin-top: -5px;
+    /* Overlap slightly */
+    border-radius: 0 0 10px 10px;
+    border: 2px solid #b0b0b0;
+    border-top: none;
+    position: relative;
+    box-shadow:
+        inset 2px 0 5px rgba(255, 255, 255, 0.5),
+        inset -2px 0 5px rgba(0, 0, 0, 0.1),
+        0 20px 40px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.mac-disk-slot {
+    width: 120px;
+    height: 8px;
+    background: #333;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.mac-logo {
+    font-family: "Garamond", serif;
+    font-style: italic;
+    font-weight: bold;
+    color: #555;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.mac-logo::before {
+    content: "";
+    font-style: normal;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .rich-text-line {
+        font-size: 1.2rem;
+    }
+
+    .macintosh-computer {
+        height: 400px;
+    }
+
+    .mac-monitor {
+        height: 300px;
+    }
+}
